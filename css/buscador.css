@@ -1,0 +1,74 @@
+/*diseño del buscador en general*/
+.buscad {
+    position: absolute;
+    left: 50%;
+    top: 6%;
+    transform: translateX(-50%);
+    padding: 10px;
+}
+.fa.fa-search {
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+input {
+    outline: none;
+    box-sizing: border-box;
+    height: 50px;
+    width: 0;
+    padding: 0 20px;
+    color: black;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid hsl(209, 93%, 53%);
+    transition: all .7s ease;
+}
+
+::placeholder {
+    color: grey;
+}
+
+.btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    background: hsl(209, 93%, 53%);
+    line-height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.buscad:hover input {
+    width: 100%; /* Cambiado para ajustarse al ancho de la pantalla */
+}
+
+.btn button {
+    background: hsl(209, 93%, 53%);
+    border: none;
+    border-radius: 50%;
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    cursor: pointer;
+    transition: background .5s ease;
+}
+
+/* Cambio de color de fondo del botón al pasar el mouse */
+.btn button:hover {
+    background: hsl(209, 93%, 40%);
+}
+
+@media (max-width: 768px) {
+    .buscad {
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+    }
+
+    input {
+        width: 100%; /* Ajustado para ocupar todo el ancho disponible */
+    }
+}

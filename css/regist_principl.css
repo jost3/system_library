@@ -1,0 +1,100 @@
+
+h1 {
+    text-align: center;
+    margin-top: 70px;
+    font-family: American;
+    font-size: 25px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50PX;
+    padding: 45px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: rgb(9, 73, 170);;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    margin: 30px auto; /* Centrar el botón horizontalmente */
+    display: block;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(9, 73, 170);;
+}
+
+/* Fondo transparente */
+.overlay {
+    display: none;
+}
+
+/* Alerta de éxito y error */
+.alert-container {
+    display: none;
+}
+
+.alert-text {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alert-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.alert-button:hover {
+    background-color: #0056b3;
+}
+/*estilo de la imagen hessen icono*/
+.icono{
+    position: absolute;
+    top: 0;
+    right: 100;
+    max-width: 100%;
+    width: 6rem; /* Tamaño deseado */
+    height: auto; /* Tamaño deseado */
+}
+/* diseño de select */
+select#descripcion {
+    width: 200px; /* Ajusta el ancho según tus preferencias */
+    height: 37px;
+}
+@media (max-width: 768px) {
+    .icono {
+        width: 4rem; /* Tamaño más pequeño para pantallas pequeñas */
+    }
+}

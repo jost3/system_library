@@ -1,0 +1,58 @@
+/* Estilo para el contenedor modal */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed; /* Posición fija en la ventana del navegador */
+    top: 50%; /* Centrado verticalmente en la ventana */
+    left: 50%; /* Centrado horizontalmente en la ventana */
+    transform: translate(-50%, -50%); /* Ajusta la posición al centro exacto */
+    background-color: white; /* Fondo del modal */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 999; /* Capa superior, encima de otros elementos */
+    width: 80%; /* Ancho del modal */
+    max-width: 400px; /* Ancho máximo del modal */
+    padding: 20px; /* Espaciado interior */
+    text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Estilo para el contenido dentro del modal */
+.modal-content {
+    position: relative; /* Posición relativa para los elementos internos */
+}
+
+/* Estilo para el botón de cierre del modal */
+.close {
+    position: absolute; /* Posición absoluta dentro del modal */
+    top: 10px; /* Posición vertical del botón de cierre */
+    right: 10px; /* Posición horizontal del botón de cierre */
+    font-size: 24px; /* Tamaño de fuente del botón de cierre */
+    color: #aaa; /* Color del botón de cierre */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+/* Estilo para el botón de cierre al pasar el ratón sobre él */
+.close:hover {
+    color: #ff0000; /* Cambia el color del botón al pasar el ratón */
+}
+
+/* Estilo para los elementos de párrafo dentro del modal */
+p {
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Estilo para los botones dentro del modal */
+.notification-button {
+    background-color: #007bff; /* Fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Espaciado interior */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilo para los botones al pasar el ratón sobre ellos */
+.notification-button:hover {
+    background-color: #02468f; /* Cambia el fondo al pasar el ratón */
+}

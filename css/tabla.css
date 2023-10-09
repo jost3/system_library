@@ -1,0 +1,113 @@
+
+.tabla_general {
+    width: 100%;
+    max-width: 990px;
+    margin: 200px auto;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+}
+ /* Estilos CSS para el botón "Mostrar todos" */
+.mostrar-todos {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    right: 100px;
+    top: 20px;
+}
+/* estilo d ela modal (ventana de advertencia)*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 250px;
+    margin: 300px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.yes{
+    background-color: red;
+    width: 60px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+.nou{
+    background-color:rgb(15, 153, 15);
+    width: 60px;
+    margin: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+/*estilo de la imagen hessen icono*/
+.icono{
+    position: absolute;
+    top: 0;
+    right: 100;
+    max-width: 100%;
+    width: 6rem; /* Tamaño deseado */
+    height: auto; /* Tamaño deseado */
+}
+.a1 {
+    background-color:white; /* Cambia el color de fondo a tu preferencia */
+    color: black; /* Cambia el color del texto a tu preferencia */
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para la clase "a2" */
+.a2 {
+    background-color: #f57573; /* Cambia el color de fondo a tu preferencia */
+    color: white; /* Cambia el color del texto a tu preferencia */
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.subtitulos, .informacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000000; /* Agrega bordes a las celdas */
+    padding: 4px; /* Añade un poco de espacio dentro de las celdas */
+}
+
+.subtitulos {
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: hsl(209, 93%, 53%); /* Cambia el color de fondo de los títulos de columna */
+}
+
+.informacion {
+    font-size: 13px; /* Tamaño de fuente base para datos */
+}
+@media (max-width: 768px) {
+    .icono {
+        width: 4rem; /* Tamaño más pequeño para pantallas pequeñas */
+    }
+}

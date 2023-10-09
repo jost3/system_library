@@ -1,0 +1,48 @@
+
+/* tiutlo de la pagina*/
+h1 {
+    text-align: center;
+    margin-top: 35px;
+    font-family: American;
+    font-size: 25px;
+}
+/* diseño del cuadro general*/
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+   margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+/*diseño del boton*/
+button[type="submit"] {
+    background-color: rgb(9, 73, 170);;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(9, 73, 170);;
+}

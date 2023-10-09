@@ -1,0 +1,157 @@
+ /* diseño general de la pagina*/
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* diseño de la estructura*/
+
+/* diseño del menu genral*/
+.menu li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    display: block;
+    font-size: 20px;
+}
+
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a:hover {
+    background: rgba(235, 106, 106, 0.925);
+}
+/*dieño de la anamcion de apertura*/
+.p10 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.p10 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+}
+
+.p10 span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+.icono {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6rem; /* Tamaño deseado */
+    height: 8rem; /* Tamaño deseado */
+}
+/* Estilos para centrar la alerta y hacerla más grande */
+.confirmation-alert {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+width: 400px; /* Ancho deseado */
+height: 100px; /* Altura deseada */
+padding: 20px;
+border: 1px solid #ccc;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+text-align: center;
+border-radius: 10px;
+}
+
+/* Estilos para los botones */
+.confirmation-alert button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.confirmation-alert button.accept-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.confirmation-alert button.cancel-button {
+background-color: #f44336;
+color: white;
+}
+.salimos{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px; /* Ancho deseado */
+    height: 50px; /* Altura deseada */
+    font-size: 18px; /* Tamaño del texto */
+    background-color:rgba(148, 30, 30, 0.925);
+    color: white;
+    border: 2px solid transparent; /* Establece un borde inicialmente transparente */
+    transition: border-color 0.3s ease; /* Agrega una transición de animación a la propiedad border-color */
+}
+.salimos:hover {
+ border-color: white; /* Cambia el color del borde al pasar el mouse sobre el botón */
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        text-align: left;
+        width: 100%;
+    }
+
+    .menu li {
+        display: block;
+        text-align: left;
+    }
+
+    .menu li a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .salimos {
+        position: fixed;
+        bottom: 20px;
+        right: 20px; /* Cambia "right" a "left" para pegar al lado izquierdo */
+        width: 150px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .icono {
+        position: absolute;
+        top: 0;
+        right: 100;
+        max-width: 100%;
+        width: 6rem; /* Tamaño deseado */
+        height: auto; /* Tamaño deseado */
+    }
+}

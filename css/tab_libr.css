@@ -1,0 +1,81 @@
+
+.tabla_libros {
+    width: 100%;
+    max-width: 800px;
+    margin: 200px auto; /* Auto en los lados izquierdo y derecho centra horizontalmente */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+}
+
+
+.titulos, .dato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px; /* Aumentado el espacio interno para mejorar la legibilidad en pantallas pequeñas */
+    text-align: center; /* Alineación de texto centrada */
+}
+
+.titulos {
+    font-weight: bold;
+    font-size: 1.2em; /* Reducido el tamaño del título para mejorar la legibilidad en pantallas pequeñas */
+    background-color: hsl(209, 93%, 53%);
+}
+
+.dato {
+    font-size: 1em; /* Tamaño de fuente base para datos */
+}
+
+/* Estilo de la modal (ventana de advertencia) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 250px; /* Cambiado a un porcentaje para hacerlo más adaptable */
+    max-width: 400px; /* Limitado el ancho máximo para evitar que sea demasiado grande en pantallas grandes */
+    margin: 300px auto; /* Aumentado el margen para centrarlo verticalmente en pantallas pequeñas */
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.yes{
+    background-color: red;
+    width: 60px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+.nou{
+    background-color:rgb(15, 153, 15);
+    width: 60px;
+    margin: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+.oculto{
+    background-color: hsl(209, 93%, 53%);
+    color: white;
+    padding: 10px 20px;
+    border: #fff;
+    cursor: pointer;
+}
+.oculto:hover {
+    border: 2px solid white; /* Cambia el borde a blanco al pasar el mouse */
+}

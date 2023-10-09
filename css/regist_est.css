@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(img/fond\ seg.jpg);
+}
+.tabla1{
+    border: solid 1px rgba(255, 255, 255, 0.2);
+}
+table{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+thead{
+    background: #8ac0ce;
+}
+
+th{
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+td{
+    padding: 15px;
+    border-bottom:  solid 1px rgba(0, 0, 0, 0.2);;
+}
+tbody tr:hover{
+    background: #c8e5ec;
+}
+
+tbody tr{
+    cursor: pointer;
+}
