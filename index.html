@@ -27,12 +27,12 @@
                 <button class="sign-up-btn">Iniciar Sesion</button>
             </div>
         </div>
-        <form class="formulario">
+        <form class="formulario" action="valida_stud.php" method="post">
             <h2 class="create-account">HESSEN LIBRARY</h2>
             <img src="img/hessen icono.png" alt="Icono de inicio de sesión">
             <p class="cuenta-gratis"></p>
-            <input type="email" placeholder="email">
-            <input type="password" placeholder="contraseña">
+            <input type="text" id="user" name="user" placeholder="usuario" required>
+            <input type="password" id="contra1" name="contra1" placeholder="contraseña" required>
             <input type="submit" value="Ingresar">
         </form>
     </div>
