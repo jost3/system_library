@@ -10,39 +10,39 @@
     body{
         background: url(img/fond_form.jpeg);
     }
+
 </style>
 <body>
     <div class="container-form sign-up">
         <div class="welcome-back">
             <div class="message">
                 <h2>Bienvenido a Hessen Bliblioteca</h2>
-                <p>Si eres alumno inicia sesion aqui</p>
+                <p>Si eres administrador inicia sesion aqui</p>
                 <button class="sign-up-btn">Iniciar Sesion</button>
             </div>
         </div>
         <form class="formulario">
             <h2 class="create-account">HESSEN LIBRARY</h2>
-            <p class="cuenta-gratis">ADMINISTRADOR</p>
-            <input type="text" placeholder="Nombre">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Iniciar sesion">
+            <p class="cuenta-gratis"></p>
+            <input type="email" placeholder="email">
+            <input type="password" placeholder="contraseña">
+            <input type="submit" value="Iniciar sesion">
         </form>
     </div>
     <div class="container-form sign-in">
-        <form class="formulario">
-            <h2 class="create-account">Iniciar Sesion</h2>
+        <form class="formulario" action="validacion.php" method="post">
+            <h2 class="create-account">HESSEN LIBRARY</h2>
 
-            <p class="cuenta-gratis">ALUMNO</p>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Iniciar Sesion">
+            <p class="cuenta-gratis"></p>
+            <input type="text" id="usuario" name="usuario" placeholder="usuario" required>
+            <input type="password" id="contraseña" name="contraseña" placeholder="contraseña" required>
+            <input type="submit" value="Ingresar">
         </form>
         <div class="welcome-back">
             <div class="message">
                 <h2>Bienvenido de nuevo</h2>
-                <p>Si no eres alumno inicia sesion aqui </p>
-                <button class="sign-in-btn">Inicia de sesion</button>
+                <p>Si no eres administrador inicia sesion aqui </p>
+                <button class="sign-in-btn">Iniciar de sesion</button>
             </div>
         </div>
     </div>
