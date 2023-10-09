@@ -44,7 +44,7 @@ body {
 .message button {
     padding: 1rem;
     font-weight: 400;
-    background-color: hsl(209, 93%, 53%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 2rem;
     border: none;
     outline: none;
@@ -52,11 +52,11 @@ body {
     font-size: .9rem;
     margin-top: 2rem;
     transition: all .3s ease-in;
-    color: #fff;
+    color: black;
 }
 
 .message button:hover {
-    background-color: hsl(209, 79%, 35%);
+    background-color: hsl(4, 85%, 74%);
 }
 
 .formulario {
@@ -148,3 +148,9 @@ input[type="submit"] {
     opacity: 0;
     visibility: hidden;
 }
+/* estilo a la imagen icono de login*/
+.formulario img {
+    width: 90px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: 105px; /* Ajusta el alto de la imagen según tus necesidades */
+    margin-bottom: -30px; /* Agrega un margen inferior para separar la imagen del encabezado */
+    }
