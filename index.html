@@ -10,6 +10,9 @@
     body{
         background: url(img/fond_form.jpeg);
     }
+    p{
+        color: black;
+    }
 
 </style>
 <body>
@@ -46,6 +49,13 @@
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p id="mensajeModal"></p>
+            <button class="notification-button" onclick="cerrarModal()">Cerrar</button>  <!-- se quito la X eh hice que se cambiara el estilo de la ventana -->
+        </div>
+    </div>
+    <script src="js/alert-login.js"></script>
     <script>
         const $btnSignIn= document.querySelector('.sign-in-btn'),
       $btnSignUp = document.querySelector('.sign-up-btn'),  
