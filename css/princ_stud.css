@@ -104,6 +104,7 @@
 #navbar .form-control {
   width: 300px; /* Ajusta el ancho según tus preferencias */
 }
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

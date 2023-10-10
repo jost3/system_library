@@ -10,6 +10,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="../css/princ_stud.css">
     </head>
+    <style>
+        .filtro{
+            display: none;
+            }
+    </style>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -23,7 +28,7 @@
                         
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar">
                         <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form>
                 </div>
@@ -43,7 +48,7 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <!-- INICIO DE LOS LIBROS 1-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -63,7 +68,7 @@
                         </div>
                     </div>
                     <!--2-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -71,7 +76,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder" >psiclogia</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
@@ -83,7 +88,7 @@
                         </div>
                     </div>
                      <!--3-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -103,7 +108,7 @@
                         </div>
                     </div>
                     <!--3-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -123,7 +128,7 @@
                         </div>
                     </div>
                     <!--4-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -143,7 +148,7 @@
                         </div>
                     </div>
                     <!--5-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -163,7 +168,7 @@
                         </div>
                     </div>
                     <!--6-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -183,7 +188,7 @@
                         </div>
                     </div>
                     <!--7-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -203,7 +208,7 @@
                         </div>
                     </div>
                     <!--8-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -223,7 +228,7 @@
                         </div>
                     </div>
                     <!--9-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -243,7 +248,7 @@
                         </div>
                     </div>
                     <!--10-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -263,7 +268,7 @@
                         </div>
                     </div>
                     <!--11-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -283,7 +288,7 @@
                         </div>
                     </div>
                     <!--12-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -303,7 +308,7 @@
                         </div>
                     </div>
                     <!--13-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -323,7 +328,7 @@
                         </div>
                     </div>
                     <!--14-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -343,7 +348,7 @@
                         </div>
                     </div>
                     <!--15-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -363,7 +368,7 @@
                         </div>
                     </div>
                     <!--16-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -383,7 +388,7 @@
                         </div>
                     </div>
                     <!--17-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -403,7 +408,7 @@
                         </div>
                     </div>
                     <!--18-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -423,7 +428,7 @@
                         </div>
                     </div>
                     <!--19-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -443,7 +448,7 @@
                         </div>
                     </div>
                     <!--20-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -463,7 +468,7 @@
                         </div>
                     </div>
                     <!--21-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -483,7 +488,7 @@
                         </div>
                     </div>
                     <!--22-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -503,7 +508,7 @@
                         </div>
                     </div>
                     <!--23-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -523,7 +528,7 @@
                         </div>
                     </div>
                     <!--24-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -543,7 +548,7 @@
                         </div>
                     </div>
                     <!--25-->
-                    <div class="col mb-5">
+                    <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
                             <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
@@ -572,6 +577,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="../js/busq_stud.js"></script>
         <script src="../js/studScript.js"></script>
     </body>
 </html>
