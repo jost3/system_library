@@ -9,9 +9,12 @@
     
 </head>
 <body>
+<a href="fisico_stud.php">
+        <img class="icono" src="../img/hessen icono.png">
+    </a>
     <!--estructura de la pagina-->
-    <h1>NUEVA RESERVA</h1>
-    <form action="../php_stud/reserv_nuev.php" method="post">
+    <h1>NUEVA RESERVACION</h1>
+    <form action="../php_stud/reserv_nuev.php" method="post" class="fot1">
         <label for="titulo1">Título del Libro:</label>
         <input type="text" id="titulo1" name="titulo1" required>
 
@@ -32,7 +35,7 @@
 
         <!-- Otros campos relevantes para el registro del libro -->
 
-        <button type="submit" name="insertar">Registrar Libro</button>
+        <button type="submit" name="insertar">Reservar Libro</button>
     </form>
 
     <div class="overlay1" id="overlay1"></div>

@@ -1,20 +1,20 @@
 
 body {
-    background: url();
+    background-color: rgba(151, 148, 148, 0.602);
     background-size: cover; /* La imagen se ajustará al tamaño de la ventana */
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     background-attachment: fixed; /* Evita que la imagen se desplace con el scroll */
-    
+
 }
 @media (max-width: 768px) {
 .icono {
-    width: 4rem; /* Tamaño más pequeño para pantallas pequeñas */
+    width: 3rem; /* Tamaño más pequeño para pantallas pequeñas */
 }
 }
 /* tiutlo de la pagina*/
 h1 {
     text-align: center;
-    margin-top: 35px;
+    margin-top: 100px;
     font-family: American;
     font-size: 25px;
 }
@@ -45,7 +45,7 @@ textarea {
 }
 /*diseño del boton*/
 button[type="submit"] {
-    background-color: rgb(9, 73, 170);;
+    background-color: rgb(177, 27, 27);;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -56,9 +56,15 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: rgb(9, 73, 170);;
+    background-color: rgb(230, 27, 27);;
 }
 select#descripcion1 {
     width: 200px; /* Ajusta el ancho según tus preferencias */
     height: 37px;
+}
+.fot1{
+    background-color: rgb(9, 73, 170);
+}
+label{
+    color: white;
 }
