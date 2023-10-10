@@ -109,6 +109,40 @@
 tbody {
   text-align: center;
 }
+/* Estilos para la tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 200px; /* Ajusta el valor según tu preferencia para el espacio superior */
+}
+
+/* Estilos para las celdas de encabezado (thead) */
+.text-muted {
+  background-color: rgb(9, 73, 170);
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilos para las celdas del cuerpo (tbody) */
+.table td {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid rgb(9, 73, 170); /* Línea de separación entre filas */
+
+}
+.table tbody td {
+    background-color: white;
+}
+
+#art{
+  font-weight: bold; /* Puedes aplicar negrita para un estilo más destacado */
+}
+#cmb{
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px; /* Espacio inferior */
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
