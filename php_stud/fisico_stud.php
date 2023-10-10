@@ -38,7 +38,7 @@ $guarda= $conex1->query($consul_stud);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php_stud/fisico_stud.php">Reservar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../php_stud/reserva.php">Reservar</a></li>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar" name="busc1">
@@ -58,9 +58,9 @@ $guarda= $conex1->query($consul_stud);
                     </thead>
                     <tbody>
                     <?php  
-            $resultado= mysqli_query($conex1, $consulta);
-            while($row=mysqli_fetch_assoc($resultado)) {
-            ?>
+                        $resultado= mysqli_query($conex1, $consulta);
+                        while($row=mysqli_fetch_assoc($resultado)) {
+                        ?>
                         <tr>
                             <td> <?php echo $row['titulo']; ?></td>
                             <td> <?php echo $row['autor']; ?></td>
