@@ -10,8 +10,5 @@ document.addEventListener("keyup", e=>{
               ?libro.classList.remove("filtro")
               :libro.classList.add("filtro")
         })
-  
     }
-  
-  
   })

@@ -4,7 +4,19 @@ include '../conex_prest.php';
 $consul_stud= "SELECT * FROM libro";
 $guarda= $conex1->query($consul_stud);
 ?>
+    <?php if (isset($_GET['busc1'])) { ?>
+        <a class="restablecimiento" href="?"><button class="oculto">Mostrar todos</button></a>
+    <?php } ?>
 
+    <?php
+        $busc1 = isset($_GET['busc1']) ? $_GET['busc1'] : '';
+        if ($busc1) {
+            $consulta = "SELECT * FROM libro WHERE 
+                titulo LIKE '%$busc1%'";
+        } else {
+            $consulta = "SELECT * FROM libro";
+        }
+    ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +41,7 @@ $guarda= $conex1->query($consul_stud);
                         <li class="nav-item"><a class="nav-link" href="../php_stud/fisico_stud.php">Reservar</a></li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar" name="busc1">
                         <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form>
                 </div>
@@ -45,7 +57,10 @@ $guarda= $conex1->query($consul_stud);
                         <th class="text-center" id="cmb">Categoria</th>
                     </thead>
                     <tbody>
-                        <?php while($row=$guarda->fetch_assoc()){?>
+                    <?php  
+            $resultado= mysqli_query($conex1, $consulta);
+            while($row=mysqli_fetch_assoc($resultado)) {
+            ?>
                         <tr>
                             <td> <?php echo $row['titulo']; ?></td>
                             <td> <?php echo $row['autor']; ?></td>
