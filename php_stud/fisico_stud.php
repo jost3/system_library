@@ -1,5 +1,8 @@
 <?php 
-
+include '../conex_prest.php';
+//consula
+$consul_stud= "SELECT * FROM libro";
+$guarda= $conex1->query($consul_stud);
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +25,13 @@
                         <th class="text-center">Categoria</th>
                     </thead>
                     <tbody>
+                        <?php while($row=$guarda->fetch_assoc()){?>
                         <tr>
-
+                            <td> <?php echo $row['titulo']; ?></td>
+                            <td> <?php echo $row['autor']; ?></td>
+                            <td> <?php echo $row['descripcion']; ?></td>
                         </tr>
+                        <?php }?>
                     </tbody>
                 </table>
             </div>
