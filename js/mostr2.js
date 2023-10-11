@@ -6,9 +6,9 @@ most1.addEventListener('click',toggleText);
 function toggleText(){
     oclt1.classList.toggle('tv');
     
-    if(oclt.classList.contains('tv')){
-        most1.innerHTML = 'mostar menos'
+    if(oclt1.classList.contains('tv')){
+        most1.innerHTML = 'Mostar Menos'
     }else{
-        most1.innerHTML = 'mostar mas'
+        most1.innerHTML = 'Mostar Mas'
     }
 }

@@ -7,8 +7,8 @@ function toggleText(){
     oclt.classList.toggle('tv');
 
     if(oclt.classList.contains('tv')){
-        most.innerHTML = 'mostar menos'
+        most.innerHTML = 'Mostar Menos'
     }else{
-        most.innerHTML = 'mostar mas'
+        most.innerHTML = 'Mostar Mas'
     }
 }

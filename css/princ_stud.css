@@ -125,13 +125,27 @@
 .se12 {
   background-color:transparent;
   position: relative;
-  top: -5px; /* Ajusta el valor negativo según lo necesites */
+  top:7px; /* Ajusta el valor negativo según lo necesites */
   color: black;
   padding: 10px 20px;
   border: 2px solid rgb(9, 73, 170);
   cursor: pointer;
 }
 .se12:hover {
+  background-color: rgb(9, 73, 170);; /* Cambia el color al pasar el mouse */
+  color: white;/*color del texto*/
+}
+/*boton de la tercera*/
+.se13 {
+  background-color:transparent;
+  position: relative;
+  top:29px; /* Ajusta el valor negativo según lo necesites */
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid rgb(9, 73, 170);
+  cursor: pointer;
+}
+.se13:hover {
   background-color: rgb(9, 73, 170);; /* Cambia el color al pasar el mouse */
   color: white;/*color del texto*/
 }
@@ -212,6 +226,13 @@ tbody {
   position: relative;
   top: -10px;
 }
+/* de la 4*/
+.secciones3{
+  text-align: center;
+  padding-bottom: 13px;
+  position: relative;
+  top: 13px;
+}
 /*linea de las secciones*/
 .linea{
   border: 2px solid black;
@@ -220,7 +241,7 @@ tbody {
   position: relative;
   top: 30px;
 }
-/* de la segunda*/
+/* de la 2*/
 .linea1{
   border: 2px solid black;
   width: 50%;
@@ -228,7 +249,7 @@ tbody {
   position: relative;
   top: -45px;
 }
-/* de la tercera*/
+/* de la 3*/
 .linea2{
   border: 2px solid black;
   width: 50%;
@@ -236,7 +257,14 @@ tbody {
   position: relative;
   top: -18px;
 }
-
+/* de la 4*/
+.linea3{
+  border: 2px solid black;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 5px;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
