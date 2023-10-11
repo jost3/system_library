@@ -93,7 +93,11 @@
 .hide{
   display: none;
 }
+
 .tv{
+  display: block;
+}
+.tv1{
   display: block;
 }
 .card-img-top{
@@ -103,17 +107,33 @@
 .center-button {
   text-align: center;
 }
+/*boton de la primera*/
 .se1 {
+  background-color:transparent;
   position: relative;
   top: -20px; /* Ajusta el valor negativo según lo necesites */
-  background-color: rgb(9, 73, 170);
-  color: white;
+  color: black;
   padding: 10px 20px;
-  border: #fff;
+  border: 2px solid rgb(9, 73, 170);
   cursor: pointer;
 }
 .se1:hover {
-  border: 2px solid white; /* Cambia el borde a blanco al pasar el mouse */
+  background-color: rgb(9, 73, 170);; /* Cambia el color al pasar el mouse */
+  color: white;/*color del texto*/
+}
+/*boton de la segunda*/
+.se12 {
+  background-color:transparent;
+  position: relative;
+  top: -5px; /* Ajusta el valor negativo según lo necesites */
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid rgb(9, 73, 170);
+  cursor: pointer;
+}
+.se12:hover {
+  background-color: rgb(9, 73, 170);; /* Cambia el color al pasar el mouse */
+  color: white;/*color del texto*/
 }
 /*barra de busqueda*/
 #navbar {
@@ -171,12 +191,26 @@ tbody {
   max-height: 70px; /* Ajusta el valor según el tamaño que desees */
   width: auto; /* Ajusta el tamaño automáticamente para mantener la proporción */
 }
-/*seciones*/
+/*seciones unico solo dela primera*/
 .secciones{
   text-align: center;
   padding-bottom: 10px;
   position: relative;
   top: 35px;
+}
+/*secciones de la segunda*/
+.secciones1{
+  text-align: center;
+  padding-bottom: 10px;
+  position: relative;
+  top: -40px;
+}
+/* de la tercera*/
+.secciones2{
+  text-align: center;
+  padding-bottom: 10px;
+  position: relative;
+  top: -10px;
 }
 /*linea de las secciones*/
 .linea{
@@ -185,6 +219,22 @@ tbody {
   margin: 0 auto;
   position: relative;
   top: 30px;
+}
+/* de la segunda*/
+.linea1{
+  border: 2px solid black;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: -45px;
+}
+/* de la tercera*/
+.linea2{
+  border: 2px solid black;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: -18px;
 }
 
 body {
