@@ -24,11 +24,9 @@ $guarda= $conex1->query($consul_stud);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/princ_stud.css">
+    <link rel="stylesheet" href="../css/fisico.css">
 </head>
 <style>
-    body{
-        background-color: rgba(151, 148, 148, 0.602);
-    }
 </style>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">

@@ -1,0 +1,29 @@
+body{
+    background-color: rgba(151, 148, 148, 0.602);
+}
+.restablecimiento {
+        margin-top: 1px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 140px;
+}
+.oculto{
+    background-color: rgb(9, 73, 170);
+    color: white;
+    padding: 10px 20px;
+    border: #fff;
+    cursor: pointer;
+}
+.oculto:hover {
+    border: 2px solid white; /* Cambia el borde a blanco al pasar el mouse */
+}
+#cmb{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px; /* Espacio inferior */
+  }

@@ -91,7 +91,7 @@
   }
 }
 .card-img-top{
-  height: 20vh;
+  height: 17vh;
 
 }
 /*barra de busqueda*/
@@ -137,12 +137,6 @@ tbody {
 
 #art{
   font-weight: bold; /* Puedes aplicar negrita para un estilo más destacado */
-}
-#cmb{
-  color: white;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px; /* Espacio inferior */
 }
 .nav-item  {
   font-size: 20px; /* Puedes ajustar el tamaño según tus preferencias */
