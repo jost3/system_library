@@ -68,3 +68,9 @@ select#descripcion1 {
 label{
     color: white;
 }
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}

@@ -14,17 +14,25 @@
         .filtro{
             display: none;
             }
+        .navbar-scroll {
+        background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta el último valor (0.9) para controlar la opacidad */
+        transition: background-color 0.3s ease; /* Agrega una transición suave */
+        }
+        body{
+            background-color: rgba(151, 148, 148, 0.602);
+        }
     </style>
     <body>
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand">Hessen library</a>
+                <a class="navbar-brand"><img src="../img/hessen2.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php_stud/fisico_stud.php">Bibioteca fisica</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../php_stud/fisico_stud.php">BIBLIOTECA FISICA</a></li>
                         
                     </ul>
                     <form class="d-flex">
@@ -35,11 +43,11 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <br><br><header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder"> BIENVENIDO A HESSEN BIBLIOTECA</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Encuentra lo que buscas aqui </p>
+                    <h1 class="display-4 fw-bolder">BIBLIOTECA VIRTUAL HESSEN</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Explora un mundo de conocimiento a través de nuestra amplia colección de libros digitales </p>
                 </div>
             </div>
         </header>
@@ -577,6 +585,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="../js/deslis.js"></script>
         <script src="../js/busq_stud.js"></script>
         <script src="../js/studScript.js"></script>
     </body>

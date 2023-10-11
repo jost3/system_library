@@ -27,18 +27,18 @@ $guarda= $conex1->query($consul_stud);
 </head>
 <style>
     body{
-        background: url(../img/fond23.jpeg);
+        background-color: rgba(151, 148, 148, 0.602);
     }
 </style>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand">BBLIOTECA HESSEN</a>
+                <a class="navbar-brand" href="inicio_stud.php"><img src="../img/hessen2.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php_stud/reserva.php">Reservar</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../php_stud/reserva.php">RESERVAR</a></li>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar" name="busc1">

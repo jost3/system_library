@@ -101,9 +101,10 @@
   left: 0;
   right: 0;
   z-index: 1000; /* Ajusta el valor de z-index según tus necesidades */
+
 }
 #navbar .form-control {
-  width: 300px; /* Ajusta el ancho según tus preferencias */
+  width: 220px; /* Ajusta el ancho según tus preferencias */
 }
 /*tabla  centrado*/
 tbody {
@@ -143,6 +144,19 @@ tbody {
   font-size: 24px;
   margin-bottom: 20px; /* Espacio inferior */
 }
+.nav-item  {
+  font-size: 20px; /* Puedes ajustar el tamaño según tus preferencias */
+  /* Otros estilos si es necesario */
+}
+#buscar {
+  border-color: blue; /* Puedes ajustar el color según tus preferencias */
+
+}
+.navbar-brand img {
+  max-height: 70px; /* Ajusta el valor según el tamaño que desees */
+  width: auto; /* Ajusta el tamaño automáticamente para mantener la proporción */
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

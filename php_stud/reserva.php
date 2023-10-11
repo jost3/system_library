@@ -8,8 +8,16 @@
     <link rel="stylesheet" href="../css/ventana3_prest.css">
     
 </head>
+<style>
+    .icono{
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+</style>
 <body>
-<a href="fisico_stud.php">
+    <a href="fisico_stud.php">
         <img class="icono" src="../img/hessen icono.png">
     </a>
     <!--estructura de la pagina-->
