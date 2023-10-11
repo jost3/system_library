@@ -43,7 +43,7 @@
             </div>
         </nav>
         <!-- Header-->
-        <br><br><header class="bg-dark py-5">
+        <header class="bg-dark py-5 mt-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">BIBLIOTECA VIRTUAL HESSEN</h1>
@@ -712,7 +712,7 @@
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
-                            <!-- Product actions-->
+                            <!-- enlace del libro-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/10NLoelHM4-iDy_6E9B4A5SbGos0NPJQU/preview">Leer Ahora</a></div>
                             </div>
@@ -927,7 +927,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Anatomia</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
@@ -945,7 +945,7 @@
             <button class="se13" id="most2">Mostrar Mas</button>
         </div>
         <!-- Footer-->
-        <br><br><br><footer class=" bg-dark">
+        <footer class=" bg-dark mt-5" >
             <div class="container"><p class="m-0 text-center text-white">By Josue Cotera</p></div>
         </footer>
         <!-- Bootstrap core JS-->

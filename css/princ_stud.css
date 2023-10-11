@@ -103,6 +103,11 @@
 .card-img-top{
   height: 17vh;
 }
+/*leer mas*/
+.card-footer a.btn.btn-outline-dark:hover {
+  background-color: rgb(9, 73, 170); /* Cambiar el color a azul al pasar el ratón */
+}
+
 /*bootn de mostrar mas */
 .center-button {
   text-align: center;
