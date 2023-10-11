@@ -164,12 +164,27 @@ tbody {
   /* Otros estilos si es necesario */
 }
 #buscar {
-  border-color: blue; /* Puedes ajustar el color según tus preferencias */
+  border-color: rgb(9, 73, 170); /* colo de los bordes del buscador */
 
 }
 .navbar-brand img {
   max-height: 70px; /* Ajusta el valor según el tamaño que desees */
   width: auto; /* Ajusta el tamaño automáticamente para mantener la proporción */
+}
+/*seciones*/
+.secciones{
+  text-align: center;
+  padding-bottom: 10px;
+  position: relative;
+  top: 35px;
+}
+/*linea de las secciones*/
+.linea{
+  border: 2px solid black;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
 }
 
 body {
