@@ -90,9 +90,30 @@
     scroll-behavior: smooth;
   }
 }
+.hide{
+  display: none;
+}
+.tv{
+  display: block;
+}
 .card-img-top{
   height: 17vh;
-
+}
+/*bootn de mostrar mas */
+.center-button {
+  text-align: center;
+}
+.se1 {
+  position: relative;
+  top: -20px; /* Ajusta el valor negativo según lo necesites */
+  background-color: rgb(9, 73, 170);
+  color: white;
+  padding: 10px 20px;
+  border: #fff;
+  cursor: pointer;
+}
+.se1:hover {
+  border: 2px solid white; /* Cambia el borde a blanco al pasar el mouse */
 }
 /*barra de busqueda*/
 #navbar {
@@ -216,7 +237,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 h6, .h6 {
