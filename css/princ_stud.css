@@ -154,6 +154,20 @@
   background-color: rgb(9, 73, 170);; /* Cambia el color al pasar el mouse */
   color: white;/*color del texto*/
 }
+/*boton de la cuarta*/
+.se14 {
+  background-color:transparent;
+  position: relative;
+  top:27px; /* Ajusta el valor negativo según lo necesites */
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid rgb(9, 73, 170);
+  cursor: pointer;
+}
+.se14:hover {
+  background-color: rgb(9, 73, 170);; /* Cambia el color al pasar el mouse */
+  color: white;/*color del texto*/
+}
 /*barra de busqueda*/
 #navbar {
   position: fixed;
@@ -238,6 +252,12 @@ tbody {
   position: relative;
   top: 13px;
 }
+/* de la 5*/
+.secciones4{
+  text-align: center;
+  top: 40px;
+  position: relative;
+}
 /*linea de las secciones*/
 .linea{
   border: 2px solid black;
@@ -269,6 +289,18 @@ tbody {
   margin: 0 auto;
   position: relative;
   top: 5px;
+}
+/*de la 5*/
+.linea4{
+  border: 2px solid black;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 45px;
+}
+/*spacer*/
+.spacer{
+  height: 40x;
 }
 body {
   margin: 0;
