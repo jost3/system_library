@@ -4,7 +4,7 @@
     max-width: 990px;
     margin: 200px auto;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-auto-rows: auto;
     grid-gap: 5px;
 }
@@ -105,6 +105,16 @@
 
 .informacion {
     font-size: 13px; /* Tamaño de fuente base para datos */
+}
+.oculto{
+    background-color: hsl(209, 93%, 53%);
+    color: white;
+    padding: 10px 20px;
+    border: #fff;
+    cursor: pointer;
+}
+.oculto:hover {
+    border: 2px solid white; /* Cambia el borde a blanco al pasar el mouse */
 }
 @media (max-width: 768px) {
     .icono {
