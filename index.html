@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Hessen - Bliblioteca</title>
     <link rel="icon" href="img/hessen icono.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/ventana1.css">
@@ -27,20 +27,22 @@
         <form class="formulario" action="valida_stud.php" method="post">
             <h2 class="create-account">HESSEN LIBRARY</h2>
             <img src="img/hessen icono.png" alt="Icono de inicio de sesión">
-            <p class="cuenta-gratis"></p>
+            <h3 class="colm">ESTUDIANTE</h3>
+            <p class="cuenta"></p>
             <input type="text" id="user" name="user" placeholder="usuario" required>
             <input type="password" id="contra1" name="contra1" placeholder="contraseña" required>
-            <input type="submit" value="Ingresar">
+            <input type="submit" class="modf" value="Ingresar">
         </form>
     </div>
     <div class="container-form sign-in">
         <form class="formulario" action="validacion.php" method="post">
             <h2 class="create-account">HESSEN LIBRARY</h2>
             <img src="img/hessen icono.png" alt="Icono de inicio de sesión">
-            <p class="cuenta-gratis"></p>
+            <h3 class="colm">ADMINISTRADOR</h3>
+            <p class="cuenta" id="lot"></p>
             <input type="text" id="usuario" name="usuario" placeholder="usuario" required>
             <input type="password" id="contraseña" name="contraseña" placeholder="contraseña" required>
-            <input type="submit" value="Ingresar">
+            <input type="submit" class="modf" value="Ingresar">
         </form>
         <div class="welcome-back">
             <div class="message" id="c1">

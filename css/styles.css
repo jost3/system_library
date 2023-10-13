@@ -97,8 +97,15 @@ body {
     cursor: pointer;
 }
 
-.cuenta-gratis {
-    padding: 2rem 0;
+.cuenta {
+    padding: 1rem 0;
+}
+.colm{
+  margin-top: 40px;
+}
+.modf:hover{
+  background-color: hsl(4, 76%, 39%);
+  color: white;
 }
 
 .formulario input {
@@ -199,7 +206,7 @@ input[type="submit"] {
       font-size: 1.2rem;
     }
   
-    .cuenta-gratis {
+    .cuenta {
       padding: 1rem 0;
     }
   

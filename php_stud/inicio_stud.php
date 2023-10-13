@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Biblioteca-virtual Hessen</title>
+        <title>Hessen - Bibloteca Virtual</title>
+        <link rel="icon" href="../img/hessen icono.png" type="image/x-icon">
         <!-- Favicon-->
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="../css/princ_stud.css">
@@ -32,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php_stud/fisico_stud.php">BIBLIOTECA FISICA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../php_stud/fisico_stud.php">LIBROS FISICOS</a></li>
                         
                     </ul>
                     <form class="d-flex">
