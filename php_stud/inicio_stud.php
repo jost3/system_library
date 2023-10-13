@@ -346,7 +346,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1xLYVgsnM8VkHBlqt3bjLm0rUaVlQw/preview">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1xLYVgsnM8VkHBlqt3bjLm0rUaVlQw-yF/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -460,7 +460,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1q7eW9ANhc11LHv6ghdoG6uVZ0F1ZSG/preview">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1q7eW9ANhc11LHv6ghdoG6uVZ0F1ZSG-8/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -652,7 +652,7 @@
             <button class="se12" id="most1">Mostrar Mas</button>
         </div>
         <div class="secciones3">
-        <strong>SECCION: SECCION 4</strong>
+        <strong>SECCION: ANESTESIA</strong>
         </div>
         <hr class="linea3">
          <!-- Section 4-->
@@ -663,19 +663,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anestesia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Manual Anest..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- enlace del libro-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/10NLoelHM4-iDy_6E9B4A5SbGos0NPJQU/preview">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1MEQsblySpNIOE2TACxSAIrglR8gGPntn/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -683,19 +683,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anestesia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder" >psiclogia</h5>
+                                    <h5 class="fw-bolder" >Historia Anest..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1bcbb-BZTuIlI90HxWZfIVELf411h33xG/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -703,19 +703,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anestesia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Anest. Pediatr..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1nAJcLN67lWOohvXIs7Yvd0k_maViG4-x/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -723,19 +723,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anestesia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Coceptos Basic..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1I4M4GDUiHMxNy1rF2mbt1fSQD-xR-j6n/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -743,159 +743,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anestesia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Anest para Transp..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--6-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--7-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--8-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--9-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--10-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--11-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--12-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Anatomia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1uKp_Dh3_El_jCJhO2Z7lCOrtaltUOdCd/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -906,7 +766,7 @@
             <button class="se13" id="most2">Mostrar Mas</button>
         </div>
         <div class="secciones4">
-        <strong>SECCION: SECCION 5</strong>
+        <strong>SECCION: ANATOMIA</strong>
         </div>
         <hr class="linea4">
         <!--Section 5-->
@@ -917,19 +777,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Manual Anat..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- enlace del libro-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/10NLoelHM4-iDy_6E9B4A5SbGos0NPJQU/preview">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1pxvtzISvX1y5MtCLWZeV4cJvxGjR4iI6/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -937,19 +797,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder" >psiclogia</h5>
+                                    <h5 class="fw-bolder" >Diccionario Anat..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1XlgJmhVWGerIm-tlICTk2nKKB4K2Wwhk/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -957,19 +817,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Introduccion Anat..</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1sEqNFkpyahUPciTXNp43HWXNpJvI7F6i/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -977,19 +837,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Corazon</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1BqbMMRXxYXmkdIBC3e_729cXfq9-MufC/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -997,19 +857,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Sist Respiratorio</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1knYGbc0VSAGPHjzPx1oN9MDVY9uozA80/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -1017,19 +877,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Sist Muscular</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1JaA1I55sC6Auu-qyVeU2-54xTV4NZsnV/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -1037,19 +897,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Ojos</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1SFyK19FjoFwkBAYwZ6_G33f-ZykoE5o9/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
@@ -1057,99 +917,19 @@
                     <div class="col mb-5" id="a1">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
+                            <img class="card-img-top" src="../img/anatomia.jpg" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
+                                    <h5 class="fw-bolder">Anat Humana</h5>
                                     <!-- Product price-->
                                    no lo pienses y empieza a leer
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--9-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--10-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--11-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Farmalogia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--12-->
-                    <div class="col mb-5" id="a1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="../img/inicio.jpeg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Anatomia</h5>
-                                    <!-- Product price-->
-                                   no lo pienses y empieza a leer
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php_stud/lectura.php">Leer Ahora</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1Po2aIgJp0MmM4QoeztJpw3S1L5cacP_V/preview">Leer Ahora</a></div>
                             </div>
                         </div>
                     </div>
