@@ -71,7 +71,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">SIglas Medicas</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -91,7 +91,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder" >Medicamentos</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -111,7 +111,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Principios Medic..1</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -131,7 +131,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Principios Medic..2</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -151,7 +151,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Temas Medic..1</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -171,7 +171,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Temas Medic..2</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -191,7 +191,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Medic. Legal</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -211,7 +211,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Balistica y Glos..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -231,7 +231,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Guías Prac..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Curar es un arte, aprender es la clave.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -262,7 +262,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">farmac. Basic..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Moléculas que sanan, dosis de vida.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -282,7 +282,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder" >Farmacos Card..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Moléculas que sanan, dosis de vida.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -302,7 +302,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Farmac. Ocular</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Moléculas que sanan, dosis de vida.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -322,7 +322,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Farmac. Embaraz..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Moléculas que sanan, dosis de vida.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -342,7 +342,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Farmacologia</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Moléculas que sanan, dosis de vida.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -362,7 +362,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Farmac. Ilustr..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Moléculas que sanan, dosis de vida.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -382,7 +382,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Manual Farmac..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Moléculas que sanan, dosis de vida.
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -416,7 +416,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Actuacion Enf..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -436,7 +436,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder" >Cuidados Basc..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -456,7 +456,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Tecnicas y Proc..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -476,7 +476,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Urgencias</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -496,7 +496,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Manual Enf..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -516,7 +516,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Tecnicas Com..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -536,7 +536,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Cuidado Pac..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -556,7 +556,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Historio Enf..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -576,7 +576,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Adm de Servic..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -596,7 +596,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Anticoagulacion</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -616,7 +616,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">ECG</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -636,7 +636,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Ginecoobstétrica</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Cuidar con amor, sanar con empatía
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -671,7 +671,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Manual Anest..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Silencio que alivia, sueños que protegen
                                 </div>
                             </div>
                             <!-- enlace del libro-->
@@ -691,7 +691,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder" >Historia Anest..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Silencio que alivia, sueños que protegen
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -711,7 +711,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Anest. Pediatr..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Silencio que alivia, sueños que protegen
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -731,7 +731,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Coceptos Basic..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Silencio que alivia, sueños que protegen
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -751,7 +751,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Anest para Transp..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Silencio que alivia, sueños que protegen
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -785,7 +785,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Manual Anat..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- enlace del libro-->
@@ -805,7 +805,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder" >Diccionario Anat..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -825,7 +825,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Introduccion Anat..</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -845,7 +845,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Corazon</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -865,7 +865,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Sist Respiratorio</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -885,7 +885,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Sist Muscular</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -905,7 +905,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Ojos</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -925,7 +925,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Anat Humana</h5>
                                     <!-- Product price-->
-                                   no lo pienses y empieza a leer
+                                    Descubriendo la maravilla bajo la piel
                                 </div>
                             </div>
                             <!-- Product actions-->
