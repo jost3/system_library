@@ -947,7 +947,7 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
+        <!-- js de la pag-->
         <script src="../js/mostr4.js"></script>
         <script src="../js/mostr3.js"></script>
         <script src="../js/mostr2.js"></script>

@@ -39,6 +39,7 @@
 p {
     font-size: 18px; /* Tamaño de fuente */
     margin-bottom: 15px; /* Margen inferior */
+    
 }
 
 /* Estilo para los botones dentro del modal */
@@ -55,4 +56,7 @@ p {
 /* Estilo para los botones al pasar el ratón sobre ellos */
 .notification-button:hover {
     background-color: #02468f; /* Cambia el fondo al pasar el ratón */
+}
+#mensajeModal{
+    color: black;
 }
