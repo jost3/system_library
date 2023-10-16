@@ -63,7 +63,7 @@
         </div>
         <button class="alert-button" onclick="cerrarAlerta('alertaError')">Aceptar</button>
     </div>
-    <script src="../js/aler_prest_nuev.js"></script>
+    <script src="../js/alert_reserv.js"></script>
 </body>
 </body>
 </html>

@@ -29,7 +29,6 @@ mostrarAlerta();
 
 // Listen for the back button click event
 window.onpopstate = function(event) {
-    // Check if the previous page is the one you want to redirect to (e.g., "prest_nuev.php")
     if (document.referrer.indexOf("prest_nuev.php") !== -1) {
         // Redirect to the desired page
         window.location.href = "prest_nuev.php";

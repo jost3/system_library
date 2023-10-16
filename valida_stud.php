@@ -1,17 +1,11 @@
 <?php
 session_start();
 
-// Establecer la conexión a la base de datos
-$servername = "localhost";
-$username = "root"; // Cambia esto si tu usuario de MySQL es diferente
-$password = "";     // Cambia esto si tienes una contraseña configurada
-$dbname = "hessen_library";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include('bd/mostrar_dt.php');
 
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if ($conex->connect_error) {
+    die("Conexión fallida: " . $conex->connect_error);
 }
 
 // Obtener datos del formulario
@@ -20,7 +14,7 @@ $contraseña1 = $_POST['contra1'];
 
 // Consulta SQL para verificar el inicio de sesión
 $sql = "SELECT * FROM alumno WHERE dni='$usuario1' AND contra='$contraseña1'";
-$result = $conn->query($sql);
+$result = $conex->query($sql);
 
 if ($result->num_rows > 0) {
     // Inicio de sesión exitoso
@@ -41,5 +35,5 @@ if ($result->num_rows > 0) {
 }
 
 // Cerrar la conexión
-$conn->close();
+$conex->close();
 ?>

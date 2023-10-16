@@ -1,5 +1,5 @@
 <?php 
-include '../conex_prest.php';
+include '../bd/conex_prest.php';
 //consula
 $consul_stud= "SELECT * FROM libro";
 $guarda= $conex1->query($consul_stud);

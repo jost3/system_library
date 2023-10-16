@@ -1,5 +1,5 @@
 <?php 
-include '../mostrar_dt.php';
+include '../bd/mostrar_dt.php';
 ?>
 <?php
   if(isset($_POST['insertar'])){
@@ -7,12 +7,9 @@ include '../mostrar_dt.php';
     $titulo1= $_POST ['titulo1'];
     $autor1= $_POST ['autor1'];
     $descripcion1= $_POST ['descripcion1'];
-    $estado= $_POST ['estado'];
-    $fecha= $_POST ['fecha'];
-    $dni_est= $_POST ['dni_est'];
     $nombre= $_POST ['nombre'];
 
-    $insertarDatos1 = "INSERT INTO prestamo VALUES('','$titulo1','$autor1','$descripcion1','$estado','$fecha','$dni_est','$nombre')";
+    $insertarDatos1 = "INSERT INTO prestamo VALUES('','$titulo1','$autor1','$descripcion1','','','','$nombre')";
     $ejecutarInsertar1 = mysqli_query($conex,$insertarDatos1);
 
     if ($ejecutarInsertar1) {
