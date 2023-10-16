@@ -12,5 +12,5 @@ function cerrarModal() {
 
 function eliminarLibro() {
     // Redirige al script de eliminación
-    window.location.href = "eliminar_fil_lib.php?id1=" + idEliminar;
+    window.location.href = "../php_adm/eliminar_fil_lib.php?id1=" + idEliminar;
 }

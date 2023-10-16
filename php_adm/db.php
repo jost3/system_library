@@ -1,10 +1,6 @@
 <?php 
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";     
-$dbname = "hessen_library";
-$conn = new mysqli($servername, $username, $password, $dbname);
+include('../bd/conex_prest.php');
 ?>
 <?php
   if(isset($_POST['registro'])){
@@ -14,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     $descripcion= $_POST ['descripcion'];
 
     $insertarDatos = "INSERT INTO libro (id, titulo, descripcion, autor)VALUES('','$titulo','$descripcion','$autor')";
-    $ejecutarInsertar = mysqli_query($conn,$insertarDatos);
+    $ejecutarInsertar = mysqli_query($conex1,$insertarDatos);
     
     if ($ejecutarInsertar) {
       //  mostrar una ventana de confirmación

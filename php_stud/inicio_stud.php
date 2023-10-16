@@ -434,7 +434,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder" >Cuidados Basc..</h5>
+                                    <h5 class="fw-bolder" >Cuidados Basic..</h5>
                                     <!-- Product price-->
                                     Cuidar con amor, sanar con empatía
                                 </div>
@@ -534,7 +534,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Cuidado Pac..</h5>
+                                    <h5 class="fw-bolder">Cuidado Paci..</h5>
                                     <!-- Product price-->
                                     Cuidar con amor, sanar con empatía
                                 </div>
@@ -554,7 +554,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Historio Enf..</h5>
+                                    <h5 class="fw-bolder">Historia Enf..</h5>
                                     <!-- Product price-->
                                     Cuidar con amor, sanar con empatía
                                 </div>
@@ -574,7 +574,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Adm de Servic..</h5>
+                                    <h5 class="fw-bolder">Adimist. de Servic..</h5>
                                     <!-- Product price-->
                                     Cuidar con amor, sanar con empatía
                                 </div>
@@ -749,7 +749,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Anest para Transp..</h5>
+                                    <h5 class="fw-bolder">Anest. para Transp..</h5>
                                     <!-- Product price-->
                                     Silencio que alivia, sueños que protegen
                                 </div>
@@ -863,7 +863,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Sist Respiratorio</h5>
+                                    <h5 class="fw-bolder">Sistm. Respiratorio</h5>
                                     <!-- Product price-->
                                     Descubriendo la maravilla bajo la piel
                                 </div>
@@ -883,7 +883,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Sist Muscular</h5>
+                                    <h5 class="fw-bolder">Sistm. Muscular</h5>
                                     <!-- Product price-->
                                     Descubriendo la maravilla bajo la piel
                                 </div>
@@ -923,7 +923,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Anat Humana</h5>
+                                    <h5 class="fw-bolder">Anat. Humana</h5>
                                     <!-- Product price-->
                                     Descubriendo la maravilla bajo la piel
                                 </div>

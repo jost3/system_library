@@ -1,5 +1,5 @@
 <?php
-include("conex_prest.php");
+include("../bd/conex_prest.php");
 
 if (isset($_GET["id1"])) {
     $idToDelete = $_GET["id1"];

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Nuevo Libro</title>
-    <link rel="icon" href="img/hessen icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/ventana2_lib.css">
-    <link rel="stylesheet" href="css/regist_principl.css">
+    <link rel="icon" href="../img/hessen icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/ventana2_lib.css">
+    <link rel="stylesheet" href="../css/regist_principl.css">
     <style>
         body {
-            background: url(img/fond23.jpeg);
+            background: url(../img/fond23.jpeg);
             background-size: cover; /* La imagen se ajustará al tamaño de la ventana */
             background-repeat: no-repeat; /* Evita la repetición de la imagen */
             background-attachment: fixed; /* Evita que la imagen se desplace con el scroll */
@@ -18,11 +18,11 @@
 </head>
 <body>
     <a href="inic.php">
-        <img class="icono" src="img/hessen icono.png">
+        <img class="icono" src="../img/hessen icono.png">
     </a>
     <!-- Estructura de la página -->
     <h1> NUEVO LIBRO</h1>
-    <form action="db.php" method="post">
+    <form action="../php_adm/db.php" method="post">
         <label for="titulo">Título del Libro:</label>
         <input type="text" id="titulo" name="titulo" required>
 
@@ -63,7 +63,7 @@
         <button class="alert-button" onclick="cerrarAlerta('alertaError')">Aceptar</button>
     </div>
 
-    <script src="js/alert_regis_lib.js">
+    <script src="../js/alert_regis_lib.js">
     </script>
 </body>
 </html>

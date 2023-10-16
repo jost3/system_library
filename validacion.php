@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     header("Pragma: no-cache");
     header("Expires: 0");
     
-    header("Location: inic.php"); // Redirige al archivo inic.php
+    header("Location: php_adm/inic.php"); // Redirige al archivo inic.php
 } else {
     // Inicio de sesión fallido
     header("Cache-Control: no-cache, no-store, must-revalidate");

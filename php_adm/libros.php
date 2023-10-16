@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro</title>
-    <link rel="icon" href="img/hessen icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/buscador.css">
+    <link rel="icon" href="../img/hessen icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/buscador.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-    <link rel="stylesheet" href="css/tab_libr.css">
+    <link rel="stylesheet" href="../css/tab_libr.css">
     <style>
          .restablecimiento {
             margin-top: 10px;
@@ -70,7 +70,7 @@
 </head>
 <body>
     <a href="inic.php">
-        <img class="icono" src="img/hessen icono.png">
+        <img class="icono" src="../img/hessen icono.png">
     </a>
     <!-- Buscador de la página -->
     <div class="buscad">
@@ -87,7 +87,7 @@
     <?php } ?>
 
     <?php
-        include("mostrar_dt.php");
+        include("../bd/mostrar_dt.php");
 
         $search1 = isset($_GET['search1']) ? $_GET['search1'] : '';
         if ($search1) {
@@ -126,6 +126,6 @@
         </div>
     </div>
     
-    <script src="js/alert_elim_lib1.js"></script>    
+    <script src="../js/alert_elim_lib1.js"></script>    
 </body>
 </html>

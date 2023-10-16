@@ -1,9 +1,5 @@
 <?php 
-$servername = "localhost";
-$username = "root";
-$password = "";     
-$dbname = "hessen_library";
-$conn1 = new mysqli($servername, $username, $password, $dbname);
+include('../bd/mostrar_dt.php');
 ?>
 <?php
   if(isset($_POST['insertar'])){
@@ -17,7 +13,7 @@ $conn1 = new mysqli($servername, $username, $password, $dbname);
     $nombre= $_POST ['nombre'];
 
     $insertarDatos1 = "INSERT INTO prestamo VALUES('','$titulo1','$autor1','$descripcion1','$estado','$fecha','$dni_est','$nombre')";
-    $ejecutarInsertar1 = mysqli_query($conn1,$insertarDatos1);
+    $ejecutarInsertar1 = mysqli_query($conex,$insertarDatos1);
 
     if ($ejecutarInsertar1) {
       //  mostrar una ventana de confirmación

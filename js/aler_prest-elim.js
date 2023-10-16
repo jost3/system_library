@@ -12,5 +12,5 @@ var idEliminar1; // Variable para almacenar el ID a eliminar
         }
 
         function eliminarLibro1() {
-            window.location.href = "eliminacion.php?id=" + idEliminar1;
+            window.location.href = "../php_adm/eliminacion.php?id=" + idEliminar1;
         }

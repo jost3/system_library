@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestamo</title>
-    <link rel="icon" href="img/hessen icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/buscador.css">
+    <link rel="icon" href="../img/hessen icono.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/buscador.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-    <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="../css/tabla.css">
     <style>
        
         body{
@@ -29,7 +29,7 @@
 </head>
 <body>
     <a href="inic.php">
-        <img class="icono" src="img/hessen icono.png">
+        <img class="icono" src="../img/hessen icono.png">
     </a>
     <!-- Buscador de la página -->
     <div class="buscad">
@@ -45,7 +45,7 @@
         <?php } ?>
 
     <?php
-    include("conex_prest.php");
+    include("../bd/conex_prest.php");
     
     $search = isset($_GET['search']) ? $_GET['search'] : '';
     if ($search) {
@@ -68,7 +68,7 @@
         <div class="subtitulos">FECHA</div>
         <div class="subtitulos">DNI </div>
         <div class="subtitulos">ESTUDIANTE</div>
-        <div class="subtitulos"><a href="prest_nuev.php"> <button type="button" class="a1">nuevo</button> </a></div>
+        <div class="subtitulos"><a href="../php_adm/prest_nuev.php"> <button type="button" class="a1">nuevo</button> </a></div>
         <?php 
         $result = mysqli_query($conex1, $prestamo);
         while($row=mysqli_fetch_assoc($result)) {?>
@@ -91,7 +91,7 @@
             <button onclick="cerrarModal1()" class="nou">No</button>
         </div>
     </div>
-    <script src="js/aler_prest-elim.js">
+    <script src="../js/aler_prest-elim.js">
     </script>
 
 </body>
