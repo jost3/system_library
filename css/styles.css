@@ -161,6 +161,16 @@ input[type="submit"] {
     height: 105px; /* Ajusta el alto de la imagen según tus necesidades */
     margin-bottom: -30px; /* Agrega un margen inferior para separar la imagen del encabezado */
     }
+  h4{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0; /* Puedes ajustar el relleno según tu preferencia */
+    background-color: rgba(0, 0, 0, 0.7); /* Un fondo semitransparente para mejorar la legibilidad */
+    color: #fff; /* Color del texto */
+    font-size: 13px;
+  }
 
 /* Estilos para dispositivos móviles */
 @media screen and (max-width: 768px) {
