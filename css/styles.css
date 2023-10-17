@@ -6,7 +6,7 @@
 }
 
 body {
-    height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,12 +162,7 @@ input[type="submit"] {
     margin-bottom: -30px; /* Agrega un margen inferior para separar la imagen del encabezado */
     }
   h4{
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-    padding: 10px 0; /* Puedes ajustar el relleno según tu preferencia */
-    background-color: rgba(0, 0, 0, 0.7); /* Un fondo semitransparente para mejorar la legibilidad */
+    margin-top: 30px;
     color: #fff; /* Color del texto */
     font-size: 13px;
   }
