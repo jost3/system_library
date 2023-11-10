@@ -7,8 +7,19 @@
     <link rel="stylesheet" href="css/ventana1.css">
 </head>
 <style>
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Color negro semi-transparente */
+    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
     body{
-        background: url(img/log67.jpg);
+       
+        background: url(img/pr1.jpg);
         background-size: cover; /* La imagen se ajustará al tamaño de la ventana */
         background-repeat: no-repeat; /* Evita la repetición de la imagen */
         background-attachment: fixed; /* Evita que la imagen se desplace con el scroll */
@@ -30,7 +41,7 @@
             <img src="img/hessen icono.png" alt="Icono de inicio de sesión">
             <h3 class="colm">ESTUDIANTE</h3>
             <p class="cuenta"></p>
-            <input type="text" id="user" name="user" placeholder="usuario" required minlength="8">
+            <input type="text" id="user" name="user" placeholder="usuario" required pattern="[0-9]{8}">
             <input type="password" id="contra1" name="contra1" placeholder="contraseña" required minlength="8">
             <input type="submit" class="modf" value="Ingresar">
             <h4>Desarrollado por josue Cotera</h4>
