@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
 </head>
 
@@ -31,7 +31,6 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid">
         <div class="row">
             <div class="barra-lateral col-12 col-sm-auto">
@@ -41,34 +40,59 @@
                     <a href="#"><i class="fas fa-home"></i><span>Libro</span></a>
                 </nav>
             </div>
-            <main class="main col">
-                <article class="full-box tile">
-                    <div class="full-box tile-title text-center text-titles text-uppercase">
-                        Cantidad de libros
-                    </div>
-                    <div class="full-box tile-icon text-center">
-                        <i class="zmdi zmdi-account"></i>
-                    </div>
-                    <div class="full-box tile-number text-titles">
-                        <p class="full-box">7</p>
-                        <small>Libros</small>
-                    </div>
-                </article>
-                <div class="row justify-content-center align-content-center text-center">
-                    <div class="columna col-lg-6">
-                        CONTENIDO
-                    </div>
-
-                </div>
-
-            </main>
+            <div class="full-box text-center" style="padding: 30px 10px;">
+			<article class="full-box tile">
+				<div class="full-box tile-title text-center text-titles text-uppercase">
+					Admin
+				</div>
+				<div class="full-box tile-icon text-center">
+					<i class="zmdi zmdi-account"></i>
+				</div>
+				<div class="full-box tile-number text-titles">
+					<p class="full-box">7</p>
+					<small>Register</small>
+				</div>
+			</article>
+			<article class="full-box tile">
+				<div class="full-box tile-title text-center text-titles text-uppercase">
+					Teacher
+				</div>
+				<div class="full-box tile-icon text-center">
+					<i class="zmdi zmdi-male-alt"></i>
+				</div>
+				<div class="full-box tile-number text-titles">
+					<p class="full-box">10</p>
+					<small>Register</small>
+				</div>
+			</article>
+			<article class="full-box tile">
+				<div class="full-box tile-title text-center text-titles text-uppercase">
+					Student
+				</div>
+				<div class="full-box tile-icon text-center">
+					<i class="zmdi zmdi-face"></i>
+				</div>
+				<div class="full-box tile-number text-titles">
+					<p class="full-box">70</p>
+					<small>Register</small>
+				</div>
+			</article>
+			<article class="full-box tile">
+				<div class="full-box tile-title text-center text-titles text-uppercase">
+					Representative
+				</div>
+				<div class="full-box tile-icon text-center">
+					<i class="zmdi zmdi-male-female"></i>
+				</div>
+				<div class="full-box tile-number text-titles">
+					<p class="full-box">70</p>
+					<small>Register</small>
+				</div>
+			</article>
+		</div>
         </div>
     </div>
-
-
-
-
-
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
