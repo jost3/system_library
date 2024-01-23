@@ -63,14 +63,14 @@
 				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
+						<form class="navbar-left navbar-form nav-search mr-md-3" method="get">
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<button type="submit" class="btn btn-search pr-1">
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
+								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search">
 							</div>
 						</form>
 					</div>
@@ -219,14 +219,14 @@
 							<h4 class="text-section">Acciones</h4>
 						</li>
 						<li class="nav-item">
-							<a href="../php_adm/libros.php">
+							<a href="../php_adm/book.php">
 								<i class="fas fa-layer-group"></i>
 								<p>Libro</p>
 							</a>
 							
 						</li>
 						<li class="nav-item">
-							<a  href="../php_adm/prestamo.php">
+							<a  href="../php_adm/loan.php">
 								<i class="fas fa-pen-square"></i>
 								<p>Prestamo</p>
 							</a>
@@ -241,12 +241,12 @@
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="tables/tables.html">
-											<span class="sub-item">Basic Table</span>
+											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>
 									<li>
 										<a href="tables/datatables.html">
-											<span class="sub-item">Datatables</span>
+											<span class="sub-item">Administrador</span>
 										</a>
 									</li>
 								</ul>
@@ -263,11 +263,7 @@
 				<div class="page-inner">
 					<div class="page-header">
 						<h4 class="page-title">Información relevante</h4>
-						<div class="btn-group btn-group-page-header ml-auto">
-							<button type="button" class="btn btn-light btn-round btn-page-header-dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-ellipsis-h"></i>
-							</button>
-						</div>
+						
 					</div>
 					<div class="row">
 						<div class="col-sm-6 col-md-3">
@@ -276,7 +272,7 @@
 									<div class="row align-items-center">
 										<div class="col-icon">
 											<div class="icon-big text-center icon-primary bubble-shadow-small">
-												<i class="fas fa-users"></i>
+												<i class="fas fa-book"></i>
 											</div>
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
@@ -314,7 +310,7 @@
 									<div class="row align-items-center">
 										<div class="col-icon">
 											<div class="icon-big text-center icon-success bubble-shadow-small">
-												<i class="far fa-chart-bar"></i>
+												<i class="fas fa-users"></i>
 											</div>
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
@@ -333,7 +329,7 @@
 									<div class="row align-items-center">
 										<div class="col-icon">
 											<div class="icon-big text-center icon-secondary bubble-shadow-small">
-												<i class="far fa-check-circle"></i>
+												<i class="fas fa-coins"></i>
 											</div>
 										</div>
 										<div class="col col-stats ml-3 ml-sm-0">
@@ -347,7 +343,18 @@
 							</div>
 						</div>
 					</div>
+					<?php
+					include("../bd/conex_prest.php");
 					
+					$search = isset($_GET['search']) ? $_GET['search'] : '';
+					if ($search) {
+						$prestamo = "SELECT * FROM prestamo WHERE 
+								titulo1 LIKE '%$search%'";
+					
+					} else {
+						$prestamo = "SELECT * FROM prestamo";
+					}
+					?>
 					<div class="row row-card-no-pd">
 						<div class="col-md-12">
 							<div class="card">
@@ -355,103 +362,54 @@
 									<div class="card-head-row">
 										<h4 class="card-title">Ultimos prestamos</h4>
 										<div class="card-tools">
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
-										</div>
+                                        <?php if (isset($_GET['search'])) { ?>
+                                        <a href="?" class=" btn btn-info btn-border btn-round btn-sm mr-2">
+											<span class="btn-label">
+												<i class="fa fa-pencil"></i>
+											</span>
+											Mostrar
+										</a>
+										<?php } ?>
 									</div>
+								</div>
 								</div>
 								<div class="card-body">
 									<div class="row">
-										<div class="col-md-6">
+										<div class="col-md-12">
 											<div class="table-responsive table-hover table-sales">
 												<table class="table">
+													<thead>
+														<tr>
+															<th>ID</th>
+															<th>Titulo</th>
+															<th class=>Autor</th>
+															<th class=>Seccion</th>
+															<th class=>Estado</th>
+															<th class=>Fecha</th>
+															<th class=>Dni</th>
+															<th class=>Estudiantes</th>
+														</tr>
+													</thead>
+													<?php 
+													$result = mysqli_query($conex1, $prestamo);
+													while($row=mysqli_fetch_assoc($result)) {?>
 													<tbody>
 														<tr>
 															<td>
 																<div class="flag">
-																	<img src="../assets/img/flags/id.png" alt="indonesia">
+																<?php  echo $row["id_prest"];?>
 																</div>
 															</td>
-															<td>Indonesia</td>
-															<td class="text-right">
-																2.320
-															</td>
-															<td class="text-right">
-																42.18%
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="flag">
-																	<img src="../assets/img/flags/us.png" alt="united states">
-																</div>
-															</td>
-															<td>USA</td>
-															<td class="text-right">
-																240
-															</td>
-															<td class="text-right">
-																4.36%
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="flag">
-																	<img src="../assets/img/flags/au.png" alt="australia">
-																</div>
-															</td>
-															<td>Australia</td>
-															<td class="text-right">
-																119
-															</td>
-															<td class="text-right">
-																2.16%
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="flag">
-																	<img src="../assets/img/flags/ru.png" alt="russia">
-																</div>
-															</td>
-															<td>Russia</td>
-															<td class="text-right">
-																1.081
-															</td>
-															<td class="text-right">
-																19.65%
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="flag">
-																	<img src="../assets/img/flags/cn.png" alt="china">
-																</div>
-															</td>
-															<td>China</td>
-															<td class="text-right">
-																1.100
-															</td>
-															<td class="text-right">
-																20%
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="flag">
-																	<img src="../assets/img/flags/br.png" alt="brazil">
-																</div>
-															</td>
-															<td>Brasil</td>
-															<td class="text-right">
-																640
-															</td>
-															<td class="text-right">
-																11.63%
-															</td>
+															<td><?php  echo $row["titulo1"];?></td>
+															<td class=><?php  echo $row["autor1"];?></td>
+															<td class=><?php  echo $row["descripcion1"];?></td>
+															<td class=><?php  echo $row["estado"];?></td>
+															<td class=><?php  echo $row["fecha"];?></td>
+															<td class=><?php  echo $row["dni_est"];?></td>
+															<td class=><?php  echo $row["nombre"];?></td>
 														</tr>
 													</tbody>
+													<?php } ?>
 												</table>
 											</div>
 										</div>
@@ -465,6 +423,7 @@
 							</div>
 						</div>
 					</div>
+
 					
 					
 				</div>
@@ -473,35 +432,7 @@
 		</div>
 		
 		<!-- Custom template | don't include it in your project! -->
-		<div class="custom-template">
-			<div class="title">Settings</div>
-			<div class="custom-content">
-				<div class="switcher">
-					<div class="switch-block">
-						<h4>Topbar</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeMainHeaderColor" data-color="blue"></button>
-							<button type="button" class="selected changeMainHeaderColor" data-color="purple"></button>
-							<button type="button" class="changeMainHeaderColor" data-color="light-blue"></button>
-							<button type="button" class="changeMainHeaderColor" data-color="green"></button>
-							<button type="button" class="changeMainHeaderColor" data-color="orange"></button>
-							<button type="button" class="changeMainHeaderColor" data-color="red"></button>
-						</div>
-					</div>
-					<div class="switch-block">
-						<h4>Background</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeBackgroundColor" data-color="bg2"></button>
-							<button type="button" class="changeBackgroundColor selected" data-color="bg1"></button>
-							<button type="button" class="changeBackgroundColor" data-color="bg3"></button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="custom-toggle">
-				<i class="flaticon-settings"></i>
-			</div>
-		</div>
+		
 		<!-- End Custom template -->
 	</div>
 </div>
