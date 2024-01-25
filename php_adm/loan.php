@@ -218,7 +218,7 @@
 							</span>
 							<h4 class="text-section">Acciones</h4>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item ">
 							<a href="../php_adm/book.php">
 								<i class="fas fa-layer-group"></i>
 								<p>Libro</p>
@@ -226,7 +226,7 @@
 							
 						</li>
 						<li class="nav-item active">
-							<a  href="../php_adm/prestamo.php">
+							<a  href="../php_adm/loan.php">
 								<i class="fas fa-pen-square"></i>
 								<p>Prestamo</p>
 							</a>
@@ -256,11 +256,31 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Sidebar -->
-
-		<div class="main-panel">
+        <div class="main-panel">
 			<div class="content">
 				<div class="page-inner">
+					<div class="page-header">
+						<h4 class="page-title">DataTables.Net</h4>
+						<ul class="breadcrumbs">
+							<li class="nav-home">
+								<a href="#">
+									<i class="flaticon-home"></i>
+								</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">Tables</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">Datatables</a>
+							</li>
+						</ul>
+					</div>
 					<?php
 					include("../bd/conex_prest.php");
 					
@@ -273,95 +293,106 @@
 						$prestamo = "SELECT * FROM prestamo";
 					}
 					?>
-					<div class="row row-card-no-pd">
+					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<h4 class="page-title">Prestamos actuales</h4>
-                                        <div class="card-tools">
-                                            <?php if (isset($_GET['search'])) { ?>
-                                            <a href="?" class=" btn btn-info btn-border btn-round btn-sm mr-2">
-												<span class="btn-label">
-													<i class="fa fa-pencil"></i>
-												</span>
-												Mostrar
-											</a>
-                                            <?php } ?>
-											<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
-												<span class="btn-label">
-													<i class="fa fa-pencil"></i>
-												</span>
-												Nuevo
-											</a>
-											<a href="#" class="btn btn-info btn-border btn-round btn-sm">
-												<span class="btn-label">
-													<i class="fa fa-print"></i>
-												</span>
-												Imprimir
-											</a>
-										</div>
+										<h4 class="card-title">Prestamos</h4>
+										<div class="card-tools">
+												<?php if (isset($_GET['search'])) { ?>
+												<a href="?" class=" btn btn-info btn-border btn-round btn-sm mr-2">
+													<span class="btn-label">
+														<i class="fa fa-pencil"></i>
+													</span>
+													Mostrar
+												</a>
+												<?php } ?>
+												<a href="new_loan.php" class="btn btn-info btn-border btn-round btn-sm mr-2">
+													<span class="btn-label">
+														<i class="fa fa-pencil"></i>
+													</span>
+													Nuevo
+												</a>
+												<a href="#" class="btn btn-info btn-border btn-round btn-sm">
+													<span class="btn-label">
+														<i class="fa fa-print"></i>
+													</span>
+													Imprimir
+												</a>
+											</div>
 									</div>
 								</div>
 								<div class="card-body">
-									<div class="row">
-										<div class="col-md-12">
-											<div class="table-responsive table-hover table-sales">
-												<table class="table">
-													<thead>
-														<tr>
-															<th>ID</th>
-															<th>Titulo</th>
-															<th class=>Autor</th>
-															<th class=>Seccion</th>
-															<th class=>Estado</th>
-															<th class=>Fecha</th>
-															<th class=>Dni</th>
-															<th class=>Estudiantes</th>
-														</tr>
-													</thead>
-													<?php 
+									<div class="table-responsive">
+										<table id="basic-datatables" class="display table table-striped table-hover" >
+											<thead>
+												<tr>
+													<th>ID</th>
+													<th>TITULO</th>
+													<th>AUTOR</th>
+													<th>SECCION</th>
+													<th>ESTADO</th>
+													<th>FECHA</th>
+													<th>DNI</th>
+													<th>ESTUDIANTE</th>
+													<th>ACCION</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+												<th>ID</th>
+													<th>TITULO</th>
+													<th>AUTOR</th>
+													<th>SECCION</th>
+													<th>ESTADO</th>
+													<th>FECHA</th>
+													<th>DNI</th>
+													<th>ESTUDIANTE</th>
+													<th>ACCION</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												<?php 
 													$result = mysqli_query($conex1, $prestamo);
-													while($row=mysqli_fetch_assoc($result)) {?>
-													<tbody>
-														<tr>
-															<td>
-																<div class="flag">
-																<?php  echo $row["id_prest"];?>
-																</div>
-															</td>
-															<td><?php  echo $row["titulo1"];?></td>
-															<td class=><?php  echo $row["autor1"];?></td>
-															<td class=><?php  echo $row["descripcion1"];?></td>
-															<td class=><?php  echo $row["estado"];?></td>
-															<td class=><?php  echo $row["fecha"];?></td>
-															<td class=><?php  echo $row["dni_est"];?></td>
-															<td class=><?php  echo $row["nombre"];?></td>
-														</tr>
-													</tbody>
-													<?php } ?>
-												</table>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="mapcontainer">
-												<div id="map-example" class="vmap"></div>
-											</div>
-										</div>
+													while($row=mysqli_fetch_assoc($result)) 
+												{?>
+												<tr>
+													<td><?php  echo $row["id_prest"];?></td>
+													<td><?php  echo $row["titulo1"];?></td>
+													<td><?php  echo $row["autor1"];?></td>
+													<td><?php  echo $row["descripcion1"];?></td>
+													<td><?php  echo $row["estado"];?></td>
+													<td><?php  echo $row["fecha"];?></td>
+													<td><?php  echo $row["dni_est"];?></td>
+													<td><?php  echo $row["nombre"];?></td>
+													<td>
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+															<span class="btn-label">
+																<i class="fa fa-pencil"></i>
+															</span>
+															Modificar
+														</a>
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+															<span class="btn-label">
+																<i class="fa fa-pencil"></i>
+															</span>
+															Eliminar
+														</a>
+													</td>
+												</tr>
+											<?php } ?>
+											</tbody> 
+										</table>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
-					
-					
 				</div>
 			</div>
 			
 		</div>
-		
-		<!-- Custom template | don't include it in your project! -->
 		
 		<!-- End Custom template -->
 	</div>
@@ -413,5 +444,6 @@
 
 <!-- Azzara JS -->
 <script src="../js/adm/ready.js"></script>
+<script src="../js/adm/table_function.js"></script>
 </body>
 </html>

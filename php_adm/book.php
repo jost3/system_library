@@ -70,7 +70,7 @@
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search">
+								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search1">
 							</div>
 						</form>
 					</div>
@@ -206,7 +206,7 @@
 						</div>
 					</div>
 					<ul class="nav">
-						<li class="nav-item active">
+						<li class="nav-item ">
 							<a href="inic.php">
 								<i class="fas fa-home"></i>
 								<p>Inicio</p>
@@ -218,15 +218,15 @@
 							</span>
 							<h4 class="text-section">Acciones</h4>
 						</li>
-						<li class="nav-item">
-							<a href="../php_adm/book.php">
+						<li class="nav-item active">
+							<a href="book.php">
 								<i class="fas fa-layer-group"></i>
 								<p>Libro</p>
 							</a>
 							
 						</li>
 						<li class="nav-item">
-							<a  href="../php_adm/loan.php">
+							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
 								<p>Prestamo</p>
 							</a>
@@ -260,7 +260,7 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">DataTables.Net</h4>
+						<h4 class="page-title">Libros actuales</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -271,184 +271,103 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Tables</a>
+								<a href="../php_adm/book.php">Libro</a>
 							</li>
-							<li class="separator">
-								<i class="flaticon-right-arrow"></i>
-							</li>
-							<li class="nav-item">
-								<a href="#">Datatables</a>
-							</li>
+							
 						</ul>
 					</div>
+					<?php
+						include("../bd/mostrar_dt.php");
+
+						$search1 = isset($_GET['search1']) ? $_GET['search1'] : '';
+						if ($search1) {
+							$consulta = "SELECT * FROM libro WHERE 
+								titulo LIKE '%$search1%'";
+						} else {
+							$consulta = "SELECT * FROM libro";
+						}
+					?> 
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Basic</h4>
+									<div class="card-head-row">
+										<h4 class="card-title">Libros</h4>
+										<div class="card-tools">
+												<?php if (isset($_GET['search1'])) { ?>
+												<a href="?" class=" btn btn-info btn-border btn-round btn-sm mr-2">
+													<span class="btn-label">
+														<i class="fa fa-pencil"></i>
+													</span>
+													Mostrar
+												</a>
+												<?php } ?>
+												<a href="new_book.php" class="btn btn-info btn-border btn-round btn-sm mr-2">
+													<span class="btn-label">
+														<i class="fa fa-pencil"></i>
+													</span>
+													Nuevo
+												</a>
+												<a href="#" class="btn btn-info btn-border btn-round btn-sm">
+													<span class="btn-label">
+														<i class="fa fa-print"></i>
+													</span>
+													Imprimir
+												</a>
+											</div>
+									</div>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
 										<table id="basic-datatables" class="display table table-striped table-hover" >
 											<thead>
 												<tr>
-													<th>Name</th>
-													<th>Position</th>
-													<th>Office</th>
-													<th>Age</th>
-													<th>Start date</th>
-													<th>Salary</th>
+													<th>ID</th>
+													<th>TITULO</th>
+													<th>AUTOR</th>
+													<th>EDICION</th>
+													<th>SECCION</th>
+													<th>ACCION</th>
 												</tr>
 											</thead>
 											<tfoot>
 												<tr>
-													<th>Name</th>
-													<th>Position</th>
-													<th>Office</th>
-													<th>Age</th>
-													<th>Start date</th>
-													<th>Salary</th>
+												<th>ID</th>
+													<th>TITULO</th>
+													<th>AUTOR</th>
+													<th>EDICION</th>
+													<th>SECCION</th>
+													<th>ACCION</th>
 												</tr>
 											</tfoot>
 											<tbody>
+											<?php  
+												$resultado= mysqli_query($conex, $consulta);
+												while($row=mysqli_fetch_assoc($resultado)) {
+											?>
 												<tr>
-													<td>Tiger Nixon</td>
-													<td>System Architect</td>
-													<td>Edinburgh</td>
-													<td>61</td>
-													<td>2011/04/25</td>
-													<td>$320,800</td>
+													<td><?php  echo $row["id"];?></td>
+													<td><?php  echo $row["titulo"];?></td>
+													<td><?php  echo $row["autor"];?></td>
+													<td>MM</td>
+													<td><?php  echo $row["descripcion"];?></td>
+													<td>
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+															<span class="btn-label">
+																<i class="fa fa-pencil"></i>
+															</span>
+															Modificar
+														</a>
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+															<span class="btn-label">
+																<i class="fa fa-pencil"></i>
+															</span>
+															Eliminar
+														</a>
+													</td>
 												</tr>
-												<tr>
-													<td>Garrett Winters</td>
-													<td>Accountant</td>
-													<td>Tokyo</td>
-													<td>63</td>
-													<td>2011/07/25</td>
-													<td>$170,750</td>
-												</tr>
-												
-												<tr>
-													<td>Bruno Nash</td>
-													<td>Software Engineer</td>
-													<td>London</td>
-													<td>38</td>
-													<td>2011/05/03</td>
-													<td>$163,500</td>
-												</tr>
-												<tr>
-													<td>Sakura Yamamoto</td>
-													<td>Support Engineer</td>
-													<td>Tokyo</td>
-													<td>37</td>
-													<td>2009/08/19</td>
-													<td>$139,575</td>
-												</tr>
-												<tr>
-													<td>Thor Walton</td>
-													<td>Developer</td>
-													<td>New York</td>
-													<td>61</td>
-													<td>2013/08/11</td>
-													<td>$98,540</td>
-												</tr>
-												<tr>
-													<td>Finn Camacho</td>
-													<td>Support Engineer</td>
-													<td>San Francisco</td>
-													<td>47</td>
-													<td>2009/07/07</td>
-													<td>$87,500</td>
-												</tr>
-												<tr>
-													<td>Serge Baldwin</td>
-													<td>Data Coordinator</td>
-													<td>Singapore</td>
-													<td>64</td>
-													<td>2012/04/09</td>
-													<td>$138,575</td>
-												</tr>
-												<tr>
-													<td>Zenaida Frank</td>
-													<td>Software Engineer</td>
-													<td>New York</td>
-													<td>63</td>
-													<td>2010/01/04</td>
-													<td>$125,250</td>
-												</tr>
-												<tr>
-													<td>Zorita Serrano</td>
-													<td>Software Engineer</td>
-													<td>San Francisco</td>
-													<td>56</td>
-													<td>2012/06/01</td>
-													<td>$115,000</td>
-												</tr>
-												<tr>
-													<td>Jennifer Acosta</td>
-													<td>Junior Javascript Developer</td>
-													<td>Edinburgh</td>
-													<td>43</td>
-													<td>2013/02/01</td>
-													<td>$75,650</td>
-												</tr>
-												<tr>
-													<td>Cara Stevens</td>
-													<td>Sales Assistant</td>
-													<td>New York</td>
-													<td>46</td>
-													<td>2011/12/06</td>
-													<td>$145,600</td>
-												</tr>
-												<tr>
-													<td>Hermione Butler</td>
-													<td>Regional Director</td>
-													<td>London</td>
-													<td>47</td>
-													<td>2011/03/21</td>
-													<td>$356,250</td>
-												</tr>
-												<tr>
-													<td>Lael Greer</td>
-													<td>Systems Administrator</td>
-													<td>London</td>
-													<td>21</td>
-													<td>2009/02/27</td>
-													<td>$103,500</td>
-												</tr>
-												<tr>
-													<td>Jonas Alexander</td>
-													<td>Developer</td>
-													<td>San Francisco</td>
-													<td>30</td>
-													<td>2010/07/14</td>
-													<td>$86,500</td>
-												</tr>
-												<tr>
-													<td>Shad Decker</td>
-													<td>Regional Director</td>
-													<td>Edinburgh</td>
-													<td>51</td>
-													<td>2008/11/13</td>
-													<td>$183,000</td>
-												</tr>
-												<tr>
-													<td>Michael Bruce</td>
-													<td>Javascript Developer</td>
-													<td>Singapore</td>
-													<td>29</td>
-													<td>2011/06/27</td>
-													<td>$183,000</td>
-												</tr>
-												<tr>
-													<td>Donna Snider</td>
-													<td>Customer Support</td>
-													<td>New York</td>
-													<td>27</td>
-													<td>2011/01/25</td>
-													<td>$112,000</td>
-												</tr>
-											</tbody>
+											<?php } ?>
+											</tbody> 
 										</table>
 									</div>
 								</div>
@@ -510,54 +429,6 @@
 
 <!-- Azzara JS -->
 <script src="../js/adm/ready.js"></script>
-<script >
-		$(document).ready(function() {
-			$('#basic-datatables').DataTable({
-				searching: false,
-			});
-
-			$('#multi-filter-select').DataTable( {
-				"pageLength": 5,
-				initComplete: function () {
-					this.api().columns().every( function () {
-						var column = this;
-						var select = $('<select class="form-control"><option value=""></option></select>')
-						.appendTo( $(column.footer()).empty() )
-						.on( 'change', function () {
-							var val = $.fn.dataTable.util.escapeRegex(
-								$(this).val()
-								);
-
-							column
-							.search( val ? '^'+val+'$' : '', true, false )
-							.draw();
-						} );
-
-						column.data().unique().sort().each( function ( d, j ) {
-							select.append( '<option value="'+d+'">'+d+'</option>' )
-						} );
-					} );
-				}
-			});
-
-			// Add Row
-			$('#add-row').DataTable({
-				"pageLength": 5,
-			});
-
-			var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-			$('#addRowButton').click(function() {
-				$('#add-row').dataTable().fnAddData([
-					$("#addName").val(),
-					$("#addPosition").val(),
-					$("#addOffice").val(),
-					action
-					]);
-				$('#addRowModal').modal('hide');
-
-			});
-		});
-	</script>
+<script src="../js/adm/table_function.js"></script>
 </body>
 </html>
