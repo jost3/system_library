@@ -281,6 +281,7 @@
 							</li>
 						</ul>
 					</div>
+					<form action="nuev_prest.php" method="post">
 					<div class="col-md-6 mx-auto">
                         <div class="card">
                             <div class="card-header">
@@ -289,15 +290,15 @@
                             <div class="card-body">
 
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" required>
-                                    <label for="inputFloatingLabelTitulo" class="placeholder">Titulo de libro</label>
+                                    <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="titulo1" required>
+                                    <label for="inputFloatingLabelTitulo" class="placeholder" >Titulo de libro</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelAutor" type="text" class="form-control input-border-bottom" required>
+                                    <input id="inputFloatingLabelAutor" type="text" class="form-control input-border-bottom" name="autor1" required>
                                     <label for="inputFloatingLabelAutor" class="placeholder">Autor</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <select class="form-control input-border-bottom" id="selectFloatingLabel" required>
+                                    <select class="form-control input-border-bottom" id="selectFloatingLabel" name="descripcion1" required>
                                         <option value="">&nbsp;</option>
                                         <option>1</option>
                                         <option>2</option>
@@ -308,32 +309,31 @@
                                     <label for="selectFloatingLabel" class="placeholder">Seccion</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <select class="form-control input-border-bottom" id="selectFloatingLabel" required>
+                                    <select class="form-control input-border-bottom" id="selectFloatingLabel"  name="estado" required>
                                         <option value="">&nbsp;</option>
-                                        <option>Libre</option>
                                         <option>Ocupado</option>
                                     </select>
                                     <label for="selectFloatingLabel" class="placeholder">Estado</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" required>
-                                    <label for="inputFloatingLabelEdicion" class="placeholder">Fecha</label>
+                                    <input id="inputFloatingLabelEdicion" type="date" class="form-control input-border-bottom" name="fecha" required>
+                                    <label for="inputFloatingLabelEdicion" class="placeholder" ></label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" required>
+                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" name="nombre" required>
                                     <label for="inputFloatingLabelEdicion" class="placeholder">Nombre del estudiante</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" required>
+                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" name="dni_est" required>
                                     <label for="inputFloatingLabelEdicion" class="placeholder">Dni del estudiante</label>
                                 </div>
                                 <div class="card-action text-center">
-                                    <button class="btn btn-primary">Registrar</button>
+                                    <button class="btn btn-primary" name="insertar">Registrar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+					</form>
 			    </div>
 			</div>
 		</div>
@@ -388,5 +388,27 @@
 
 <!-- Azzara JS -->
 <script src="../js/adm/ready.js"></script>
+<script>
+	$(document).ready(function() {
+    function mostrarAlerta(tipo, mensaje) {
+        Swal.fire({
+            icon: tipo,
+            title: mensaje,
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+
+    // Obtén el valor de la variable de alerta desde la URL
+    const alerta = new URLSearchParams(window.location.search).get('alerta');
+
+    // Verifica el valor de la variable de alerta y muestra la alerta correspondiente
+    if (alerta === 'exito') {
+        mostrarAlerta('success', 'Prestamo registrado con éxito');
+    } else if (alerta === 'error') {
+        mostrarAlerta('error', 'Error al registrar el prestamo');
+    }
+});
+</script>
 </body>
 </html>

@@ -349,7 +349,7 @@
 													<td><?php  echo $row["id"];?></td>
 													<td><?php  echo $row["titulo"];?></td>
 													<td><?php  echo $row["autor"];?></td>
-													<td>MM</td>
+													<td><?php  echo $row["edicion"];?></td>
 													<td><?php  echo $row["descripcion"];?></td>
 													<td>
 														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">

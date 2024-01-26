@@ -17,12 +17,12 @@ include('../bd/mostrar_dt.php');
 
     if ($ejecutarInsertar1) {
       //  mostrar una ventana de confirmación
-      $_SESSION['mensaje'] = "Libro registrado con éxito";
-      echo '<script>window.location.href = "prest_nuev.php?alerta=exito";</script>';
+      $_SESSION['mensaje'] = "Prestamo registrado con éxito";
+      header('Location: new_loan.php?alerta=exito');
     } else {
       //  muestra una ventana de error
       $_SESSION['mensaje'] = "Error al registrar el libro";
-        echo '<script>window.location.href = "prest_nuev.php?alerta=error";</script>';
+      header('Location: new_loan.php?alerta=error');
     }
   }
 ?>

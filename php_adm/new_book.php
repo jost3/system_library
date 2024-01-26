@@ -7,16 +7,7 @@
 	<link rel="icon" href="../img/hessen icono.png" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
+	
 
 	<!-- CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -113,7 +104,7 @@
 											</a>
 											<a href="#">
 												<div class="notif-img"> 
-													<img src="../assets/img/profile2.jpg" alt="Img Profile">
+													<img src="" alt="Img Profile">
 												</div>
 												<div class="notif-content">
 													<span class="block">
@@ -142,13 +133,13 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg"><img src="" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
 											<h4>Hizrian</h4>
 											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
@@ -182,7 +173,7 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -281,6 +272,7 @@
 							</li>
 						</ul>
 					</div>
+					<form action="db.php" method="post">
 					<div class="col-md-6 mx-auto">
                         <div class="card">
                             <div class="card-header">
@@ -289,19 +281,19 @@
                             <div class="card-body">
 
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" required>
+                                    <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="titulo" required>
                                     <label for="inputFloatingLabelTitulo" class="placeholder">Titulo de libro</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelAutor" type="text" class="form-control input-border-bottom" required>
+                                    <input id="inputFloatingLabelAutor" type="text" class="form-control input-border-bottom" name="autor" required>
                                     <label for="inputFloatingLabelAutor" class="placeholder">Autor</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" required>
+                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" name="edicion" required>
                                     <label for="inputFloatingLabelEdicion" class="placeholder">Edicion</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <select class="form-control input-border-bottom" id="selectFloatingLabel" required>
+                                    <select class="form-control input-border-bottom" id="selectFloatingLabel" name="descripcion" required>
                                         <option value="">&nbsp;</option>
                                         <option>1</option>
                                         <option>2</option>
@@ -312,12 +304,13 @@
                                     <label for="selectFloatingLabel" class="placeholder">Seccion</label>
                                 </div>
                                 <div class="card-action text-center">
-                                    <button class="btn btn-primary">Registrar</button>
+                                    <button class="btn btn-primary" name="registro">Registrar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+					</form>
+					
 			    </div>
 			</div>
 		</div>
@@ -325,7 +318,6 @@
 		<!-- End Custom template -->
 	</div>
 </div>
-<!--   Core JS Files   -->
 
 <!-- jQuery desde CDN -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -372,5 +364,27 @@
 
 <!-- Azzara JS -->
 <script src="../js/adm/ready.js"></script>
+<script>
+	$(document).ready(function() {
+    function mostrarAlerta(tipo, mensaje) {
+        Swal.fire({
+            icon: tipo,
+            title: mensaje,
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+
+    // Obtén el valor de la variable de alerta desde la URL
+    const alerta = new URLSearchParams(window.location.search).get('alerta');
+
+    // Verifica el valor de la variable de alerta y muestra la alerta correspondiente
+    if (alerta === 'exito') {
+        mostrarAlerta('success', 'Libro registrado con éxito');
+    } else if (alerta === 'error') {
+        mostrarAlerta('error', 'Error al registrar el libro');
+    }
+});
+</script>
 </body>
 </html>
