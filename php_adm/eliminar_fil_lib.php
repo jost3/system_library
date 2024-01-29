@@ -1,31 +1,22 @@
 <?php
-include("../bd/conex_prest.php");
+session_start();
+include('../bd/conex_prest.php');
 
-if (isset($_GET["id1"])) {
-    $idToDelete = $_GET["id1"];
-    
-    // Utiliza una consulta preparada para eliminar el registro
-    $deleteQuery = "DELETE FROM libro WHERE id = ?";
-    
-    $stmt = mysqli_prepare($conex1, $deleteQuery);
-    
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "i", $idToDelete);
-        $success = mysqli_stmt_execute($stmt);
-        
-        if ($success) {
-            // Redirige de nuevo a la página principal o a donde desees
-            header("Location: libros.php");
-            exit();
-        } else {
-            echo "Error al eliminar el registro.";
-        }
-        
-        mysqli_stmt_close($stmt);
+if (isset($_GET['id'])) {
+    $idLibro = $_GET['id'];
+
+    // Realiza la eliminación en la base de datos
+    $eliminarLibro = "DELETE FROM libro WHERE id = $idLibro";
+    $ejecutarEliminar = mysqli_query($conex1, $eliminarLibro);
+
+    if ($ejecutarEliminar) {
+        $_SESSION['mensaje'] = "Libro eliminado con éxito";
+        header('Location: book.php?alerta=exito');
     } else {
-        echo "Error en la consulta preparada.";
+        $_SESSION['mensaje'] = "Error al eliminar el libro";
+        header('Location: book.php?alerta=error');
     }
+} else {
+    header('Location: book.php');
 }
-
-mysqli_close($conex1);
 ?>

@@ -260,7 +260,7 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">DataTables.Net</h4>
+						<h4 class="page-title">Prestamos actuales</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -271,14 +271,10 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Tables</a>
+								<a href="#">prestamo</a>
 							</li>
-							<li class="separator">
-								<i class="flaticon-right-arrow"></i>
-							</li>
-							<li class="nav-item">
-								<a href="#">Datatables</a>
-							</li>
+							
+							
 						</ul>
 					</div>
 					<?php
@@ -367,15 +363,15 @@
 													<td><?php  echo $row["dni_est"];?></td>
 													<td><?php  echo $row["nombre"];?></td>
 													<td>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+													<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
+														<span class="btn-label">
+															<i class="fa fa-pencil"></i>
+														</span>
+														Modificar
+													</a>
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
 															<span class="btn-label">
-																<i class="fa fa-pencil"></i>
-															</span>
-															Modificar
-														</a>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
-															<span class="btn-label">
-																<i class="fa fa-pencil"></i>
+																<i class="fa fa-trash"></i>
 															</span>
 															Eliminar
 														</a>
@@ -442,7 +438,41 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-<!-- Azzara JS -->
+<!-- JS -->
+<script>
+	$(".modificar-prestamo").click(function (event) {
+		event.preventDefault(); // Evita que el enlace se abra directamente
+
+		var idPrestamo = $(this).data("id");
+
+		// Redirige a la página de modificación con el ID del préstamo
+		window.location.href = 'modificar_prest.php?id=' + idPrestamo;
+	});
+	$(document).ready(function () {
+        // Agrega un evento de clic a los botones de eliminar
+        $(".eliminar-prestamo").click(function (event) {
+            event.preventDefault(); // Evita que el enlace se abra directamente
+
+            var idPrestamo = $(this).data("id");
+
+            // Muestra una alerta de confirmación
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: '¡No podrás revertir esto!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si el usuario confirma, realiza la eliminación
+                    window.location.href = 'eliminar_prest.php?id=' + idPrestamo;
+                }
+            });
+        });
+    });
+</script>
 <script src="../js/adm/ready.js"></script>
 <script src="../js/adm/table_function.js"></script>
 </body>

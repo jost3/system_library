@@ -352,15 +352,15 @@
 													<td><?php  echo $row["edicion"];?></td>
 													<td><?php  echo $row["descripcion"];?></td>
 													<td>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-libro" data-id="<?php echo $row["id"]; ?>">
 															<span class="btn-label">
 																<i class="fa fa-pencil"></i>
 															</span>
 															Modificar
 														</a>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-libro" data-id="<?php echo $row["id"]; ?>">
 															<span class="btn-label">
-																<i class="fa fa-pencil"></i>
+																<i class="fa fa-trash"></i>
 															</span>
 															Eliminar
 														</a>
@@ -427,8 +427,43 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-<!-- Azzara JS -->
+<!--  JS -->
+<script>
+	$(".modificar-libro").click(function (event) {
+		event.preventDefault(); // Evita que el enlace se abra directamente
+
+		var idLibro = $(this).data("id");
+
+		// Redirige a la página de modificación con el ID del préstamo
+		window.location.href = 'modificar_book.php?id=' + idLibro;
+	});
+	$(document).ready(function () {
+        // Agrega un evento de clic a los botones de eliminar
+        $(".eliminar-libro").click(function (event) {
+            event.preventDefault(); // Evita que el enlace se abra directamente
+
+            var idLibro = $(this).data("id");
+
+            // Muestra una alerta de confirmación
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: '¡No podrás revertir esto!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si el usuario confirma, realiza la eliminación
+                    window.location.href = 'eliminar_fil_lib.php?id=' + idLibro;
+                }
+            });
+        });
+    });
+</script>
 <script src="../js/adm/ready.js"></script>
 <script src="../js/adm/table_function.js"></script>
+
 </body>
 </html>
