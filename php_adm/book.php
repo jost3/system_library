@@ -245,7 +245,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="tables/datatables.html">
+										<a href="adm_register.php">
 											<span class="sub-item">Administrador</span>
 										</a>
 									</li>

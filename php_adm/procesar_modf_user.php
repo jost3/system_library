@@ -1,0 +1,33 @@
+<?php
+session_start();
+include('../bd/mostrar_dt.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $idUsuario = mysqli_real_escape_string($conex, $_POST['id']);
+    $usuario = mysqli_real_escape_string($conex, $_POST['usuario']);
+    $correo = mysqli_real_escape_string($conex, $_POST['correo']);
+    $rol = mysqli_real_escape_string($conex, $_POST['rol']);
+
+    // Manejo de la imagen si se ha proporcionado una nueva
+    if (!empty($_FILES['imagen']['tmp_name'])) {
+        $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+        $actualizarUsuario = "UPDATE usuarios SET usuario='$usuario', correo='$correo', rol='$rol', foto='$imagen' WHERE id=$idUsuario";
+    } else {
+        // No se ha proporcionado una nueva imagen
+        $actualizarUsuario = "UPDATE usuarios SET usuario='$usuario', correo='$correo', rol='$rol' WHERE id=$idUsuario";
+    }
+
+    $resultado = mysqli_query($conex, $actualizarUsuario);
+
+    if ($resultado) {
+        $_SESSION['mensaje'] = "Usuario actualizado con éxito";
+        header('Location: adm_register.php?alerta=exito');
+    } else {
+        $_SESSION['mensaje'] = "Error al actualizar el usuario";
+        header('Location: adm_register.php?alerta=error');
+    }
+} else {
+    $_SESSION['mensaje'] = "Método de solicitud no válido";
+    header('Location: adm_register.php?alerta=error');
+}
+?>

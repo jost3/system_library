@@ -210,14 +210,14 @@
 							<h4 class="text-section">Acciones</h4>
 						</li>
 						<li class="nav-item active">
-							<a href="../php_adm/book.php">
+							<a href="book.php">
 								<i class="fas fa-layer-group"></i>
 								<p>Libro</p>
 							</a>
 							
 						</li>
 						<li class="nav-item ">
-							<a  href="../php_adm/loan.php">
+							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
 								<p>Prestamo</p>
 							</a>
@@ -236,7 +236,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="tables/datatables.html">
+										<a href="adm_register.php">
 											<span class="sub-item">Administrador</span>
 										</a>
 									</li>

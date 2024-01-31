@@ -10,10 +10,10 @@ if ($conex->connect_error) {
 
 // Obtener datos del formulario
 $usuario = $_POST['usuario'];
-$contraseña = $_POST['contraseña'];
+$contraseña = $_POST['password'];
 
 // Consulta SQL para verificar el inicio de sesión
-$sql = "SELECT * FROM usuarios WHERE usuario='$usuario' AND contraseña='$contraseña'";
+$sql = "SELECT * FROM usuarios WHERE usuario='$usuario' AND password='$contraseña'";
 $result = $conex->query($sql);
 
 if ($result->num_rows > 0) {
