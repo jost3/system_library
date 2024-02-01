@@ -172,7 +172,7 @@ session_start()
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Mi perfil</a>
+									<a class="dropdown-item" href="perfil_adm.php">Mi perfil</a>
 									
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Cerrar sesión</a>
@@ -205,7 +205,7 @@ session_start()
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
 									<?php echo $_SESSION['usuario']; ?>
-									<span class="user-level">Administrador</span>
+									<span class="user-level"><?php echo $_SESSION['rolUsuario']; ?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -214,7 +214,7 @@ session_start()
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#profile">
+										<a href="perfil_adm.php">
 											<span class="link-collapse">Mi perfil</span>
 										</a>
 									</li>
