@@ -1,11 +1,43 @@
+
 <?php
+include("../bd/conex_prest.php");
 session_start();
 
-// Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['usuario'])) {
-    // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
-    header('Location: ../index.html');
-    exit();
+/* libro*/
+$sql = "SELECT COUNT(*) AS total_libros FROM libro";
+$result = $conex1->query($sql);
+if ($result) {
+    $row = $result->fetch_assoc();
+    $total_libros = $row['total_libros'];
+} else {
+    echo "Error al ejecutar la consulta: " . $conex1->error;
+}
+/* prstamo*/
+$sql = "SELECT COUNT(*) AS total_prestamos FROM prestamo";
+$result1 = $conex1->query($sql);
+if ($result1) {
+    $row = $result1->fetch_assoc();
+    $total_prestamos = $row['total_prestamos'];
+} else {
+    echo "Error al ejecutar la consulta: " . $conex1->error;
+}
+/* estudiante*/
+$sql = "SELECT COUNT(*) AS total_estudiantes FROM estudiante";
+$result2 = $conex1->query($sql);
+if ($result2) {
+    $row = $result2->fetch_assoc();
+    $total_estudiantes = $row['total_estudiantes'];
+} else {
+    echo "Error al ejecutar la consulta: " . $conex1->error;
+}
+/* deudas*/
+$sql_deudas = "SELECT COUNT(*) AS fuera_de_tiempo FROM prestamo WHERE estado = 'Limite de tiempo'";
+$result_deudas = $conex1->query($sql_deudas);
+if ($result_deudas) {
+    $row = $result_deudas->fetch_assoc();
+    $fuera_de_tiempo = $row['fuera_de_tiempo'];
+} else {
+    echo "Error al ejecutar la consulta de préstamos fuera de tiempo: " . $conex1->error;
 }
 ?>
 <!DOCTYPE html>
@@ -44,9 +76,7 @@ if (!isset($_SESSION['usuario'])) {
 </style>
 <body>
 	<div class="wrapper">
-		<!--
-			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
-		-->
+		
 		<div class="main-header" >
 			<!-- Logo Header -->
 			<div class="logo-header">
@@ -152,28 +182,39 @@ if (!isset($_SESSION['usuario'])) {
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+										<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+										<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+									<?php else : ?>
+										<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+									<?php endif; ?>	
 								</div>
 							</a>
+							
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg">
+											
+											<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+												<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+												<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded">
+											<?php else : ?>
+												<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded">
+											<?php endif; ?>
+										</div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4><?php echo $_SESSION['usuario']; ?></h4>
+											<p class="text-muted"><?php echo $_SESSION['correoUsuario']; ?></p>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
-									<a class="dropdown-item" href="#">Inbox</a>
+									<a class="dropdown-item" href="#">Mi perfil</a>
+									
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="#">Cerrar sesión</a>
 								</li>
 							</ul>
 						</li>
@@ -192,13 +233,18 @@ if (!isset($_SESSION['usuario'])) {
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+								<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+								<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+							<?php else : ?>
+								<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+							<?php endif; ?>	
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo $_SESSION['usuario']; ?>
+									<span class="user-level">Administrador</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -254,11 +300,13 @@ if (!isset($_SESSION['usuario'])) {
 											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>
+									<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
 									<li>
 										<a href="adm_register.php">
 											<span class="sub-item">Administrador</span>
 										</a>
 									</li>
+									<?php endif; ?>
 								</ul>
 							</div>
 						</li>
@@ -288,7 +336,7 @@ if (!isset($_SESSION['usuario'])) {
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
 												<p class="card-category">Libros</p>
-												<h4 class="card-title">1,294</h4>
+												<h4 class="card-title"><?php echo $total_libros; ?></h4>
 											</div>
 										</div>
 									</div>
@@ -307,7 +355,7 @@ if (!isset($_SESSION['usuario'])) {
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
 												<p class="card-category">Prestamos</p>
-												<h4 class="card-title">1303</h4>
+												<h4 class="card-title"><?php echo $total_prestamos; ?></h4>
 											</div>
 										</div>
 									</div>
@@ -326,7 +374,7 @@ if (!isset($_SESSION['usuario'])) {
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
 												<p class="card-category">Esutidiantes</p>
-												<h4 class="card-title">$ 1,345</h4>
+												<h4 class="card-title"><?php echo $total_estudiantes; ?></h4>
 											</div>
 										</div>
 									</div>
@@ -345,7 +393,7 @@ if (!isset($_SESSION['usuario'])) {
 										<div class="col col-stats ml-3 ml-sm-0">
 											<div class="numbers">
 												<p class="card-category">Deuda de esutidiantes</p>
-												<h4 class="card-title">576</h4>
+												<h4 class="card-title"><?php echo $fuera_de_tiempo ?></h4>
 											</div>
 										</div>
 									</div>
@@ -362,7 +410,7 @@ if (!isset($_SESSION['usuario'])) {
 								titulo1 LIKE '%$search%'";
 					
 					} else {
-						$prestamo = "SELECT * FROM prestamo";
+						$prestamo = "SELECT * FROM prestamo ORDER BY fecha DESC LIMIT 10";
 					}
 					?>
 					<div class="row row-card-no-pd">

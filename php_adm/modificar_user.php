@@ -70,9 +70,7 @@ if (isset($_GET['id'])) {
 </style>
 <body>
 	<div class="wrapper">
-		<!--
-			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
-		-->
+		
 		<div class="main-header" >
 			<!-- Logo Header -->
 			<div class="logo-header">
@@ -178,28 +176,39 @@ if (isset($_GET['id'])) {
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+										<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+										<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+									<?php else : ?>
+										<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+									<?php endif; ?>	
 								</div>
 							</a>
+							
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg">
+											
+											<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+												<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+												<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded">
+											<?php else : ?>
+												<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded">
+											<?php endif; ?>
+										</div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4><?php echo $_SESSION['usuario']; ?></h4>
+											<p class="text-muted"><?php echo $_SESSION['correoUsuario']; ?></p>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
-									<a class="dropdown-item" href="#">Inbox</a>
+									<a class="dropdown-item" href="#">Mi perfil</a>
+									
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="#">Cerrar sesión</a>
 								</li>
 							</ul>
 						</li>
@@ -218,13 +227,18 @@ if (isset($_GET['id'])) {
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+								<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+								<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+							<?php else : ?>
+								<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+							<?php endif; ?>	
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo $_SESSION['usuario']; ?>
+									<span class="user-level">Administrador</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -307,13 +321,13 @@ if (isset($_GET['id'])) {
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="book.php">usuarios</a>
+								<a href="adm_register.php">administradores</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="">Modificar usuario</a>
+								<a href="">Modificar administrador</a>
 							</li>
 						</ul>
 					</div>
@@ -327,7 +341,7 @@ if (isset($_GET['id'])) {
 
                                 <div class="form-group form-floating-label">
                                     <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="id" value="<?php echo $idUsuario; ?>" required>
-                                    <label for="inputFloatingLabelTitulo" class="placeholder">Id del uaurio</label>
+                                    <label for="inputFloatingLabelTitulo" class="placeholder">Id del usuario</label>
                                 </div>
                                 <div class="form-group form-floating-label">
                                     <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="usuario" value="<?php echo $usuario; ?>" required>
@@ -335,19 +349,16 @@ if (isset($_GET['id'])) {
                                 </div>
                                 <div class="form-group form-floating-label">
                                     <input id="inputFloatingLabelAutor" type="email" class="form-control input-border-bottom" name="correo" value="<?php echo $correo; ?>" required>
-                                    <label for="inputFloatingLabelAutor" class="placeholder">Autor</label>
+                                    <label for="inputFloatingLabelAutor" class="placeholder">correo</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <select class="form-control input-border-bottom" id="selectFloatingLabel" name="rol" required>
-                                        <option value="" <?php if ($rol == '') echo 'selected'; ?>>&nbsp;</option>
-                                        <option value="1" <?php if ($rol == '1') echo 'selected'; ?>>1</option>
-                                        <option value="2" <?php if ($rol == '2') echo 'selected'; ?>>2</option>
-                                        <option value="3" <?php if ($rol == '3') echo 'selected'; ?>>3</option>
-                                        <option value="4" <?php if ($rol == '4') echo 'selected'; ?>>4</option>
-                                        <option value="5" <?php if ($rol == '5') echo 'selected'; ?>>5</option>
-                                    </select>
-                                    <label for="selectFloatingLabel" class="placeholder">rol</label>
-                                </div>
+									<select class="form-control input-border-bottom" id="selectFloatingLabel" name="rol" required>
+										<option value="" <?php if ($rol == '') echo 'selected'; ?>>&nbsp;</option>
+										<option value="root" <?php if ($rol == 'root') echo 'selected'; ?>>Root</option>
+										<option value="administrador" <?php if ($rol == 'admin') echo 'selected'; ?>>Administrador</option>
+									</select>
+									<label for="selectFloatingLabel" class="placeholder">Rol</label>
+								</div>
                                 <div class="form-group form-floating-label">
 									<input id="inputFloatingLabelAutor" type="file" class="form-control input-border-bottom" name="imagen">
 									<label for="inputFloatingLabelAutor" class="placeholder"></label>

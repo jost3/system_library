@@ -8,10 +8,13 @@ if (isset($_POST['registro'])) {
     $usuario = mysqli_real_escape_string($conex1, $_POST['usuario']);
     $correo = mysqli_real_escape_string($conex1, $_POST['correo']);
     $rol = mysqli_real_escape_string($conex1, $_POST['rol']);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $imagen = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+    $password = mysqli_real_escape_string($conex1, $_POST['password']);
+    // Encripta la contraseña
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $insertarUsuario = "INSERT INTO usuarios (id, usuario, correo, rol, password, foto) VALUES ('$id', '$usuario', '$correo', '$rol', '$password', '$imagen')";
+
+    $insertarUsuario = "INSERT INTO usuarios (id, usuario, correo, rol, password, foto) VALUES ('$id', '$usuario', '$correo', '$rol', '$hashed_password', '$imagen')";
     $resultado = mysqli_query($conex1, $insertarUsuario);
 
     if ($resultado) {

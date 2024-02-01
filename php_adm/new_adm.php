@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,15 +22,13 @@
 </head>
 <style>
   .logo img {
-        max-width: 70%; /* Reduzca el ancho máximo de la imagen al contenedor al 40% */
-        height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+        max-width: 70%; 
+        height: auto; 
     }
 </style>
 <body>
 	<div class="wrapper">
-		<!--
-			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
-		-->
+		
 		<div class="main-header" >
 			<!-- Logo Header -->
 			<div class="logo-header">
@@ -133,28 +134,39 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="" alt="..." class="avatar-img rounded-circle">
+									<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+										<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+										<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+									<?php else : ?>
+										<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+									<?php endif; ?>	
 								</div>
 							</a>
+							
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg">
+											
+											<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+												<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+												<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded">
+											<?php else : ?>
+												<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded">
+											<?php endif; ?>
+										</div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4><?php echo $_SESSION['usuario']; ?></h4>
+											<p class="text-muted"><?php echo $_SESSION['correoUsuario']; ?></p>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
-									<a class="dropdown-item" href="#">Inbox</a>
+									<a class="dropdown-item" href="#">Mi perfil</a>
+									
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="#">Cerrar sesión</a>
 								</li>
 							</ul>
 						</li>
@@ -173,13 +185,18 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="" alt="..." class="avatar-img rounded-circle">
+							<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+								<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+								<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+							<?php else : ?>
+								<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+							<?php endif; ?>	
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo $_SESSION['usuario']; ?>
+									<span class="user-level">Administrador</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -300,16 +317,13 @@
                                 <div class="form-group form-floating-label">
                                     <select class="form-control input-border-bottom" id="selectFloatingLabel" name="rol" required>
                                         <option value="">&nbsp;</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option value="admin">Administrador</option>
+        								<option value="root"></option>
                                     </select>
                                     <label for="selectFloatingLabel" class="placeholder">rol</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="password" class="form-control input-border-bottom" name="password" required>
+                                    <input id="password" type="password" class="form-control input-border-bottom" name="password" required>
                                     <label for="inputFloatingLabelEdicion" class="placeholder">Contraseña</label>
                                 </div>
                                 <div class="card-action text-center">
