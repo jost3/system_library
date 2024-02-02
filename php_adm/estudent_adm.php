@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,28 +145,38 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+										<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+										<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+									<?php else : ?>
+										<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+									<?php endif; ?>	
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg">
+											
+											<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+												<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+												<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded">
+											<?php else : ?>
+												<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded">
+											<?php endif; ?>
+										</div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4><?php echo $_SESSION['usuario']; ?></h4>
+											<p class="text-muted"><?php echo $_SESSION['correoUsuario']; ?></p>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
-									<a class="dropdown-item" href="#">Inbox</a>
+									<a class="dropdown-item" href="perfil_adm.php">Mi perfil</a>
+									
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="#">Cerrar sesión</a>
 								</li>
 							</ul>
 						</li>
@@ -182,13 +195,18 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+								<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+								<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+							<?php else : ?>
+								<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+							<?php endif; ?>	
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo $_SESSION['usuario']; ?>
+									<span class="user-level"><?php echo $_SESSION['rolUsuario']; ?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -197,7 +215,7 @@
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#profile">
+										<a href="perfil_adm.php">
 											<span class="link-collapse">Mi perfil</span>
 										</a>
 									</li>
@@ -219,19 +237,19 @@
 							<h4 class="text-section">Acciones</h4>
 						</li>
 						<li class="nav-item ">
-							<a href="../php_adm/book.php">
+							<a href="book.php">
 								<i class="fas fa-layer-group"></i>
 								<p>Libro</p>
 							</a>
 							
 						</li>
-						<li class="nav-item active">
-							<a  href="../php_adm/loan.php">
+						<li class="nav-item">
+							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
-								<p>alumnos</p>
+								<p>Prestamo</p>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item active">
 							<a data-toggle="collapse" href="#tables">
 								<i class="fas fa-table"></i>
 								<p>Usuarios</p>
@@ -245,9 +263,13 @@
 										</a>
 									</li>
 									<li>
-										<a href="tables/datatables.html">
+									<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
+									<li>
+										<a href="adm_register.php">
 											<span class="sub-item">Administrador</span>
 										</a>
+									</li>
+									<?php endif; ?>
 									</li>
 								</ul>
 							</div>
@@ -282,11 +304,11 @@
 					
 					$search = isset($_GET['search']) ? $_GET['search'] : '';
 					if ($search) {
-						$alumnos = "SELECT * FROM alumnos WHERE 
+						$alumnos = "SELECT * FROM alumno WHERE 
 								titulo1 LIKE '%$search%'";
 					
 					} else {
-						$alumnos = "SELECT * FROM alumnos";
+						$alumnos = "SELECT * FROM alumno";
 					}
 					?>
 					<div class="row">
@@ -324,7 +346,7 @@
 										<table id="basic-datatables" class="display table table-striped table-hover" >
 											<thead>
 												<tr>
-                                                    <th>ID</th>
+													<th>ID</th>
 													<th>DNI</th>
 													<th>NOMBRE</th>
 													<th>CONTRASEÑA</th>
@@ -334,8 +356,8 @@
 											</thead>
 											<tfoot>
 												<tr>
-                                                    <th>ID</th>
-													<th>DNI</th>
+													<th>ID</th>
+                                                    <th>DNI</th>
 													<th>NOMBRE</th>
 													<th>CONTRASEÑA</th>
 													<th>CARRERA</th>
@@ -348,19 +370,19 @@
 													while($row=mysqli_fetch_assoc($result)) 
 												{?>
 												<tr>
-													<td><?php  echo $row["id_alumno"];?></td>
+													<td><?php  echo $row["id"];?></td>
 													<td><?php  echo $row["dni"];?></td>
-													<td><?php  echo $row["nombres"];?></td>
+													<td><?php  echo $row["Nombre"];?></td>
 													<td><?php  echo $row["contra"];?></td>
 													<td><?php  echo $row["carrera"];?></td>
 													<td>
-													<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-alumnos" data-id="<?php echo $row["id_alumno"]; ?>">
+													<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-alumnos" data-id="<?php echo $row["id"]; ?>">
 														<span class="btn-label">
 															<i class="fa fa-pencil"></i>
 														</span>
 														Modificar
 													</a>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-alumnos" data-id="<?php echo $row["id_alumno"]; ?>">
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-alumnos" data-id="<?php echo $row["id"]; ?>">
 															<span class="btn-label">
 																<i class="fa fa-trash"></i>
 															</span>
@@ -433,16 +455,16 @@
 <script>
 $(".modificar-alumnos").click(function (event) {
     event.preventDefault(); // Evita que el enlace se abra directamente
-    var idalumno = $(this).data("id"); // Cambia data-id_alumno a data-id
+    var idAlumno = $(this).data("id"); // Cambia data-id_alumno a data-id
     // Redirige a la página de modificación con el ID del alumno
-    window.location.href = 'modificar_estudent.php?id=' + idalumno;
+    window.location.href = 'modificar_estudent.php?id=' + idAlumno;
 });
 
 $(document).ready(function () {
     // Agrega un evento de clic a los botones de eliminar
     $(".eliminar-alumnos").click(function (event) {
         event.preventDefault(); // Evita que el enlace se abra directamente
-        var idalumno = $(this).data("id"); // Obtén el ID del alumno a eliminar
+        var idAlumno = $(this).data("id"); // Obtén el ID del alumno a eliminar
         // Muestra una alerta de confirmación
         Swal.fire({
             title: '¿Estás seguro?',
@@ -455,7 +477,7 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 // Si el usuario confirma, realiza la eliminación
-                window.location.href = 'eliminar_alumno.php?id=' + idalumno;
+                window.location.href = 'eliminar_alumno.php?id=' + idAlumno;
             }
         });
     });

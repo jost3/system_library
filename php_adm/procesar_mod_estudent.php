@@ -4,19 +4,19 @@ include('../bd/mostrar_dt.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifica si se han enviado los datos del formulario
-    if (isset($_POST['id_alumno'], $_POST['nombres'], $_POST['dni'], $_POST['contra'], $_POST['carrera'])) {
-        $id_alumno = $_POST['id_alumno'];
-        $nombres = $_POST['nombres'];
+    if (isset($_POST['id'], $_POST['nombre'], $_POST['dni'], $_POST['contra'], $_POST['carrera'])) {
+        $idAlumno = $_POST['id'];
+        $nombres = $_POST['nombre'];
         $dni = $_POST['dni'];
         $contra = $_POST['contra'];
         $carrera = $_POST['carrera'];
     
         // Realiza la actualización en la base de datos
-        $actualizarAlumno = "UPDATE alumnos SET nombres = '$nombres', dni = '$dni', contra = '$contra', carrera = '$carrera' WHERE id_alumno = $id_alumno";
+        $actualizarAlumno = "UPDATE alumno SET nombre = '$nombres', dni = '$dni', contra = '$contra', carrera = '$carrera' WHERE id = $idAlumno";
         $ejecutarActualizarAlumno = mysqli_query($conex, $actualizarAlumno);
         if ($ejecutarActualizarAlumno) {
             $_SESSION['mensaje'] = "Datos de alumno modificados con éxito";
-            header('Location: modificar_estudent.php?alerta=exito');
+            header('Location: estudent_adm.php?alerta=exito');
             exit();
         } else {
             $_SESSION['mensaje'] = "Error al modificar los datos del alumno";
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         $_SESSION['mensaje'] = "Todos los campos del formulario son obligatorios";
-        header('Location: modificar_estudent.php?id=' . $_POST['id_alumno'] . '&alerta=error');
+        header('Location: modificar_estudent.php?id=' . $_POST['id'] . '&alerta=error');
         exit();
     }
 } else {

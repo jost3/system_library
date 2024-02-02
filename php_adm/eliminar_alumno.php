@@ -3,13 +3,13 @@ session_start();
 include('../bd/conex_prest.php');
 
 if (isset($_GET['id'])) {
-    $idalumno = $_GET['id'];
+    $idAlumno = $_GET['id'];
 
     // Sanitizamos la entrada para evitar inyección SQL
-    $idalumno = mysqli_real_escape_string($conex1, $idalumno);
+    $idAlumno = mysqli_real_escape_string($conex1, $idAlumno);
 
     // Realiza la eliminación en la base de datos
-    $eliminaridalumno = "DELETE FROM alumnos WHERE id_alumno = $idalumno";
+    $eliminaridalumno = "DELETE FROM alumno WHERE id = $idAlumno";
     $ejecutarEliminar1 = mysqli_query($conex1, $eliminaridalumno);
 
     if ($ejecutarEliminar1) {

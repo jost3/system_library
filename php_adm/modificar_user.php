@@ -290,14 +290,18 @@ if (isset($_GET['id'])) {
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="tables/tables.html">
+										<a href="estudent_adm.php">
 											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>
 									<li>
+									<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
+									<li>
 										<a href="adm_register.php">
 											<span class="sub-item">Administrador</span>
 										</a>
+									</li>
+									<?php endif; ?>
 									</li>
 								</ul>
 							</div>
@@ -340,8 +344,8 @@ if (isset($_GET['id'])) {
                             <div class="card-body">
 
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="id" value="<?php echo $idUsuario; ?>" required>
-                                    <label for="inputFloatingLabelTitulo" class="placeholder">Id del usuario</label>
+									<label for="inputFloatingLabelTitulo" class="">Id del usuario</label>
+                                    <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="id" value="<?php echo $idUsuario; ?>" readonly>
                                 </div>
                                 <div class="form-group form-floating-label">
                                     <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="usuario" value="<?php echo $usuario; ?>" required>

@@ -257,7 +257,7 @@ session_start()
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="tables/tables.html">
+										<a href="estudent_adm.php">
 											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>

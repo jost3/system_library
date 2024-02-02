@@ -5,31 +5,30 @@ include('../bd/mostrar_dt.php');
 if (isset($_GET['id'])) {
     $idAlumno = $_GET['id'];
 
-    // Realiza una consulta para obtener la información del alumno
-    $consultaAlumno = "SELECT * FROM alumnos WHERE id_alumno = $idAlumno";
-    $resultadoConsulta = mysqli_query($conex, $consultaAlumno);
+    // Realiza una consulta para obtener la información del préstamo
+    $consultaAlumno = "SELECT * FROM alumno WHERE id = $idAlumno";
+    $resultadoConsulta3 = mysqli_query($conex, $consultaAlumno);
 
-    if ($resultadoConsulta) {
-        // Obtén los datos del alumno
-        $datosAlumno = mysqli_fetch_assoc($resultadoConsulta);
-        
-        // Puedes utilizar $datosAlumno para prellenar los campos del formulario de modificación
-        $id_alumno = $datosAlumno['id_alumno'];
-        $nombres = $datosAlumno['nombres'];
-        $dni = $datosAlumno['dni'];
-        $contra = $datosAlumno['contra'];
-        $carrera = $datosAlumno['carrera'];
+    if ($resultadoConsulta3) {
+        // Obtén los datos del préstamo
+        $datosAlum1 = mysqli_fetch_assoc($resultadoConsulta3);
+        // Puedes utilizar $datosPrestamo para prellenar los campos del formulario de modificación
+        $dni= $datosAlum1 ['dni'];
+        $nombre= $datosAlum1 ['Nombre'];
+        $contra= $datosAlum1 ['contra'];
+        $carrera= $datosAlum1 ['carrera'];
+
         // ...
 
         // Luego, puedes utilizar estos valores en tu formulario HTML
     } else {
-        $_SESSION['mensaje'] = "Error al obtener información del alumno";
-        header('Location: estudent_adm.php?alerta=error');
+        $_SESSION['mensaje'] = "Error al obtener información del préstamo";
+        header('Location: loan.php?alerta=error');
         exit(); // Asegúrate de detener la ejecución del script después de una redirección
     }
 } else {
-    $_SESSION['mensaje'] = "ID de alumno no proporcionado";
-    header('Location: estudent_adm.php?alerta=error');
+    $_SESSION['mensaje'] = "ID de préstamo no proporcionado";
+    header('Location: loan.php?alerta=error');
     exit(); // Asegúrate de detener la ejecución del script después de una redirección
 }
 ?>
@@ -178,28 +177,38 @@ if (isset($_GET['id'])) {
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+										<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+										<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+									<?php else : ?>
+										<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+									<?php endif; ?>	
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg">
+											
+											<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+												<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+												<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded">
+											<?php else : ?>
+												<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded">
+											<?php endif; ?>
+										</div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4><?php echo $_SESSION['usuario']; ?></h4>
+											<p class="text-muted"><?php echo $_SESSION['correoUsuario']; ?></p>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
-									<a class="dropdown-item" href="#">Inbox</a>
+									<a class="dropdown-item" href="perfil_adm.php">Mi perfil</a>
+									
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="#">Cerrar sesión</a>
 								</li>
 							</ul>
 						</li>
@@ -218,13 +227,18 @@ if (isset($_GET['id'])) {
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<?php if (isset($_SESSION['fotoUsuario'])) : ?>
+								<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
+								<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded-circle">
+							<?php else : ?>
+								<img src="../assets/img/default_profile.jpg" alt="imagen de perfil predeterminada" class="avatar-img rounded-circle">
+							<?php endif; ?>	
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo $_SESSION['usuario']; ?>
+									<span class="user-level"><?php echo $_SESSION['rolUsuario']; ?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -233,7 +247,7 @@ if (isset($_GET['id'])) {
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#profile">
+										<a href="perfil_adm.php">
 											<span class="link-collapse">Mi perfil</span>
 										</a>
 									</li>
@@ -281,9 +295,13 @@ if (isset($_GET['id'])) {
 										</a>
 									</li>
 									<li>
+									<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
+									<li>
 										<a href="adm_register.php">
 											<span class="sub-item">Administrador</span>
 										</a>
+									</li>
+									<?php endif; ?>
 									</li>
 								</ul>
 							</div>
@@ -307,7 +325,7 @@ if (isset($_GET['id'])) {
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="book.php">alumnos</a>
+								<a href="estudent_adm.php">Estudiantes</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
@@ -325,11 +343,11 @@ if (isset($_GET['id'])) {
                             </div>
 							<div class="card-body">
 								<div class="form-group form-floating-label">
-									<input id="inputFloatingLabelid_alumno" type="text" class="form-control input-border-bottom" name="id_alumno" value="<?php echo $id_alumno; ?>" required>
-									<label for="inputFloatingLabelid_alumno" class="placeholder" >ID</label>
+									<label for="inputFloatingLabelid_alumno" class="" >ID</label>
+									<input id="inputFloatingLabelid_alumno" type="text" class="form-control input-border-bottom" name="id" value="<?php echo $idAlumno; ?>" readonly>
 								</div>
 								<div class="form-group form-floating-label">
-									<input id="inputFloatingLabelnombres" type="text" class="form-control input-border-bottom" name="nombres" value="<?php echo $nombres; ?>" required>
+									<input id="inputFloatingLabelnombres" type="text" class="form-control input-border-bottom" name="nombre" value="<?php echo $nombre; ?>" required>
 									<label for="inputFloatingLabelnombres" class="placeholder" >Nombre del alumno</label>
 								</div>
 								<div class="form-group form-floating-label">
