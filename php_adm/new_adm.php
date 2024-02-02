@@ -318,6 +318,10 @@ session_start()
                                     <input id="inputFloatingLabelEdicion" type="email" class="form-control input-border-bottom" name="correo" required>
                                     <label for="inputFloatingLabelEdicion" class="placeholder">Correo</label>
                                 </div>
+								<div class="form-group form-floating-label">
+									<input id="inputTelefono" type="tel" class="form-control input-border-bottom" name="telefono" required>
+									<label for="inputTelefono" class="placeholder">Número de Teléfono</label>
+								</div>
                                 <div class="form-group form-floating-label">
                                     <select class="form-control input-border-bottom" id="selectFloatingLabel" name="rol" required>
                                         <option value="">&nbsp;</option>

@@ -331,6 +331,7 @@ session_start()
 															<th>USUARIO</th>
                                                             <th>CORREO</th>
                                                             <th>ROL</th>
+															<th>TELEFONO</th>
                                                             <th>FOTO</th>
 															<th>ACCION</th>
 														
@@ -348,6 +349,7 @@ session_start()
 															<td><?php  echo $row["usuario"];?></td>
                                                             <td><?php  echo $row["correo"];?></td>
                                                             <td><?php  echo $row["rol"];?></td>
+															<td><?php  echo $row["telefono"];?></td>
                                                             <td>
 																<img class="img-fluid" src="data:image/jpeg;base64,<?php echo base64_encode($row['foto']); ?>" alt="Foto de usuario" style="width: 50px; height: 50px;">
                                                             </td>

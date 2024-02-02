@@ -16,6 +16,7 @@ if (isset($_GET['id'])) {
         // Puedes utilizar $datosPrestamo para prellenar los campos del formulario de modificación
         $usuario= $datosUser1 ['usuario'];
         $correo= $datosUser1 ['correo'];
+		$telefono= $datosUser1 ['telefono'];
         $rol= $datosUser1 ['rol'];
         $password= $datosUser1 ['password'];
         $imagen = $datosUser1 ['foto'];
@@ -355,6 +356,10 @@ if (isset($_GET['id'])) {
                                     <input id="inputFloatingLabelAutor" type="email" class="form-control input-border-bottom" name="correo" value="<?php echo $correo; ?>" required>
                                     <label for="inputFloatingLabelAutor" class="placeholder">correo</label>
                                 </div>
+								<div class="form-group form-floating-label">
+									<input id="inputTelefono" type="tel" class="form-control input-border-bottom" name="telefono" value="<?php echo $telefono; ?>" required>
+									<label for="inputTelefono" class="placeholder">Número de Teléfono</label>
+								</div>
                                 <div class="form-group form-floating-label">
 									<select class="form-control input-border-bottom" id="selectFloatingLabel" name="rol" required>
 										<option value="" <?php if ($rol == '') echo 'selected'; ?>>&nbsp;</option>

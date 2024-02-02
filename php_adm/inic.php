@@ -22,7 +22,7 @@ if ($result1) {
     echo "Error al ejecutar la consulta: " . $conex1->error;
 }
 /* estudiante*/
-$sql = "SELECT COUNT(*) AS total_estudiantes FROM estudiante";
+$sql = "SELECT COUNT(*) AS total_estudiantes FROM alumno";
 $result2 = $conex1->query($sql);
 if ($result2) {
     $row = $result2->fetch_assoc();

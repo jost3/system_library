@@ -1,4 +1,4 @@
-<?php
+<?php include("generatB_pdf.php");
 session_start()
 ?>
 <!DOCTYPE html>
@@ -8,7 +8,6 @@ session_start()
 	<title>Hessen - Biblioteca</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../img/hessen icono.png" type="image/x-icon"/>
-
 	<!-- Fonts and icons -->
 	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
@@ -20,12 +19,10 @@ session_start()
 			}
 		});
 	</script>
-
 	<!-- CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="../css1/bootstrap.min.css">
 	<link rel="stylesheet" href="../css1/azzara.min.css">
-
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../css1/demo.css">
 </head>
@@ -37,7 +34,6 @@ session_start()
 </style>
 <body>
 	<div class="wrapper">
-		
 		<div class="main-header" >
 			<!-- Logo Header -->
 			<div class="logo-header">
@@ -58,10 +54,8 @@ session_start()
 				</div>
 			</div>
 			<!-- End Logo Header -->
-
 			<!-- Navbar Header -->
-			<nav class="navbar navbar-header navbar-expand-lg">
-				
+			<nav class="navbar navbar-header navbar-expand-lg">			
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 						<form class="navbar-left navbar-form nav-search mr-md-3" method="get">
@@ -81,7 +75,6 @@ session_start()
 								<i class="fa fa-search"></i>
 							</a>
 						</li>
-						
 						<li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-bell"></i>
@@ -151,12 +144,10 @@ session_start()
 									<?php endif; ?>	
 								</div>
 							</a>
-							
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
 										<div class="avatar-lg">
-											
 											<?php if (isset($_SESSION['fotoUsuario'])) : ?>
 												<?php $base64Image = base64_encode($_SESSION['fotoUsuario']); ?>
 												<img src="data:image/jpeg;base64,<?php echo $base64Image; ?>" alt="imagen de perfil" class="avatar-img rounded">
@@ -179,16 +170,13 @@ session_start()
 								</li>
 							</ul>
 						</li>
-						
 					</ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
 		</div>
-
 		<!-- Sidebar -->
-		<div class="sidebar">
-			
+		<div class="sidebar">	
 			<div class="sidebar-background"></div>
 			<div class="sidebar-wrapper scrollbar-inner">
 				<div class="sidebar-content">
@@ -239,8 +227,7 @@ session_start()
 							<a href="book.php">
 								<i class="fas fa-layer-group"></i>
 								<p>Libro</p>
-							</a>
-							
+							</a>	
 						</li>
 						<li class="nav-item">
 							<a  href="loan.php">
@@ -293,8 +280,7 @@ session_start()
 							</li>
 							<li class="nav-item">
 								<a href="../php_adm/book.php">Libro</a>
-							</li>
-							
+							</li>	
 						</ul>
 					</div>
 					<?php
@@ -329,7 +315,7 @@ session_start()
 													</span>
 													Nuevo
 												</a>
-												<a href="#" class="btn btn-info btn-border btn-round btn-sm">
+												<a href="?print_pdf" class="btn btn-info btn-border btn-round btn-sm ">
 													<span class="btn-label">
 														<i class="fa fa-print"></i>
 													</span>
@@ -403,7 +389,6 @@ session_start()
 		<!-- End Custom template -->
 	</div>
 </div>
-<!--   Core JS Files   -->
 
 <!-- jQuery desde CDN -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

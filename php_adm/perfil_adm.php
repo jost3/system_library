@@ -288,32 +288,29 @@ session_start()
 										<div class="col-md-6">
 											<div class="form-group form-group-default">
 												<label>Usuario</label>
-												<input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo $_SESSION['usuario']; ?>">
+												<input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo $_SESSION['usuario']; ?>" readonly>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-group-default">
 												<label>Correo</label>
-												<input type="email" class="form-control" name="email" placeholder="Name" value="<?php echo $_SESSION['correoUsuario']; ?>">
+												<input type="email" class="form-control" name="email" placeholder="Name" value="<?php echo $_SESSION['correoUsuario']; ?>"readonly>
 											</div>
 										</div>
 									</div>
 									<div class="row mt-3">
 										<div class="col-md-4">
 											<div class="form-group form-group-default">
-												<label>Phone</label>
-												<input type="text" class="form-control" value="+62008765678" name="phone" placeholder="Phone">
+												<label>Telefono</label>
+												<input type="tel" class="form-control"  name="phone" placeholder="Phone" value="<?php echo $_SESSION['telfUsuario']; ?>"readonly>
 											</div>
 										</div>
 									</div>
-									
-									
-									<div class="text-right mt-3 mb-3">
-										<button class="btn btn-success">Save</button>
-									</div>
+								
 								</div>
 							</div>
 						</div>
+					
 						<div class="col-md-4">
 							<div class="card card-profile card-secondary">
                             <div class="card-header" style="background-image: url('../img/inicio.jpeg'); background-size: cover;">

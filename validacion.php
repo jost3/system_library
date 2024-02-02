@@ -12,7 +12,7 @@ $usuario = $conex->real_escape_string($_POST['usuario']);
 $contraseña = $_POST['password'];
 
 // Consulta SQL para verificar el inicio de sesión
-$sql = "SELECT id, usuario, correo, rol, password, foto FROM usuarios WHERE usuario='$usuario'";
+$sql = "SELECT id, usuario, correo, rol, telefono, password, foto FROM usuarios WHERE usuario='$usuario'";
 $result = $conex->query($sql);
 
 if ($result) {
@@ -26,6 +26,7 @@ if ($result) {
             $_SESSION['idUsuario'] = $row['id'];
             $_SESSION['usuario'] = $row['usuario'];
             $_SESSION['correoUsuario'] = $row['correo'];
+            $_SESSION['telfUsuario'] = $row['telefono'];
             $_SESSION['fotoUsuario'] = $row['foto'];
             $_SESSION['rolUsuario'] = $row['rol'];
 
