@@ -2,6 +2,11 @@
 <?php
 include("../bd/conex_prest.php");
 session_start();
+if (!isset($_SESSION['usuario'])) {
+    // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
+    header('Location: ../index.html');
+    exit();
+}
 
 /* libro*/
 $sql = "SELECT COUNT(*) AS total_libros FROM libro";

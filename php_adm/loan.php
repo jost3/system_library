@@ -1,5 +1,10 @@
 <?php include("generateP_pdf.php");
-session_start()
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
+    header('Location: ../index.html');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

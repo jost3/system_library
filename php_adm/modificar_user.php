@@ -1,6 +1,11 @@
 <?php
 session_start();
 include('../bd/mostrar_dt.php');
+if (!isset($_SESSION['usuario'])) {
+    // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
+    header('Location: ../index.html');
+    exit();
+}
 
 if (isset($_GET['id'])) {
     $idUsuario = $_GET['id'];
