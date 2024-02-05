@@ -13,27 +13,24 @@ $usuario1 = $_POST['user'];
 $contraseña1 = $_POST['contra1'];
 
 // Consulta SQL para verificar el inicio de sesión
-$sql = "SELECT * FROM alumno WHERE dni='$usuario1' AND contra='$contraseña1'";
+$sql = "SELECT contra FROM alumno WHERE dni='$usuario1'";
 $result = $conex->query($sql);
 
-if ($result->num_rows > 0) {
-    // Inicio de sesión exitoso
-    $_SESSION['user'] = $usuario1;
-    // Establece las cabeceras para evitar el almacenamiento en caché
-    header("Cache-Control: no-cache, no-store, must-revalidate");
-    header("Pragma: no-cache");
-    header("Expires: 0");
-    
-    header("Location: php_stud/inicio_stud.php"); // Redirige al archivo inic.php
-} else {
-    // Inicio de sesión fallido
-    header("Cache-Control: no-cache, no-store, must-revalidate");
-    header("Pragma: no-cache");
-    header("Expires: 0");
+if ($result) {
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $hashedPassword = $row['contra'];
 
-    header("Location: index.html?alerta=incorrecto");
+        // Verificar la contraseña utilizando password_verify
+        if (password_verify($contraseña1, $hashedPassword)) {
+            // Inicio de sesión exitoso
+            // Redirige al archivo inic.php
+            header("Location: php_adm/inic.php");
+            exit();
+        }
+    }
 }
-
+header("Location: index.html?alerta=incorrecto");
 // Cerrar la conexión
 $conex->close();
 ?>

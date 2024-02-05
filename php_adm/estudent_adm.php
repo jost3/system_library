@@ -8,38 +8,21 @@ session_start();
 	<title>Estudiantes</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../img/hessen icono.png" type="image/x-icon"/>
-
-	<!-- Fonts and icons -->
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-
+	
 	<!-- CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="../css1/bootstrap.min.css">
 	<link rel="stylesheet" href="../css1/azzara.min.css">
-
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="../css1/demo.css">
 </head>
 <style>
   .logo img {
-        max-width: 70%; /* Reduzca el ancho máximo de la imagen al contenedor al 40% */
-        height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+        max-width: 70%; 
+        height: auto; 
     }
 </style>
 <body>
 	<div class="wrapper">
-		<!--
-			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
-		-->
+		
 		<div class="main-header" >
 			<!-- Logo Header -->
 			<div class="logo-header">
@@ -282,7 +265,7 @@ session_start();
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Estudiantes registrados</h4>
+						<h4 class="page-title">Estudiantes actuales</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -305,7 +288,7 @@ session_start();
 					$search = isset($_GET['search']) ? $_GET['search'] : '';
 					if ($search) {
 						$alumnos = "SELECT * FROM alumno WHERE 
-								titulo1 LIKE '%$search%'";
+								Nombre LIKE '%$search%'";
 					
 					} else {
 						$alumnos = "SELECT * FROM alumno";
@@ -332,12 +315,6 @@ session_start();
 													</span>
 													Nuevo
 												</a>
-												<a href="#" class="btn btn-info btn-border btn-round btn-sm">
-													<span class="btn-label">
-														<i class="fa fa-print"></i>
-													</span>
-													Imprimir
-												</a>
 											</div>
 									</div>
 								</div>
@@ -349,7 +326,6 @@ session_start();
 													<th>ID</th>
 													<th>DNI</th>
 													<th>NOMBRE</th>
-													<th>CONTRASEÑA</th>
 													<th>CARRERA</th>
 													<th>ACCION</th>
 												</tr>
@@ -359,7 +335,6 @@ session_start();
 													<th>ID</th>
                                                     <th>DNI</th>
 													<th>NOMBRE</th>
-													<th>CONTRASEÑA</th>
 													<th>CARRERA</th>
 													<th>ACCION</th>
 												</tr>
@@ -373,7 +348,6 @@ session_start();
 													<td><?php  echo $row["id"];?></td>
 													<td><?php  echo $row["dni"];?></td>
 													<td><?php  echo $row["Nombre"];?></td>
-													<td><?php  echo $row["contra"];?></td>
 													<td><?php  echo $row["carrera"];?></td>
 													<td>
 													<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-alumnos" data-id="<?php echo $row["id"]; ?>">

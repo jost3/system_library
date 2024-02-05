@@ -5,7 +5,6 @@ include('../bd/conex_prest.php');
 if (isset($_GET['id'])) {
     $idPrestamo = $_GET['id'];
 
-    // Realiza una consulta para obtener la información del préstamo
     $consultaPrestamo = "SELECT * FROM prestamo WHERE id_prest = $idPrestamo";
     $resultadoConsulta = mysqli_query($conex1, $consultaPrestamo);
 
@@ -13,7 +12,6 @@ if (isset($_GET['id'])) {
         // Obtén los datos del préstamo
         $datosPrestamo = mysqli_fetch_assoc($resultadoConsulta);
         
-        // Puedes utilizar $datosPrestamo para prellenar los campos del formulario de modificación
         $titulo=$datosPrestamo ['titulo1'];
         $autor= $datosPrestamo ['autor1'];
         $descripcion= $datosPrestamo ['descripcion1'];
@@ -22,18 +20,15 @@ if (isset($_GET['id'])) {
         $dni_est= $datosPrestamo ['dni_est'];
         $nombre= $datosPrestamo ['nombre'];
 
-        // ...
-
-        // Luego, puedes utilizar estos valores en tu formulario HTML
     } else {
         $_SESSION['mensaje'] = "Error al obtener información del préstamo";
         header('Location: loan.php?alerta=error');
-        exit(); // Asegúrate de detener la ejecución del script después de una redirección
+        exit(); 
     }
 } else {
     $_SESSION['mensaje'] = "ID de préstamo no proporcionado";
     header('Location: loan.php?alerta=error');
-    exit(); // Asegúrate de detener la ejecución del script después de una redirección
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -43,31 +38,15 @@ if (isset($_GET['id'])) {
 	<title>Hessen - Biblioteca</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../img/hessen icono.png" type="image/x-icon"/>
-
-	<!-- Fonts and icons -->
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-
 	<!-- CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="../css1/bootstrap.min.css">
 	<link rel="stylesheet" href="../css1/azzara.min.css">
-
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="../css1/demo.css">
 </head>
 <style>
   .logo img {
-        max-width: 70%; /* Reduzca el ancho máximo de la imagen al contenedor al 40% */
-        height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+        max-width: 70%;
+        height: auto; 
     }
 </style>
 <body>

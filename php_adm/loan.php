@@ -1,5 +1,4 @@
-
-<?php
+<?php include("generateP_pdf.php");
 session_start()
 ?>
 <!DOCTYPE html>
@@ -9,31 +8,17 @@ session_start()
 	<title>Hessen - Biblioteca</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../img/hessen icono.png" type="image/x-icon"/>
-
-	<!-- Fonts and icons -->
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-
 	<!-- CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="../css1/bootstrap.min.css">
 	<link rel="stylesheet" href="../css1/azzara.min.css">
 
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="../css1/demo.css">
+	
 </head>
 <style>
   .logo img {
-        max-width: 70%; /* Reduzca el ancho máximo de la imagen al contenedor al 40% */
-        height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+        max-width: 70%; 
+        height: auto; 
     }
 </style>
 <body>
@@ -332,7 +317,7 @@ session_start()
 													</span>
 													Nuevo
 												</a>
-												<a href="#" class="btn btn-info btn-border btn-round btn-sm">
+												<a href="?print_pdf1" class="btn btn-info btn-border btn-round btn-sm">
 													<span class="btn-label">
 														<i class="fa fa-print"></i>
 													</span>

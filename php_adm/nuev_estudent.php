@@ -3,14 +3,15 @@ include('../bd/mostrar_dt.php');
 
 if(isset($_POST['insertar'])){
     // Recibe los datos del formulario
-    $id_alumno = $_POST['id'];
-    $nombres = $_POST['Nombre'];
-    $dni = $_POST['dni'];
-    $contra = $_POST['contra'];
-    $carrera = $_POST['carrera'];
+    $id_alumno =mysqli_real_escape_string ($conex,$_POST['id']);
+    $nombres =mysqli_real_escape_string ($conex,$_POST['Nombre']);
+    $dni = mysqli_real_escape_string  ($conex,$_POST['dni']);
+    $contra = mysqli_real_escape_string ($conex,$_POST['contra']);
+    $carrera = mysqli_real_escape_string ($conex,$_POST['carrera']);
 
+    $hashed_password = password_hash($contra, PASSWORD_DEFAULT);
     // Realiza la inserción en la tabla correspondiente
-    $insertarDatos1 = "INSERT INTO alumno (id, Nombre, dni, contra, carrera) VALUES ('$id_alumno', '$nombres', '$dni', '$contra', '$carrera')";
+    $insertarDatos1 = "INSERT INTO alumno (id, Nombre, dni, contra, carrera) VALUES ('$id_alumno', '$nombres', '$dni', '$hashed_password', '$carrera')";
     $ejecutarInsertar1 = mysqli_query($conex, $insertarDatos1);
 
     if ($ejecutarInsertar1) {
