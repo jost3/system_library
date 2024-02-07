@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('../bd/mostrar_dt.php');
 
 if(isset($_POST['insertar'])){
@@ -15,12 +16,15 @@ if(isset($_POST['insertar'])){
     $ejecutarInsertar1 = mysqli_query($conex, $insertarDatos1);
 
     if ($ejecutarInsertar1) {
-        // Redirige a estudent_adm.php
-        header('Location: estudent_adm.php?alerta=exito');
+        $_SESSION['mensaje'] = "Alumno registrado correctamente";
+        $_SESSION['tipo_alerta'] = "success";
+        header('Location: estudent_adm.php');
         exit();
     } else {
         // Redirige con un mensaje de error
-        header('Location: new_estudent.php?alerta=error');
+        $_SESSION['mensaje'] = "Error al registrar alumno";
+        $_SESSION['tipo_alerta'] = "error";
+        header('Location: new_estudent.php');
         exit();
     }
 }
