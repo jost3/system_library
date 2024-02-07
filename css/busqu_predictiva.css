@@ -1,0 +1,60 @@
+#sugerencias {
+    position: absolute;
+    width: calc(100% - 2px);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.sugerencia {
+    width: 100%; /* Mismo ancho para todos los botones */
+    border: none; /* Eliminar borde */
+    background: none; /* Fondo transparente */
+    text-align: left; /* Alinear texto a la izquierda */
+    padding: 8px 12px; /* Espaciado interno */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sugerencia:hover {
+    background-color: #f0f0f0; /* Cambiar color de fondo al pasar el ratón */
+}
+
+.sugerencia:last-child {
+    border-bottom: none; /* Eliminar el borde inferior del último elemento */
+}
+#sugerencias_autores {
+    position: absolute;
+    width: calc(100% - 2px);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Ajustar z-index para que esté por debajo de la lista de títulos */
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0;
+    display: none;
+}
+
+#sugerencias_autores .sugerencia {
+    width: 100%;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sugerencias_autores .sugerencia:hover {
+    background-color: #f0f0f0;
+}
+
+#sugerencias_autores .sugerencia:last-child {
+    border-bottom: none;
+}

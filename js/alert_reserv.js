@@ -1,3 +1,4 @@
+// Función para mostrar alerta según los parámetros de la URL
 function mostrarAlerta() {
     var parametro = new URLSearchParams(window.location.search);
     var alerta = parametro.get("alerta");
@@ -17,6 +18,7 @@ function mostrarAlerta() {
     }
 }
 
+// Función para cerrar la alerta
 function cerrarAlerta(id) {
     var alerta = document.getElementById(id);
     var overlay1 = document.getElementById("overlay1");
@@ -24,13 +26,13 @@ function cerrarAlerta(id) {
     overlay1.style.display = "none";
 }
 
-// Call the mostrarAlerta function to display alerts only when necessary
+// Llamada a la función para mostrar alertas cuando sea necesario
 mostrarAlerta();
 
-// Listen for the back button click event
+// Escuchar el evento de clic en el botón de retroceso del navegador
 window.onpopstate = function(event) {
     if (document.referrer.indexOf("reserva.php") !== -1) {
-        // Redirect to the desired page
+        // Redirigir a la página deseada
         window.location.href = "reserva.php";
     }
 };
