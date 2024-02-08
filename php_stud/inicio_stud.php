@@ -43,7 +43,8 @@ if (!isset($_SESSION['student'])) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php_stud/fisico_stud.php">LIBROS FISICOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="fisico_stud.php">LIBROS FISICOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reserva.php">RESERVAR</a></li>
                         
                     </ul>
                     <form class="d-flex">

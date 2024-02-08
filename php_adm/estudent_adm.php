@@ -464,7 +464,20 @@ $(document).ready(function () {
 
 
 </script>
-<!-- Coloca estas referencias al final del body -->
+<script>
+        <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
+                title: '<?php echo $_SESSION['mensaje']; ?>',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        <?php
+            unset($_SESSION['mensaje']);
+            unset($_SESSION['tipo_alerta']);
+        endif;
+        ?>
+</script>
 <script src="../js/adm/ready.js"></script>
 <script src="../js/adm/table_function.js"></script>
 

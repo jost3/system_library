@@ -15,7 +15,6 @@ if (isset($_GET['id'])) {
     $resultadoConsulta3 = mysqli_query($conex, $consultaAlumno);
 
     if ($resultadoConsulta3) {
-        // Obtén los datos del préstamo
         $datosAlum1 = mysqli_fetch_assoc($resultadoConsulta3);
         $dni= $datosAlum1 ['dni'];
         $nombre= $datosAlum1 ['Nombre'];
@@ -337,11 +336,6 @@ if (isset($_GET['id'])) {
 									<input id="inputFloatingLabeldni" type="text" class="form-control input-border-bottom" name="dni" value="<?php echo $dni; ?>" required>
 									<label for="inputFloatingLabeldni" class="placeholder">dni</label>
 								</div>
-
-								<div class="form-group form-floating-label">
-									<input id="inputFloatingLabelcontra" type="text" class="form-control input-border-bottom" name="contra" value="<?php echo $contra; ?>" required>
-									<label for="inputFloatingLabelcontra" class="placeholder">Contraseña</label>
-								</div>
 								<div class="form-group form-floating-label">
 									<select class="form-control input-border-bottom" id="selectFloatingLabel"  name="carrera" required>
 										<option value="" <?php if ($carrera == '') echo 'selected'; ?>>&nbsp;</option>
@@ -352,6 +346,7 @@ if (isset($_GET['id'])) {
 								</div>
 								<div class="card-action text-center">
 									<button class="btn btn-primary" name="insertar">Registrar</button>
+									<button class="btn btn-warning" name="resetear_contra">Restablecer Contraseña</button>
 								</div>
 							</div>
 
@@ -362,11 +357,8 @@ if (isset($_GET['id'])) {
 			    </div>
 			</div>
 		</div>
-        
-		<!-- End Custom template -->
 	</div>
 </div>
-<!--   Core JS Files   -->
 
 <!-- jQuery desde CDN -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
