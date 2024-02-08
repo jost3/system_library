@@ -47,9 +47,8 @@ $guarda= $conex1->query($consul_stud);
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="inicio_stud.php">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="fisico_stud.php">LIBROS FISICOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reserva.php">RESERVAR</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../php_stud/reserva.php">RESERVAR</a></li>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar" name="busc1">
