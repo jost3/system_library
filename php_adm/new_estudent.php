@@ -324,6 +324,14 @@ if (!isset($_SESSION['usuario'])) {
                                     </select>
                                     <label for="selectFloatingLabel" class="placeholder">Carrera</label>
                                 </div>
+								<div class="form-group form-floating-label">
+                                    <input id="inputFloatingLabeldni" type="tel" class="form-control input-border-bottom" name="telefono" required>
+                                    <label for="inputFloatingLabeldni" class="placeholder">Telefono</label>
+                                </div>
+								<div class="form-group form-floating-label">
+                                    <input id="inputFloatingLabeldni" type="email" class="form-control input-border-bottom" name="correo" required>
+                                    <label for="inputFloatingLabeldni" class="placeholder">Correo</label>
+                                </div>
                                 <div class="card-action text-center">
                                     <button class="btn btn-primary" name="insertar">Registrar</button>
                                 </div>

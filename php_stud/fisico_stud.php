@@ -15,10 +15,6 @@ include '../bd/conex_prest.php';
 $consul_stud= "SELECT * FROM libro";
 $guarda= $conex1->query($consul_stud);
 ?>
-    <?php if (isset($_GET['busc1'])) { ?>
-        <a class="restablecimiento" href="?"><button class="oculto">Mostrar todos</button></a>
-    <?php } ?>
-
     <?php
         $busc1 = isset($_GET['busc1']) ? $_GET['busc1'] : '';
         if ($busc1) {
@@ -36,9 +32,33 @@ $guarda= $conex1->query($consul_stud);
     <title>Hessen - Libros Fisicos</title>
     <link rel="icon" href="../img/hessen icono.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/princ_stud.css">
-    <link rel="stylesheet" href="../css/fisico.css">
+    <link rel="stylesheet" href="../css1/azzara.min.css">
+    
+   
 </head>
 <style>
+      #tm a {
+        font-size: 15px; /* Puedes ajustar el valor según tus preferencias */
+        }
+       
+    #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* Ajusta el valor de z-index según tus necesidades */
+
+        }
+        #navbar .form-control {
+        width: 220px; /* Ajusta el ancho según tus preferencias */
+        }
+        .filtro{
+            display: none;
+            }
+        .navbar-scroll {
+        background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta el último valor (0.9) para controlar la opacidad */
+        transition: background-color 0.3s ease; /* Agrega una transición suave */
+        }
 </style>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -46,9 +66,11 @@ $guarda= $conex1->query($consul_stud);
                 <a class="navbar-brand" href="inicio_stud.php"><img src="../img/hessen2.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php_stud/reserva.php">RESERVAR</a></li>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="tm">
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="inicio_stud.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="fisico_stud.php">Libros fisicos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reserva.php">Reservar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="perfil_student.php">Perfil</a></li>
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar" name="busc1">
@@ -57,31 +79,83 @@ $guarda= $conex1->query($consul_stud);
                 </div>
             </div>
         </nav>
-    <div class="conatiner">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class="table-responsive table-hover" id="TablaConsulta">
-                <table class="table">
-                    <thead class="text-muted">
-                        <th class="text-center" id="cmb">Libro</th>
-                        <th class="text-center" id="cmb">Autor</th>
-                        <th class="text-center" id="cmb">Categoria</th>
-                    </thead>
-                    <tbody>
-                    <?php  
-                        $resultado= mysqli_query($conex1, $consulta);
-                        while($row=mysqli_fetch_assoc($resultado)) {
-                        ?>
-                        <tr>
-                            <td> <?php echo $row['titulo']; ?></td>
-                            <td> <?php echo $row['autor']; ?></td>
-                            <td> <?php echo $row['descripcion']; ?></td>
-                        </tr>
-                        <?php }?>
-                    </tbody>
-                </table>
+        <!-- Header-->
+        <header class="colr py-5 mt-5" >
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">LIBROS ACTUALES</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Explora entre difrentes secciones y temas que tenemos para ti </p>
+                </div>
             </div>
-        </div>
-    </div>
+        </header>
+        <div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-head-row">
+							<h4 class="card-title">Libros</h4>
+								<div class="card-tools">
+									<?php if (isset($_GET['busc1'])) { ?>
+										<a href="?" class=" btn btn-info btn-border btn-round btn-sm mr-2">
+											<span class="btn-label">
+												<i class="fa fa-pencil"></i>
+											</span>
+											Mostrar
+										</a>
+										<?php } ?>
+									</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+							<table id="basic-datatables" class="display table table-striped table-hover">
+								<thead>
+										<tr>
+											
+											<th>TITULO</th>
+											<th>AUTOR</th>
+											<th>EDICION</th>
+											<th>SECCION</th>
+										
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<th>TITULO</th>
+											<th>AUTOR</th>
+											<th>EDICION</th>
+											<th>SECCION</th>
+										</tr>
+									</tfoot>
+									<tbody>
+									<?php  
+										$resultado= mysqli_query($conex1, $consulta);
+										while($row=mysqli_fetch_assoc($resultado)) {
+									?>
+										<tr>
+											<td><?php  echo $row["titulo"];?></td>
+											<td><?php  echo $row["autor"];?></td>
+											<td><?php  echo $row["edicion"];?></td>
+											<td><?php  echo $row["descripcion"];?></td>
+										</tr>
+									<?php } ?>
+									</tbody> 
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+            
+<!-- jQuery desde CDN -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Datatables -->
+<script src="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/adm/ready.js"></script>
+<script src="../js/adm/table_function.js"></script>
+<script src="../js/deslis.js"></script>
+
 </body>
 </html>

@@ -332,6 +332,8 @@ if (!isset($_SESSION['usuario'])) {
 													<th>DNI</th>
 													<th>NOMBRE</th>
 													<th>CARRERA</th>
+													<th>TELEFONO</th>
+													<th>CORREO</th>
 													<th>ACCION</th>
 												</tr>
 											</thead>
@@ -341,6 +343,8 @@ if (!isset($_SESSION['usuario'])) {
                                                     <th>DNI</th>
 													<th>NOMBRE</th>
 													<th>CARRERA</th>
+													<th>TELEFONO</th>
+													<th>CORREO</th>
 													<th>ACCION</th>
 												</tr>
 											</tfoot>
@@ -354,6 +358,8 @@ if (!isset($_SESSION['usuario'])) {
 													<td><?php  echo $row["dni"];?></td>
 													<td><?php  echo $row["Nombre"];?></td>
 													<td><?php  echo $row["carrera"];?></td>
+													<td><?php  echo $row["telefono"];?></td>
+													<td><?php  echo $row["correo"];?></td>
 													<td>
 													<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-alumnos" data-id="<?php echo $row["id"]; ?>">
 														<span class="btn-label">

@@ -20,6 +20,8 @@ if (isset($_GET['id'])) {
         $nombre= $datosAlum1 ['Nombre'];
         $contra= $datosAlum1 ['contra'];
         $carrera= $datosAlum1 ['carrera'];
+		$telefono= $datosAlum1 ['telefono'];
+		$correo= $datosAlum1 ['correo'];
 
     
     } else {
@@ -344,6 +346,14 @@ if (isset($_GET['id'])) {
 									</select>
 									<label for="selectFloatingLabel" class="placeholder">Carrera</label>
 								</div>
+								<div class="form-group form-floating-label">
+                                    <input id="inputFloatingLabeldni" type="tel" class="form-control input-border-bottom" name="telefono" value="<?php echo $telefono; ?>" required>
+                                    <label for="inputFloatingLabeldni" class="placeholder">Telefono</label>
+                                </div>
+								<div class="form-group form-floating-label">
+                                    <input id="inputFloatingLabeldni" type="email" class="form-control input-border-bottom" name="correo" value="<?php echo $correo; ?>" required>
+                                    <label for="inputFloatingLabeldni" class="placeholder">Correo</label>
+                                </div>
 								<div class="card-action text-center">
 									<button class="btn btn-primary" name="insertar">Registrar</button>
 									<button class="btn btn-warning" name="resetear_contra">Restablecer Contraseña</button>

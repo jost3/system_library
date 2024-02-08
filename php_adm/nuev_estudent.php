@@ -9,10 +9,12 @@ if(isset($_POST['insertar'])){
     $dni = mysqli_real_escape_string  ($conex,$_POST['dni']);
     $contra = mysqli_real_escape_string ($conex,$_POST['contra']);
     $carrera = mysqli_real_escape_string ($conex,$_POST['carrera']);
+    $telefono = mysqli_real_escape_string ($conex,$_POST['telefono']);
+    $correo = mysqli_real_escape_string ($conex,$_POST['correo']);
 
     $hashed_password = password_hash($contra, PASSWORD_DEFAULT);
     // Realiza la inserción en la tabla correspondiente
-    $insertarDatos1 = "INSERT INTO alumno (id, Nombre, dni, contra, carrera) VALUES ('$id_alumno', '$nombres', '$dni', '$hashed_password', '$carrera')";
+    $insertarDatos1 = "INSERT INTO alumno (id, Nombre, dni, contra, carrera, telefono, correo) VALUES ('$id_alumno', '$nombres', '$dni', '$hashed_password', '$carrera','$telefono','$correo')";
     $ejecutarInsertar1 = mysqli_query($conex, $insertarDatos1);
 
     if ($ejecutarInsertar1) {

@@ -103,6 +103,10 @@
 .card-img-top{
   height: 17vh;
 }
+.colr{
+  background-color: #0a51bd;
+}
+
 /*leer mas*/
 .card-footer a.btn.btn-outline-dark:hover {
   background-color: rgb(9, 73, 170); /* Cambiar el color a azul al pasar el ratón */
@@ -169,17 +173,7 @@
   color: white;/*color del texto*/
 }
 /*barra de busqueda*/
-#navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Ajusta el valor de z-index según tus necesidades */
 
-}
-#navbar .form-control {
-  width: 220px; /* Ajusta el ancho según tus preferencias */
-}
 /*tabla  centrado*/
 tbody {
   text-align: center;
@@ -6809,7 +6803,6 @@ textarea.form-control-lg {
   min-height: 1em;
   vertical-align: middle;
   cursor: wait;
-  background-color: currentcolor;
   opacity: 0.5;
 }
 .placeholder.btn::before {

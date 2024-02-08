@@ -4,14 +4,16 @@ include('../bd/mostrar_dt.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifica si se han enviado los datos del formulario
-    if (isset($_POST['id'], $_POST['nombre'], $_POST['dni'], $_POST['carrera'])) {
+    if (isset($_POST['id'], $_POST['nombre'], $_POST['dni'], $_POST['carrera'],$_POST['telefono'],$_POST['correo'])) {
         $idAlumno = $_POST['id'];
         $nombres = $_POST['nombre'];
         $dni = $_POST['dni'];
         $carrera = $_POST['carrera'];
+        $telefono = $_POST['telefono'];
+        $correo = $_POST['correo'];
     
         // Realiza la actualización en la base de datos
-        $actualizarAlumno = "UPDATE alumno SET nombre = '$nombres', dni = '$dni', carrera = '$carrera' WHERE id = $idAlumno";
+        $actualizarAlumno = "UPDATE alumno SET nombre = '$nombres', dni = '$dni', carrera = '$carrera', telefono = '$telefono', correo = '$correo' WHERE id = $idAlumno";
         $ejecutarActualizarAlumno = mysqli_query($conex, $actualizarAlumno);
         
         // Verifica si se ha presionado el botón de restablecer contraseña

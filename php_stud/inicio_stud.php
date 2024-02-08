@@ -20,6 +20,8 @@ if (!isset($_SESSION['student'])) {
         <!-- Favicon-->
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="../css/princ_stud.css">
+        <link rel="stylesheet" href="../css1/azzara.min.css">
+
     </head>
     <style>
         .filtro{
@@ -29,9 +31,21 @@ if (!isset($_SESSION['student'])) {
         background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta el último valor (0.9) para controlar la opacidad */
         transition: background-color 0.3s ease; /* Agrega una transición suave */
         }
-        body{
-            background-color: rgba(151, 148, 148, 0.602);
+        #tm a {
+        font-size: 15px; /* Puedes ajustar el valor según tus preferencias */
         }
+        #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* Ajusta el valor de z-index según tus necesidades */
+
+        }
+        #navbar .form-control {
+        width: 220px; /* Ajusta el ancho según tus preferencias */
+        }
+       
     </style>
     <body>
 
@@ -41,10 +55,11 @@ if (!isset($_SESSION['student'])) {
                 <a class="navbar-brand"><img src="../img/hessen2.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="fisico_stud.php">LIBROS FISICOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reserva.php">RESERVAR</a></li>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="tm">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="inicio_stud.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="fisico_stud.php">Libros fisicos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reserva.php">Reservar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="perfil_student.php">Perfil</a></li>
                         
                     </ul>
                     <form class="d-flex">
@@ -55,7 +70,7 @@ if (!isset($_SESSION['student'])) {
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5 mt-5">
+        <header class="colr py-5 mt-5" >
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">BIBLIOTECA VIRTUAL HESSEN</h1>
@@ -166,7 +181,7 @@ if (!isset($_SESSION['student'])) {
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class=" p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="https://drive.google.com/file/d/1Wxvzv6Wi9rYBnYxjnoeqGtJVxHEv9CPk/preview">Leer Ahora</a></div>
                             </div>
                         </div>
@@ -954,7 +969,7 @@ if (!isset($_SESSION['student'])) {
         <div class="spacer"></div>
         <!-- Footer-->
         <footer class=" bg-dark mt-5" >
-            <div class="container"><p class="m-0 text-center text-white">By Josue Cotera</p></div>
+
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
