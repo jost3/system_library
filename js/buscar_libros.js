@@ -36,3 +36,29 @@ function seleccionarSugerencia(sugerencia) {
     document.getElementById('sugerencias').innerHTML = '';
 }
 
+// Variable para almacenar el temporizador del debouncing
+var timeoutId;
+
+// Función para buscar libros con debouncing
+function buscarLibros() {
+    // Limpiar el temporizador existente (si existe)
+    clearTimeout(timeoutId);
+
+    // Obtener el valor del campo de búsqueda
+    var query = document.getElementById('titulo1').value;
+
+    // Establecer un temporizador para ejecutar la búsqueda después de un breve retraso (por ejemplo, 300 milisegundos)
+    timeoutId = setTimeout(function() {
+        // Realizar la búsqueda solo después del tiempo de espera
+        $.ajax({
+            url: '../php_stud/buscar_libros.php',
+            method: 'POST',
+            data: { query: query },
+            success: function(data) {
+                // Mostrar los resultados de la búsqueda en el contenedor de sugerencias
+                $('#sugerencias').html(data);
+                $('#sugerencias').show();
+            }
+        });
+    }, 300); // Tiempo de espera en milisegundos
+}

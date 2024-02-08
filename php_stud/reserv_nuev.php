@@ -4,19 +4,19 @@ session_start();
 
 if(isset($_POST['insertar'])){
     $titulo1 = $_POST['titulo1'];
-    $autor1 = $_POST['autor1'];
+    $descripcion1 = $_POST['descripcion1']; // Cambiado de autor a descripcion
     $dni_est = $_POST['dni_est'];
+    
+    // Verificar si la descripcion está asociada con el título del libro en la base de datos
+    $consultaDescripcionTitulo = "SELECT * FROM libro WHERE titulo = '$titulo1' AND descripcion = '$descripcion1'";    
+    $resultadoDescripcionTitulo = mysqli_query($conex, $consultaDescripcionTitulo);
 
-    // Verificar si el autor está asociado con el título del libro en la base de datos
-    $consultaAutorTitulo = "SELECT * FROM libro WHERE titulo = '$titulo1' AND autor = '$autor1'";
-    $resultadoAutorTitulo = mysqli_query($conex, $consultaAutorTitulo);
-
-    if(mysqli_num_rows($resultadoAutorTitulo) > 0){
-        // Autor asociado con el título del libro, proceder con el préstamo
+    if(mysqli_num_rows($resultadoDescripcionTitulo) > 0){
+        // Descripcion asociada con el título del libro, proceder con el préstamo
 
         // Obtener descripción del libro
-        $filaLibro = mysqli_fetch_assoc($resultadoAutorTitulo);
-        $descripcion1 = $filaLibro['descripcion'];
+        $filaLibro = mysqli_fetch_assoc($resultadoDescripcionTitulo);
+        $descripcion_libro = $filaLibro['descripcion'];
 
         // Obtener nombre del estudiante
         $consultaAlumno = "SELECT nombre FROM alumno WHERE dni = '$dni_est'";
@@ -33,7 +33,7 @@ if(isset($_POST['insertar'])){
 
             // Insertar los datos en la tabla de préstamo con estado "pendiente"
             $estado = "pendiente"; // Estado por defecto
-            $insertarDatos = "INSERT INTO prestamo (titulo1, autor1, descripcion1, estado, fecha, dni_est, nombre) VALUES ('$titulo1', '$autor1', '$descripcion1', '$estado', '$fecha', '$dni_est', '$nombre')";
+            $insertarDatos = "INSERT INTO prestamo (titulo1, descripcion1, estado, fecha, dni_est, nombre) VALUES ('$titulo1', '$descripcion1', '$estado', '$fecha', '$dni_est', '$nombre')";
             $ejecutarInsertar = mysqli_query($conex, $insertarDatos);
 
             if($ejecutarInsertar){
@@ -41,19 +41,19 @@ if(isset($_POST['insertar'])){
                 echo '<script>window.location.href = "reserva.php?alerta=exito";</script>';
                 exit();
             } else {
-                $_SESSION['mensaje'] = "Error al registrar el libro";
-                header("Location: reserv_nuev.php?alerta=error");
+                $_SESSION['mensaje'] = "Error al registrar el préstamo";
+                header("Location: reserva.php?alerta=error");
                 exit();
-            }
+            }            
         } else {
             $_SESSION['mensaje'] = "No se encontraron datos del estudiante con el DNI proporcionado";
-            header("Location: reserv_nuev.php?alerta=error");
+            header("Location: reserva.php?alerta=error");
             exit();
         }
     } else {
-        // Autor no asociado con el título del libro, no se puede proceder con el préstamo
-        $_SESSION['mensaje'] = "El autor no está asociado con el título del libro";
-        header("Location: reserv_nuev.php?alerta=error");
+        // Descripcion no asociada con el título del libro, no se puede proceder con el préstamo
+        $_SESSION['mensaje'] = "La descripcion no está asociada con el título del libro";
+        header("Location: reserva.php?alerta=error");
         exit();
     }
 }
