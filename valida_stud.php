@@ -13,7 +13,7 @@ $usuario1 = $_POST['user'];
 $contraseña1 = $_POST['contra1'];
 
 // Consulta SQL para verificar el inicio de sesión
-$sql = "SELECT Nombre, contra, correo, telefono, dni, carrera FROM alumno WHERE dni='$usuario1'";
+$sql = "SELECT id, Nombre, contra, correo, telefono, dni, carrera FROM alumno WHERE dni='$usuario1'";
 $result = $conex->query($sql);
 
 if ($result) {
@@ -24,6 +24,7 @@ if ($result) {
         // Verificar la contraseña utilizando password_verify
         if (password_verify($contraseña1, $hashedPassword)) {
             // Inicio de sesión exitoso
+            $_SESSION['idEst'] = $row['id'];
             $_SESSION['student'] = $row['Nombre'];
             $_SESSION['email'] = $row['correo'];
             $_SESSION['phone'] = $row['telefono']; 

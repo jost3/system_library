@@ -11,30 +11,50 @@ session_start()
 	<link rel="stylesheet" href="../css1/azzara.min.css">
 </head>
 <style>
+	
 	 #tm a {
         font-size: 15px; /* Puedes ajustar el valor según tus preferencias */
         }
+	    #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* Ajusta el valor de z-index según tus necesidades */
+
+        }
+        #navbar .form-control {
+        width: 220px; /* Ajusta el ancho según tus preferencias */
+        }
+        .filtro{
+            display: none;
+            }
+        .navbar-scroll {
+        background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta el último valor (0.9) para controlar la opacidad */
+        transition: background-color 0.3s ease; /* Agrega una transición suave */
+        }
+
 </style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand"><img src="../img/hessen2.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="tm">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="inicio_stud.php">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="fisico_stud.php">Libros fisicos</a></li>
-                <li class="nav-item"><a class="nav-link" href="reserva.php">Reservar</a></li>
-                <li class="nav-item"><a class="nav-link" href="perfil_student.php">Perfil</a></li>
-                        
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar">
-                <button class="btn btn-outline-primary" type="submit">Buscar</button>
-            </form>
-        </div>
-    </div>
-</nav>
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="inicio_stud.php"><img src="../img/hessen2.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="tm">
+                        <li class="nav-item"><a class="nav-link " aria-current="page" href="inicio_stud.php">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="fisico_stud.php">Libros fisicos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reserva.php">Reservar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="perfil_student.php">Perfil</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar" name="busc1">
+                        <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+    </nav>
+	<div style="margin-top: 50px;"></div>
 	<form action="perf_studUpd.php" method="post">
     <div class="main-panel">
 			<div class="content">
@@ -76,7 +96,7 @@ session_start()
 										<div class="col-md-6">
 										<div class="form-group form-group-default">
 												<label>Dni</label>
-												<input type="text" class="form-control"  name="phone" placeholder="Phone" value="<?php echo $_SESSION['dni']; ?>">
+												<input type="text" class="form-control"  name="dni" placeholder="Phone" value="<?php echo $_SESSION['dni']; ?>">
 											</div>
 										</div>
 									</div>
@@ -84,7 +104,7 @@ session_start()
 										<div class="col-md-12">
 											<div class="form-group form-group-default">
 												<label>Carrera</label>
-												<input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo $_SESSION['carrera']; ?>">
+												<input type="text" class="form-control" name="carrera" placeholder="Name" value="<?php echo $_SESSION['carrera']; ?>">
 											</div>
 										</div>
 									</div>
@@ -97,7 +117,7 @@ session_start()
 						
 						<div class="col-md-4">
 							<div class="card card-profile card-secondary">
-								<div class="card-header" style="background-image: url('../assets/img/blogpost.jpg')">
+							<div class="card-header" style="background-image: url('../img/inicio.jpeg'); background-size: cover;">
 									<div class="profile-picture">
 										<div class="avatar avatar-xl">
 											<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
@@ -124,7 +144,7 @@ session_start()
 											</a>
 										</div>
 										<div class="view-profile">
-											<a href="#" class="btn btn-secondary btn-block">Abandonar la Biblioteca</a>
+											<a href="#" class="btn btn-primary btn-block">Abandonar la Biblioteca</a>
 										</div>
 									</div>
 								</div>
@@ -136,6 +156,22 @@ session_start()
 			
 		</div>
 	</form>
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../js/deslis.js"></script>
+    <script>
+        <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
+                title: '<?php echo $_SESSION['mensaje']; ?>',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        <?php
+            unset($_SESSION['mensaje']);
+            unset($_SESSION['tipo_alerta']);
+        endif;
+        ?>
+</script>
 </body>
 </html>
