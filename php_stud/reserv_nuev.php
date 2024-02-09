@@ -2,59 +2,71 @@
 include '../bd/mostrar_dt.php';
 session_start();
 
-if(isset($_POST['insertar'])){
-    $titulo1 = $_POST['titulo1'];
-    $descripcion1 = $_POST['descripcion1']; // Cambiado de autor a descripcion
-    $dni_est = $_POST['dni_est'];
-    
-    // Verificar si la descripcion está asociada con el título del libro en la base de datos
-    $consultaDescripcionTitulo = "SELECT * FROM libro WHERE titulo = '$titulo1' AND descripcion = '$descripcion1'";    
-    $resultadoDescripcionTitulo = mysqli_query($conex, $consultaDescripcionTitulo);
+if(isset($_POST['registro'])) {
 
-    if(mysqli_num_rows($resultadoDescripcionTitulo) > 0){
-        // Descripcion asociada con el título del libro, proceder con el préstamo
+    // Sanitizar entradas y preparar consultas
+    $titulo1 = mysqli_real_escape_string($conex, $_POST['titulo1']);
+    $descripcion1 = mysqli_real_escape_string($conex, $_POST['descripcion1']);
+    $dni_est = mysqli_real_escape_string($conex, $_POST['dni_est']);
 
-        // Obtener descripción del libro
-        $filaLibro = mysqli_fetch_assoc($resultadoDescripcionTitulo);
-        $descripcion_libro = $filaLibro['descripcion'];
+    // Consulta para verificar si el libro existe en la base de datos
+    $consultaLibro = "SELECT id, descripcion FROM libro WHERE titulo = '$titulo1' AND descripcion = '$descripcion1'";
+    $resultadoLibro = mysqli_query($conex, $consultaLibro);
 
-        // Obtener nombre del estudiante
-        $consultaAlumno = "SELECT nombre FROM alumno WHERE dni = '$dni_est'";
-        $resultadoAlumno = mysqli_query($conex, $consultaAlumno);
+    if(!$resultadoLibro) {
+        // Manejar el error en la consulta SQL
+        $_SESSION['mensaje'] = "Error en la consulta de verificación del libro: " . mysqli_error($conex);
+        header("Location: reserva.php?alerta=error");
+        exit();
+    }
 
-        if(mysqli_num_rows($resultadoAlumno) > 0){
-            // Nombre de estudiante encontrado, proceder con el préstamo
+    if(mysqli_num_rows($resultadoLibro) > 0) {
+        // El libro existe, proceder con la inserción del préstamo
+        $filaLibro = mysqli_fetch_assoc($resultadoLibro);
+        $id_libro = $filaLibro['id'];
+        $descripcion_libro = $filaLibro['descripcion']; // Obtener la descripción del libro
 
-            $filaAlumno = mysqli_fetch_assoc($resultadoAlumno);
-            $nombre = $filaAlumno['nombre'];
+        // Consulta para verificar si el estudiante existe en la base de datos
+        $consultaEstudiante = "SELECT dni FROM alumno WHERE dni = '$dni_est'";
+        $resultadoEstudiante = mysqli_query($conex, $consultaEstudiante);
 
-            // Generar la fecha actual
-            $fecha = date('Y-m-d');
+        if(!$resultadoEstudiante) {
+            // Manejar el error en la consulta SQL
+            $_SESSION['mensaje'] = "Error en la consulta de verificación del estudiante: " . mysqli_error($conex);
+            header("Location: reserva.php?alerta=error");
+            exit();
+        }
 
-            // Insertar los datos en la tabla de préstamo con estado "pendiente"
-            $estado = "pendiente"; // Estado por defecto
-            $insertarDatos = "INSERT INTO prestamo (titulo1, descripcion1, estado, fecha, dni_est, nombre) VALUES ('$titulo1', '$descripcion1', '$estado', '$fecha', '$dni_est', '$nombre')";
-            $ejecutarInsertar = mysqli_query($conex, $insertarDatos);
+        if(mysqli_num_rows($resultadoEstudiante) > 0) {
+            // El estudiante existe, proceder con la inserción del préstamo
+            $fecha_prestamo = date("Y-m-d"); // Obtener la fecha actual
 
-            if($ejecutarInsertar){
-                $_SESSION['mensaje'] = "Libro registrado con éxito";
-                echo '<script>window.location.href = "reserva.php?alerta=exito";</script>';
+            // Inserción del préstamo en la tabla prestamo
+            $queryInsertPrestamo = "INSERT INTO prestamo (id_prest, titulo1, descripcion1, dni_est, fecha) VALUES ('$id_libro', '$titulo1', '$descripcion_libro', '$dni_est', '$fecha_prestamo')";
+            $resultadoInsertPrestamo = mysqli_query($conex, $queryInsertPrestamo);
+
+            if($resultadoInsertPrestamo) {
+                $_SESSION['mensaje'] = "Préstamo registrado con éxito";
+                header("Location: reserva.php?alerta=exito");
                 exit();
             } else {
-                $_SESSION['mensaje'] = "Error al registrar el préstamo";
+                $_SESSION['mensaje'] = "Error al registrar el préstamo: " . mysqli_error($conex);
                 header("Location: reserva.php?alerta=error");
                 exit();
-            }            
+            }
         } else {
-            $_SESSION['mensaje'] = "No se encontraron datos del estudiante con el DNI proporcionado";
+            $_SESSION['mensaje'] = "El estudiante no está registrado";
             header("Location: reserva.php?alerta=error");
             exit();
         }
     } else {
-        // Descripcion no asociada con el título del libro, no se puede proceder con el préstamo
-        $_SESSION['mensaje'] = "La descripcion no está asociada con el título del libro";
+        $_SESSION['mensaje'] = "El libro no está registrado";
         header("Location: reserva.php?alerta=error");
         exit();
     }
+} else {
+    // Redireccionar si no se envió el formulario correctamente
+    header("Location: reserva.php");
+    exit();
 }
 ?>

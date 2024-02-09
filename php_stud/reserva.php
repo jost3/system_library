@@ -96,15 +96,8 @@
                             <div id="sugerencias" style="display: none;"></div>
                         </div>
                         <div class="form-group form-floating-label">
-                            <select class="form-control input-border-bottom" id="selectFloatingLabel" name="descripcion1" required>
-                                <option value="">&nbsp;</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                            <label for="selectFloatingLabel" class="placeholder">Seccion</label>
+                            <input id="inputFloatingLabelDescripcion" type="text" class="form-control input-border-bottom" name="descripcion1" required autocomplete="off">
+                            <label for="inputFloatingLabelDescripcion" class="placeholder">Descripcion</label>
                         </div>
                         <div class="form-group form-floating-label">
                             <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" name="dni_est"  pattern="[0-9]{8}" title="El DNI debe contener exactamente 8 dígitos numéricos" required autocomplete="off">
@@ -119,29 +112,29 @@
 	    </form>
 
     <div class="overlay1" id="overlay1"></div>
-    <!-- Alerta de éxito -->
-    <div id="alertaExito" class="alert-container">
-        <div class="alert-text">
-            Prestamo registrado con éxito.
+        <!-- Alerta de éxito -->
+        <div id="alertaExito" class="alert-container">
+            <div class="alert-text">
+                Prestamo registrado con éxito.
+            </div>
+            <button class="alert-button" onclick="cerrarAlerta('alertaExito')">Aceptar</button>
         </div>
-        <button class="alert-button" onclick="cerrarAlerta('alertaExito')">Aceptar</button>
-    </div>
-    <!-- Alerta de error -->
-    <div id="alertaError" class="alert-container">
-        <div class="alert-text">
-            Error al registrar el prestamo.
+        <!-- Alerta de error -->
+        <div id="alertaError" class="alert-container">
+            <div class="alert-text">
+                Error al registrar el prestamo.
+            </div>
+            <button class="alert-button" onclick="cerrarAlerta('alertaError')">Aceptar</button>
         </div>
-        <button class="alert-button" onclick="cerrarAlerta('alertaError')">Aceptar</button>
-    </div>
+
     <!-- Script para ajustar el ancho del contenedor de sugerencias -->
     <script>
         // Obtener el campo de entrada y el contenedor de sugerencias
-        var inputTitulo = document.getElementById('titulo');
+        var inputTitulo = document.getElementById('inputFloatingLabelTitulo');
         var sugerenciasTitulo = document.getElementById('sugerencias');
         
 
-
-        // Agregar un evento de entrada al campo de entrada de título
+        // Agregar un evento de entrada al campo de entrada de título del libro
         inputTitulo.addEventListener('input', function() {
             // Obtener el ancho del campo de entrada de título
             var anchoInputTitulo = inputTitulo.offsetWidth;

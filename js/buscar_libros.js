@@ -27,13 +27,17 @@ function buscarLibros() {
 
 
 
-// Definir la función seleccionarSugerencia para manejar la selección de sugerencias
-function seleccionarSugerencia(sugerencia) {
-    // Asignar el valor de la sugerencia al campo de entrada de título del libro
-    document.getElementById('titulo1').value = sugerencia;
+// Función para manejar la selección de sugerencias
+function seleccionarSugerencia(titulo, descripcion) {
+    // Asignar el valor de la sugerencia al campo de entrada del título del libro
+    document.getElementById('inputFloatingLabelTitulo').value = titulo;
+    
+    // Asignar el valor de la descripción al campo de entrada de la descripción del libro
+    document.getElementById('inputFloatingLabelDescripcion').value = descripcion;
     
     // Limpiar las sugerencias
-    document.getElementById('sugerencias').innerHTML = '';
+    $('#sugerencias').html('');
+    $('#sugerencias').hide();
 }
 
 // Variable para almacenar el temporizador del debouncing
@@ -45,13 +49,13 @@ function buscarLibros() {
     clearTimeout(timeoutId);
 
     // Obtener el valor del campo de búsqueda
-    var query = document.getElementById('titulo1').value;
+    var query = document.getElementById('inputFloatingLabelTitulo').value;
 
     // Establecer un temporizador para ejecutar la búsqueda después de un breve retraso (por ejemplo, 300 milisegundos)
     timeoutId = setTimeout(function() {
         // Realizar la búsqueda solo después del tiempo de espera
         $.ajax({
-            url: '../php_stud/buscar_libros.php',
+            url: 'buscar_libros.php',
             method: 'POST',
             data: { query: query },
             success: function(data) {
@@ -61,4 +65,18 @@ function buscarLibros() {
             }
         });
     }, 300); // Tiempo de espera en milisegundos
+}
+
+
+// Función para manejar la selección de sugerencias
+function seleccionarSugerencia(titulo, descripcion) {
+    // Asignar el valor de la sugerencia al campo de entrada del título del libro
+    document.getElementById('inputFloatingLabelTitulo').value = titulo;
+    
+    // Asignar el valor de la descripción al campo de entrada de la descripción del libro
+    document.getElementById('inputFloatingLabelDescripcion').value = descripcion;
+    
+    // Limpiar las sugerencias
+    $('#sugerencias').html('');
+    $('#sugerencias').hide();
 }
