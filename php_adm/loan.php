@@ -326,7 +326,7 @@ if (!isset($_SESSION['usuario'])) {
 													<span class="btn-label">
 														<i class="fa fa-print"></i>
 													</span>
-													Imprimir
+													Guardar
 												</a>
 											</div>
 									</div>

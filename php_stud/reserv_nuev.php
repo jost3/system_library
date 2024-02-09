@@ -9,31 +9,64 @@ if (isset($_POST['registro'])) {
     // Verificar si el título del libro existe
     $queryLibro = "SELECT id FROM libro WHERE titulo = '$tituloLibro'";
     $resultLibro = mysqli_query($conex, $queryLibro);
-    
+
     if ($resultLibro && mysqli_num_rows($resultLibro) > 0) {
-        // Verificar si el DNI del estudiante existe
-        $queryEstudiante = "SELECT id FROM alumno WHERE dni = '$dniEstudiante'";
+        // Verificar si el DNI del estudiante existe y obtener su nombre
+        $queryEstudiante = "SELECT id, Nombre, dni FROM alumno WHERE dni = '$dniEstudiante'";
         $resultEstudiante = mysqli_query($conex, $queryEstudiante);
 
         if ($resultEstudiante && mysqli_num_rows($resultEstudiante) > 0) {
-            // Ahora puedes realizar la inserción en la tabla de reservas
-            $descripcion1 = $_POST['descripcion1'];
-            $autor = $_POST['autor'];
-            $queryReserva = "INSERT INTO prestamo (titulo1, dni_est, descripcion1, autor1) VALUES ('$tituloLibro', '$dniEstudiante', '$descripcion1','$autor')";
-            
-            // Ejecuta la consulta de inserción
-            $resultReserva = mysqli_query($conex, $queryReserva);
+            // Obtener información del estudiante
+            $filaEstudiante = mysqli_fetch_assoc($resultEstudiante);
+            $idEstudiante = $filaEstudiante['id'];
+            $nombreEstudiante = $filaEstudiante['Nombre'];
+            $dniGuardado = $filaEstudiante['dni'];
 
-            if ($resultReserva) {
-                echo "Reserva exitosa.";
+            // Obtener el DNI almacenado en la sesión
+            $dniSesion = $_SESSION['dni'];
+
+            // Verificar si el DNI coincide con el DNI almacenado en la sesión
+            if ($dniEstudiante === $dniSesion) {
+                // Guardar el ID del estudiante en la sesión
+                $_SESSION['idEst'] = $idEstudiante;
+                $estd= 'Pendiente';
+                $fechaActual = date("Y-m-d");
+                // Ahora puedes realizar la inserción en la tabla de reservas
+                $descripcion1 = $_POST['descripcion1'];
+                $autor = $_POST['autor'];
+                $queryReserva = "INSERT INTO prestamo (titulo1, dni_est, descripcion1, autor1, nombre, estado, fecha) VALUES ('$tituloLibro', '$dniEstudiante', '$descripcion1','$autor', '$nombreEstudiante','$estd', '$fechaActual')";
+
+                // Ejecuta la consulta de inserción
+                $resultReserva = mysqli_query($conex, $queryReserva);
+
+                if ($resultReserva) {
+                    $_SESSION['mensaje'] = "Reservación registrado con exito";
+                    $_SESSION['tipo_alerta'] = "success";
+                    header('Location: reserva.php');
+                    exit();
+                } else {
+                    $_SESSION['mensaje'] = "Error al registrar Reserva";
+                    $_SESSION['tipo_alerta'] = "error";
+                    header('Location: reserva.php');
+                    exit();
+                }
             } else {
-                echo "Error al realizar la reserva.";
+                $_SESSION['mensaje'] = "Error al DNI es incorrecto";
+                $_SESSION['tipo_alerta'] = "error";
+                header('Location: reserva.php');
+                exit();
             }
         } else {
-            echo "Error: El DNI del estudiante no existe.";
+            $_SESSION['mensaje'] = "Error: El DNI no existe";
+            $_SESSION['tipo_alerta'] = "error";
+            header('Location: reserva.php');
+            exit();
         }
     } else {
-        echo "Error: El título del libro no existe.";
+            $_SESSION['mensaje'] = "El libro no existe";
+            $_SESSION['tipo_alerta'] = "error";
+            header('Location: reserva.php');
+            exit();
     }
 
     // Cierra la conexión a la base de datos

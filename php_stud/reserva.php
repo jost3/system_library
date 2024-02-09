@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,22 +118,6 @@
             </div>
 	    </form>
 
-    <div class="overlay1" id="overlay1"></div>
-        <!-- Alerta de éxito -->
-        <div id="alertaExito" class="alert-container">
-            <div class="alert-text">
-                Prestamo registrado con éxito.
-            </div>
-            <button class="alert-button" onclick="cerrarAlerta('alertaExito')">Aceptar</button>
-        </div>
-        <!-- Alerta de error -->
-        <div id="alertaError" class="alert-container">
-            <div class="alert-text">
-                Error al registrar el prestamo.
-            </div>
-            <button class="alert-button" onclick="cerrarAlerta('alertaError')">Aceptar</button>
-        </div>
-
     <!-- Script para ajustar el ancho del contenedor de sugerencias -->
     <script>
         // Obtener el campo de entrada y el contenedor de sugerencias
@@ -148,8 +135,22 @@
 
     </script>
     <!-- Scripts adicionales -->
-    <script src="../js/alert_reserv.js"></script>
     <script src="../js/buscar_libros.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
+                title: '<?php echo $_SESSION['mensaje']; ?>',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        <?php
+            unset($_SESSION['mensaje']);
+            unset($_SESSION['tipo_alerta']);
+        endif;
+        ?>
+</script>
 </body>
 </html>
