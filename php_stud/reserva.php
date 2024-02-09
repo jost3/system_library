@@ -97,7 +97,11 @@
                         </div>
                         <div class="form-group form-floating-label">
                             <input id="inputFloatingLabelDescripcion" type="text" class="form-control input-border-bottom" name="descripcion1" required autocomplete="off">
-                            <label for="inputFloatingLabelDescripcion" class="placeholder">Descripcion</label>
+                            <label for="inputFloatingLabelDescripcion" class="placeholder">Seccion</label>
+                        </div>
+                        <div class="form-group form-floating-label">
+                            <input id="inputFloatingLabelSeccion" type="text" class="form-control input-border-bottom" name="autor" required autocomplete="off">
+                            <label for="inputFloatingLabelSeccion" class="placeholder">Autor</label>
                         </div>
                         <div class="form-group form-floating-label">
                             <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" name="dni_est"  pattern="[0-9]{8}" title="El DNI debe contener exactamente 8 dígitos numéricos" required autocomplete="off">

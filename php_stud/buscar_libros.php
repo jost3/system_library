@@ -10,7 +10,7 @@ $query = $_POST['query'];
 $busqueda = mysqli_real_escape_string($conex, $query);
 
 // Construir la consulta SQL para buscar libros que coincidan con el valor de búsqueda
-$consulta = "SELECT titulo, autor FROM libro WHERE titulo LIKE '%$busqueda%' LIMIT 5"; // Limita a 5 resultados
+$consulta = "SELECT titulo, descripcion, autor FROM libro WHERE titulo LIKE '%$busqueda%' LIMIT 5";
 
 // Ejecutar la consulta
 $resultado = mysqli_query($conex, $consulta);
@@ -20,7 +20,7 @@ if (mysqli_num_rows($resultado) > 0) {
     // Construir sugerencias en formato HTML
     echo '<ul>';
     while ($fila = mysqli_fetch_assoc($resultado)) {
-        echo '<li><input type="button" class="sugerencia" value="' . $fila['titulo'] . '" onclick="seleccionarSugerencia(\'' . $fila['titulo'] . '\', \'' . $fila['autor'] . '\')"></li>';
+        echo '<li><input type="button" class="sugerencia" value="' . $fila['titulo'] . '" onclick="seleccionarSugerencia(\'' . $fila['titulo'] . '\', \'' . $fila['descripcion'] . '\', \'' . $fila['autor'] . '\')"></li>';
     }
     echo '</ul>';
 } else {

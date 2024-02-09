@@ -28,12 +28,15 @@ function buscarLibros() {
 
 
 // Función para manejar la selección de sugerencias
-function seleccionarSugerencia(titulo, descripcion) {
+function seleccionarSugerencia(titulo, descripcion,autor) {
     // Asignar el valor de la sugerencia al campo de entrada del título del libro
     document.getElementById('inputFloatingLabelTitulo').value = titulo;
     
     // Asignar el valor de la descripción al campo de entrada de la descripción del libro
     document.getElementById('inputFloatingLabelDescripcion').value = descripcion;
+    if (autor) {
+        document.getElementById('inputFloatingLabelSeccion').value = autor;
+    }
     
     // Limpiar las sugerencias
     $('#sugerencias').html('');
@@ -68,15 +71,3 @@ function buscarLibros() {
 }
 
 
-// Función para manejar la selección de sugerencias
-function seleccionarSugerencia(titulo, descripcion) {
-    // Asignar el valor de la sugerencia al campo de entrada del título del libro
-    document.getElementById('inputFloatingLabelTitulo').value = titulo;
-    
-    // Asignar el valor de la descripción al campo de entrada de la descripción del libro
-    document.getElementById('inputFloatingLabelDescripcion').value = descripcion;
-    
-    // Limpiar las sugerencias
-    $('#sugerencias').html('');
-    $('#sugerencias').hide();
-}
