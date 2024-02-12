@@ -5,12 +5,18 @@ if (!isset($_SESSION['usuario'])) {
     header('Location: ../index.html');
     exit();
 }
+if (isset($_POST['logout'])) {
+    // Cerrar sesión
+    session_destroy();
+    header('Location: ../index.html');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Hessen - Biblioteca</title>
+	<title>Nuevo - Usuario</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../img/hessen icono.png" type="image/x-icon"/>
 	<!-- CSS Files -->
@@ -70,65 +76,6 @@ if (!isset($_SESSION['usuario'])) {
 								<i class="fa fa-search"></i>
 							</a>
 						</li>
-						
-						<li class="nav-item dropdown hidden-caret">
-							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-bell"></i>
-								<span class="notification">4</span>
-							</a>
-							<ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
-								<li>
-									<div class="dropdown-title">You have 4 new notification</div>
-								</li>
-								<li>
-									<div class="notif-scroll scrollbar-outer">
-										<div class="notif-center">
-											<a href="#">
-												<div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
-												<div class="notif-content">
-													<span class="block">
-														New user registered
-													</span>
-													<span class="time">5 minutes ago</span> 
-												</div>
-											</a>
-											<a href="#">
-												<div class="notif-icon notif-success"> <i class="fa fa-comment"></i> </div>
-												<div class="notif-content">
-													<span class="block">
-														Rahmad commented on Admin
-													</span>
-													<span class="time">12 minutes ago</span> 
-												</div>
-											</a>
-											<a href="#">
-												<div class="notif-img"> 
-													<img src="" alt="Img Profile">
-												</div>
-												<div class="notif-content">
-													<span class="block">
-														Reza send messages to you
-													</span>
-													<span class="time">12 minutes ago</span> 
-												</div>
-											</a>
-											<a href="#">
-												<div class="notif-icon notif-danger"> <i class="fa fa-heart"></i> </div>
-												<div class="notif-content">
-													<span class="block">
-														Farrah liked Admin
-													</span>
-													<span class="time">17 minutes ago</span> 
-												</div>
-											</a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i> </a>
-								</li>
-							</ul>
-						</li>
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
@@ -164,7 +111,9 @@ if (!isset($_SESSION['usuario'])) {
 									<a class="dropdown-item" href="perfil_adm.php">Mi perfil</a>
 									
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Cerrar sesión</a>
+									<form method="post" action="">
+										<button type="submit" name="logout" class="dropdown-item">Cerrar sesión</button>
+									</form>
 								</li>
 							</ul>
 						</li>

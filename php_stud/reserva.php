@@ -1,5 +1,16 @@
 <?php
 session_start();
+if (!isset($_SESSION['student'])) {
+    // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
+    header('Location: ../index.html');
+    exit();
+}
+if (isset($_POST['logout'])) {
+    // Cerrar sesión
+    session_destroy();
+    header('Location: ../index.html');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

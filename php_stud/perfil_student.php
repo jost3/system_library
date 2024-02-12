@@ -1,14 +1,20 @@
 <?php
-session_start()
+session_start();
+if (!isset($_SESSION['student'])) {
+    // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
+    header('Location: ../index.html');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hessen - Perfil</title>
     <link rel="stylesheet" href="../css/princ_stud.css">
 	<link rel="stylesheet" href="../css1/azzara.min.css">
+	
 </head>
 <style>
 	
@@ -33,7 +39,9 @@ session_start()
         background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta el último valor (0.9) para controlar la opacidad */
         transition: background-color 0.3s ease; /* Agrega una transición suave */
         }
-
+		.modal-open #navbar {
+        left: 0px !important/* Ajusta el valor según sea necesario */
+    }
 </style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -110,6 +118,7 @@ session_start()
 									</div>
 									<div class="text-right mt-3 mb-3">
 										<button class="btn btn-success" name="update">Actualizar </button>
+										<button class="btn btn-primary" name="open_change_password_modal" data-toggle="modal" data-target="#changePasswordModal">Actualizar Contraseña</button>
 									</div>
 								</div>
 							</div>
@@ -120,7 +129,7 @@ session_start()
 							<div class="card-header" style="background-image: url('../img/inicio.jpeg'); background-size: cover;">
 									<div class="profile-picture">
 										<div class="avatar avatar-xl">
-											<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+											<img src="../img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 										</div>
 									</div>
 								</div>
@@ -144,7 +153,7 @@ session_start()
 											</a>
 										</div>
 										<div class="view-profile">
-											<a href="#" class="btn btn-primary btn-block">Abandonar la Biblioteca</a>
+											<button type="submit" class="btn btn-primary btn-block" name="logout">Cerrar la Biblioteca</button>
 										</div>
 									</div>
 								</div>
@@ -155,23 +164,54 @@ session_start()
 			</div>
 			
 		</div>
+		<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="changePasswordModalLabel">Actualizar Contraseña</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<!-- Formulario para cambiar la contraseña -->
+						<form action="perf_studUpd.php" method="post">
+							<div class="form-group">
+								<label>Contraseña Actual</label>
+								<input type="password" class="form-control" name="current_password" placeholder="Contraseña Actual" required>
+							</div>
+							<div class="form-group">
+								<label>Nueva Contraseña</label>
+								<input type="password" class="form-control" name="new_password" placeholder="Nueva Contraseña" required>
+							</div>
+							<button type="submit" class="btn btn-primary" name="change_password_modal">Actualizar Contraseña</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="../js/deslis.js"></script>
-    <script>
-        <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
-            Swal.fire({
-                icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
-                title: '<?php echo $_SESSION['mensaje']; ?>',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        <?php
-            unset($_SESSION['mensaje']);
-            unset($_SESSION['tipo_alerta']);
-        endif;
-        ?>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/deslis.js"></script>
+<script>
+   $(document).ready(function () {
+    $("button[name='open_change_password_modal']").click(function (e) {
+        e.preventDefault(); // Evitar el envío automático del formulario
+        $("#changePasswordModal").modal("show");
+    });
+});
+    <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
+        Swal.fire({
+            icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
+            title: '<?php echo $_SESSION['mensaje']; ?>',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    <?php
+        unset($_SESSION['mensaje']);
+        unset($_SESSION['tipo_alerta']);
+    endif;
+    ?>
 </script>
 </body>
 </html>

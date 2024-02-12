@@ -1,5 +1,11 @@
 <?php
 session_start();
+if (isset($_POST['logout'])) {
+    // Cerrar sesión
+    session_destroy();
+    header('Location: ../index.html');
+    exit();
+}
 include('../bd/mostrar_dt.php');
 if (isset($_POST['update'])) {
     $idEs = $_SESSION['idEst'];
