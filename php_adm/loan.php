@@ -201,7 +201,6 @@ if (isset($_POST['logout'])) {
 											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>
-									<li>
 									<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
 									<li>
 										<a href="adm_register.php">
@@ -209,7 +208,6 @@ if (isset($_POST['logout'])) {
 										</a>
 									</li>
 									<?php endif; ?>
-									</li>
 								</ul>
 							</div>
 						</li>
@@ -290,7 +288,8 @@ if (isset($_POST['logout'])) {
 													<th>AUTOR</th>
 													<th>SECCION</th>
 													<th>ESTADO</th>
-													<th>FECHA</th>
+													<th>FECHA DE RESERVA</th>
+													<th>FECHA DE TERMINO</th>
 													<th>DNI</th>
 													<th>ESTUDIANTE</th>
 													<th>ACCION</th>
@@ -303,7 +302,8 @@ if (isset($_POST['logout'])) {
 													<th>AUTOR</th>
 													<th>SECCION</th>
 													<th>ESTADO</th>
-													<th>FECHA</th>
+													<th>FECHA DE RESERVA</th>
+													<th>FECHA DE TERMINO</th>
 													<th>DNI</th>
 													<th>ESTUDIANTE</th>
 													<th>ACCION</th>
@@ -321,6 +321,7 @@ if (isset($_POST['logout'])) {
 													<td><?php  echo $row["descripcion1"];?></td>
 													<td><?php  echo $row["estado"];?></td>
 													<td><?php  echo $row["fecha"];?></td>
+													<td><?php  echo $row["fecha_term"];?></td>
 													<td><?php  echo $row["dni_est"];?></td>
 													<td><?php  echo $row["nombre"];?></td>
 													<td>
@@ -433,6 +434,22 @@ if (isset($_POST['logout'])) {
             });
         });
     });
+</script>
+<script>
+
+    <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
+        Swal.fire({
+            icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
+            title: '<?php echo $_SESSION['mensaje']; ?>',
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+    <?php
+        unset($_SESSION['mensaje']);
+        unset($_SESSION['tipo_alerta']);
+    endif;
+    ?>
 </script>
 <script src="../js/adm/ready.js"></script>
 <script src="../js/adm/table_function.js"></script>

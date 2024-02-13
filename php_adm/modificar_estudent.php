@@ -227,7 +227,6 @@ if (isset($_POST['logout'])) {
 											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>
-									<li>
 									<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
 									<li>
 										<a href="adm_register.php">
@@ -235,7 +234,6 @@ if (isset($_POST['logout'])) {
 										</a>
 									</li>
 									<?php endif; ?>
-									</li>
 								</ul>
 							</div>
 						</li>

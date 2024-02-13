@@ -22,6 +22,7 @@ if (isset($_GET['id'])) {
         $descripcion= $datosPrestamo ['descripcion1'];
         $estado= $datosPrestamo ['estado'];
         $fecha= $datosPrestamo ['fecha'];
+		$fecha_term= $datosPrestamo ['fecha_term'];
         $dni_est= $datosPrestamo ['dni_est'];
         $nombre= $datosPrestamo ['nombre'];
 
@@ -231,7 +232,6 @@ if (isset($_POST['logout'])) {
 											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>
-									<li>
 									<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
 									<li>
 										<a href="adm_register.php">
@@ -239,7 +239,6 @@ if (isset($_POST['logout'])) {
 										</a>
 									</li>
 									<?php endif; ?>
-									</li>
 								</ul>
 							</div>
 						</li>
@@ -311,7 +310,11 @@ if (isset($_POST['logout'])) {
                                     <label for="selectFloatingLabel" class="placeholder">Estado</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="date" class="form-control input-border-bottom" name="fecha" value="<?php echo $fecha; ?>" required>
+                                    <input id="inputFloatingLabelEdicion" type="date" class="form-control input-border-bottom" name="fecha" value="<?php echo $fecha; ?>" readonly>
+                                    <label for="inputFloatingLabelEdicion" class="placeholder" ></label>
+                                </div>
+								<div class="form-group form-floating-label">
+                                    <input id="inputFloatingLabelEdicion" type="date" class="form-control input-border-bottom" name="fecha_term" value="<?php echo $fecha_term; ?>" required>
                                     <label for="inputFloatingLabelEdicion" class="placeholder" ></label>
                                 </div>
                                 <div class="form-group form-floating-label">
