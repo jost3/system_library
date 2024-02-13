@@ -34,4 +34,66 @@ if (isset($_POST['update'])) {
         
     }
 }
+if (isset($_POST['update_password'])){
+
+ 
+    $idEs = $_SESSION['idEst'];
+    $currentPassword = $_POST['current_password'];
+    $newPassword = $_POST['new_password'];
+    $confirmPassword = $_POST['confirm_password'];
+
+    // Obtener la contraseña actual de la base de datos
+    $getPasswordQuery = "SELECT contra FROM alumno WHERE id = '$idEs'";
+    $getPasswordResult = mysqli_query($conex, $getPasswordQuery);
+
+    if ($getPasswordResult) {
+        $userData = mysqli_fetch_assoc($getPasswordResult);
+        $hashedPassword = $userData['contra'];
+
+        // Verificar la contraseña actual ingresada
+        if (password_verify($currentPassword, $hashedPassword)) {
+            // Contraseña actual es correcta, verificar si las nuevas contraseñas coinciden
+            if ($newPassword == $confirmPassword) {
+                // Hash de la nueva contraseña
+                $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+                // Actualizar la contraseña en la base de datos
+                $updatePasswordQuery = "UPDATE alumno SET contra = '$hashedNewPassword' WHERE id = '$idEs'";
+                $updatePasswordResult = mysqli_query($conex, $updatePasswordQuery);
+
+                if ($updatePasswordResult) {
+                    // Actualización exitosa de la contraseña
+                    $_SESSION['mensaje'] = "Contraseña actualizada con éxito";
+                    $_SESSION['tipo_alerta'] = "success";
+                    header('Location: perfil_student.php');
+                    exit();
+                } else {
+                    // Error en la actualización de la contraseña
+                    $_SESSION['mensaje'] = "Error al actualizar la contraseña";
+                    $_SESSION['tipo_alerta'] = "error";
+                    header('Location: perfil_student.php');
+                    exit();
+                }
+            } else {
+                // Las nuevas contraseñas no coinciden
+                $_SESSION['mensaje'] = "Las nuevas contraseñas no coinciden";
+                $_SESSION['tipo_alerta'] = "error";
+                header('Location: perfil_student.php');
+                exit();
+            }
+        } else {
+            // Contraseña actual incorrecta
+            $_SESSION['mensaje'] = "Contraseña actual incorrecta";
+            $_SESSION['tipo_alerta'] = "error";
+            header('Location: perfil_student.php');
+            exit();
+        }
+    } else {
+        // Error al obtener la contraseña actual
+        $_SESSION['mensaje'] = "Error al obtener la contraseña actual";
+        $_SESSION['tipo_alerta'] = "error";
+        header('Location: perfil_student.php');
+        exit();
+    }
+}
 ?>

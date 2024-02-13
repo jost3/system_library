@@ -39,9 +39,6 @@ if (!isset($_SESSION['student'])) {
         background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta el último valor (0.9) para controlar la opacidad */
         transition: background-color 0.3s ease; /* Agrega una transición suave */
         }
-		.modal-open #navbar {
-        left: 0px !important/* Ajusta el valor según sea necesario */
-    }
 </style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -73,12 +70,15 @@ if (!isset($_SESSION['student'])) {
 							<div class="card card-with-nav">
 								<div class="card-header">
 									<div class="row row-nav-line">
-										<ul class="nav nav-tabs nav-line nav-color-secondary" role="tablist">
-											<li class="nav-item"> <a class="nav-link active show" data-toggle="tab" href="#home" role="tab" aria-selected="true">Perfil</a> </li>
-										</ul>
+									<ul class="nav nav-tabs nav-line nav-color-secondary" role="tablist">
+                                        <li class="nav-item"> <a class="nav-link active show" data-bs-toggle="tab" href="#home" role="tab" aria-selected="true">Perfil</a> </li>
+                                        <li class="nav-item"> 
+                                            <a class="nav-link" data-bs-toggle="tab" href="#profile" role="tab" aria-selected="false">Actualizar contraseña</a> 
+                                        </li>
+                                    </ul>
 									</div>
 								</div>
-								<div class="card-body">
+								<div class="card-body tab-pane olk active show" id="home">
 									<div class="row mt-3">
 										<div class="col-md-6">
 											<div class="form-group form-group-default">
@@ -118,12 +118,38 @@ if (!isset($_SESSION['student'])) {
 									</div>
 									<div class="text-right mt-3 mb-3">
 										<button class="btn btn-success" name="update">Actualizar </button>
-										<button class="btn btn-primary" name="open_change_password_modal" data-toggle="modal" data-target="#changePasswordModal">Actualizar Contraseña</button>
+									</div>
+								</div>
+								<div class="card-body tab-pane old" id="profile" style="display: none;">
+									<div class="row mt-3">
+										<div class="col-md-6">
+											<div class="form-group form-group-default">
+												<label>Contraseña Actual</label>
+												<input type="password" class="form-control" name="current_password" placeholder="Contraseña Actual">
+											</div>
+										</div>
+									</div>
+									<div class="row mt-3">
+										<div class="col-md-6">
+											<div class="form-group form-group-default">
+												<label>Nueva Contraseña</label>
+												<input type="password" class="form-control" name="new_password" placeholder="Nueva Contraseña">
+											</div>
+										</div>
+									
+										<div class="col-md-6">
+											<div class="form-group form-group-default">
+												<label>Confirmar Nueva Contraseña</label>
+												<input type="password" class="form-control" name="confirm_password" placeholder="Confirmar Nueva Contraseña">
+											</div>
+										</div>
+									</div>
+									<div class="text-right mt-3 mb-3">
+										<button class="btn btn-success" name="update_password">Actualizar Contraseña</button>
 									</div>
 								</div>
 							</div>
 						</div>
-						
 						<div class="col-md-4">
 							<div class="card card-profile card-secondary">
 							<div class="card-header" style="background-image: url('../img/inicio.jpeg'); background-size: cover;">
@@ -164,42 +190,36 @@ if (!isset($_SESSION['student'])) {
 			</div>
 			
 		</div>
-		<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="changePasswordModalLabel">Actualizar Contraseña</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<!-- Formulario para cambiar la contraseña -->
-						<form action="perf_studUpd.php" method="post">
-							<div class="form-group">
-								<label>Contraseña Actual</label>
-								<input type="password" class="form-control" name="current_password" placeholder="Contraseña Actual" required>
-							</div>
-							<div class="form-group">
-								<label>Nueva Contraseña</label>
-								<input type="password" class="form-control" name="new_password" placeholder="Nueva Contraseña" required>
-							</div>
-							<button type="submit" class="btn btn-primary" name="change_password_modal">Actualizar Contraseña</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
 	</form>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/deslis.js"></script>
 <script>
-   $(document).ready(function () {
-    $("button[name='open_change_password_modal']").click(function (e) {
-        e.preventDefault(); // Evitar el envío automático del formulario
-        $("#changePasswordModal").modal("show");
+document.addEventListener('DOMContentLoaded', function () {
+    // Escuchar el evento de cambio de pestaña
+    var tabs = document.querySelectorAll('.nav-link');
+    tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            // Obtener el ID de la pestaña activa
+            var activeTabId = tab.getAttribute('href').substring(1);
+            
+            // Ocultar todos los elementos con la clase 'tab-pane'
+            var tabContents = document.querySelectorAll('.tab-pane');
+            tabContents.forEach(function (content) {
+                content.style.display = 'none';
+            });
+            
+            // Mostrar el contenido de la pestaña activa
+            var activeTabContent = document.getElementById(activeTabId);
+            if (activeTabContent) {
+                activeTabContent.style.display = 'block';
+            }
+        });
     });
 });
+</script>
+<script>
     <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
         Swal.fire({
             icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
@@ -207,6 +227,7 @@ if (!isset($_SESSION['student'])) {
             showConfirmButton: false,
             timer: 1500
         });
+		document.body.classList.add('scroll-fixed');
     <?php
         unset($_SESSION['mensaje']);
         unset($_SESSION['tipo_alerta']);
