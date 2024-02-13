@@ -21,24 +21,23 @@ if (!isset($_SESSION['student'])) {
 	 #tm a {
         font-size: 15px; /* Puedes ajustar el valor según tus preferencias */
         }
-	    #navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000; /* Ajusta el valor de z-index según tus necesidades */
+		#navbar {
+    	/* Otros estilos aquí */
+    	transition: background-color 0.3s ease; /* Transición suave para cambios de color */
+		}
 
-        }
+		.fixed-nav {
+			position: fixed;
+			width: 100%;
+			top: 0;
+			z-index: 1000; /* Ajusta según sea necesario para superponer otros elementos */
+		}
         #navbar .form-control {
         width: 220px; /* Ajusta el ancho según tus preferencias */
         }
         .filtro{
             display: none;
             }
-        .navbar-scroll {
-        background-color: rgba(255, 255, 255, 0.9) !important; /* Ajusta el último valor (0.9) para controlar la opacidad */
-        transition: background-color 0.3s ease; /* Agrega una transición suave */
-        }
 </style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
@@ -59,7 +58,7 @@ if (!isset($_SESSION['student'])) {
                 </div>
             </div>
     </nav>
-	<div style="margin-top: 50px;"></div>
+	<div style="margin-top: -50px;"></div>
 	<form action="perf_studUpd.php" method="post">
     <div class="main-panel">
 			<div class="content">
@@ -196,6 +195,19 @@ if (!isset($_SESSION['student'])) {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/deslis.js"></script>
 <script>
+	document.addEventListener('DOMContentLoaded', function () {
+    var navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', function () {
+        // Si el usuario ha desplazado hacia abajo más allá de cierto punto, agrega la clase 'fixed-nav'
+        if (window.scrollY > 100) {
+            navbar.classList.add('fixed-nav');
+        } else {
+            // De lo contrario, quita la clase 'fixed-nav'
+            navbar.classList.remove('fixed-nav');
+        }
+    });
+});
 document.addEventListener('DOMContentLoaded', function () {
     // Escuchar el evento de cambio de pestaña
     var tabs = document.querySelectorAll('.nav-link');
@@ -227,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showConfirmButton: false,
             timer: 1500
         });
-		document.body.classList.add('scroll-fixed');
+
     <?php
         unset($_SESSION['mensaje']);
         unset($_SESSION['tipo_alerta']);

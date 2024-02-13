@@ -39,13 +39,16 @@ if (isset($_POST['logout'])) {
         font-size: 15px; /* Puedes ajustar el valor según tus preferencias */
         }
         #navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000; /* Ajusta el valor de z-index según tus necesidades */
+    	/* Otros estilos aquí */
+    	transition: background-color 0.3s ease; /* Transición suave para cambios de color */
+		}
 
-        }
+		.fixed-nav {
+			position: fixed;
+			width: 100%;
+			top: 0;
+			z-index: 1000; /* Ajusta según sea necesario para superponer otros elementos */
+		}
         #navbar .form-control {
         width: 220px; /* Ajusta el ancho según tus preferencias */
         }
@@ -151,6 +154,19 @@ if (isset($_POST['logout'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.getElementById('navbar');
+
+            window.addEventListener('scroll', function () {
+                // Si el usuario ha desplazado hacia abajo más allá de cierto punto, agrega la clase 'fixed-nav'
+                if (window.scrollY > 100) {
+                    navbar.classList.add('fixed-nav');
+                } else {
+                    // De lo contrario, quita la clase 'fixed-nav'
+                    navbar.classList.remove('fixed-nav');
+                }
+            });
+        });
         <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
             Swal.fire({
                 icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
