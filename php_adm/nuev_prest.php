@@ -9,10 +9,11 @@ include('../bd/mostrar_dt.php');
     $descripcion1= $_POST ['descripcion1'];
     $estado= $_POST ['estado'];
     $fecha= $_POST ['fecha'];
+    $fecha_term = $_POST['fecha_term'];
     $dni_est= $_POST ['dni_est'];
     $nombre= $_POST ['nombre'];
 
-    $insertarDatos1 = "INSERT INTO prestamo VALUES('','$titulo1','$autor1','$descripcion1','$estado','$fecha','$dni_est','$nombre')";
+    $insertarDatos1 = "INSERT INTO prestamo VALUES('','$titulo1','$autor1','$descripcion1','$estado','$fecha','$fecha_term','$dni_est','$nombre')";
     $ejecutarInsertar1 = mysqli_query($conex,$insertarDatos1);
 
     if ($ejecutarInsertar1) {

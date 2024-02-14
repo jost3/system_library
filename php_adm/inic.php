@@ -36,7 +36,7 @@ if ($result2) {
     echo "Error al ejecutar la consulta: " . $conex1->error;
 }
 /* deudas*/
-$sql_deudas = "SELECT COUNT(*) AS fuera_de_tiempo FROM prestamo WHERE estado = 'Limite de tiempo'";
+$sql_deudas = "SELECT COUNT(*) AS fuera_de_tiempo FROM prestamo WHERE estado = 'Fuera de limite'";
 $result_deudas = $conex1->query($sql_deudas);
 if ($result_deudas) {
     $row = $result_deudas->fetch_assoc();

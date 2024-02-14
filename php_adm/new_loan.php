@@ -68,7 +68,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search">
+								<input type="text" placeholder="" class="form-control" name="search">
 							</div>
 						</form>
 					</div>
@@ -224,8 +224,8 @@ if (isset($_POST['logout'])) {
 						<h4 class="page-title">Agregar un nuevo prestamo</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
+								<a href="inic.php">
+									<i class="fas fa-home"></i>
 								</a>
 							</li>
 							<li class="separator">
@@ -259,7 +259,7 @@ if (isset($_POST['logout'])) {
                                     <label for="inputFloatingLabelAutor" class="placeholder">Autor</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <select class="form-control input-border-bottom" id="selectFloatingLabel" name="descripcion1" required>
+                                    <select class="form-control input-border-bottom" id="selectFloatingLabelSecc" name="descripcion1" required>
                                         <option value="">&nbsp;</option>
                                         <option>1</option>
                                         <option>2</option>
@@ -267,26 +267,30 @@ if (isset($_POST['logout'])) {
                                         <option>4</option>
                                         <option>5</option>
                                     </select>
-                                    <label for="selectFloatingLabel" class="placeholder">Seccion</label>
+                                    <label for="selectFloatingLabelSecc" class="placeholder">Seccion</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <select class="form-control input-border-bottom" id="selectFloatingLabel"  name="estado" required>
+                                    <select class="form-control input-border-bottom" id="selectFloatingLabelEst"  name="estado" required>
                                         <option value="">&nbsp;</option>
                                         <option>Ocupado</option>
                                     </select>
-                                    <label for="selectFloatingLabel" class="placeholder">Estado</label>
+                                    <label for="selectFloatingLabelEst" class="placeholder">Estado</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="date" class="form-control input-border-bottom" name="fecha" required>
-                                    <label for="inputFloatingLabelEdicion" class="placeholder" ></label>
+									<label for="inputFloatingLabelRerv" class="" >Fecha de Reserva</label>
+                                    <input id="inputFloatingLabelRerv" type="date" class="form-control input-border-bottom" name="fecha" required>
+                                </div>
+								<div class="form-group form-floating-label">
+									<label for="inputFloatingLabelTerm" class="" >Fecha de Termino</label>
+                                    <input id="inputFloatingLabelTerm" type="date" class="form-control input-border-bottom" name="fecha_term" required>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" name="nombre" required>
-                                    <label for="inputFloatingLabelEdicion" class="placeholder">Nombre del estudiante</label>
+                                    <input id="inputFloatingLabelNomb" type="text" class="form-control input-border-bottom" name="nombre" required>
+                                    <label for="inputFloatingLabelNomb" class="placeholder">Nombre del estudiante</label>
                                 </div>
                                 <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelEdicion" type="text" class="form-control input-border-bottom" name="dni_est" required>
-                                    <label for="inputFloatingLabelEdicion" class="placeholder">Dni del estudiante</label>
+                                    <input id="inputFloatingLabelDni" type="text" class="form-control input-border-bottom" name="dni_est" required>
+                                    <label for="inputFloatingLabelDni" class="placeholder">Dni del estudiante</label>
                                 </div>
                                 <div class="card-action text-center">
                                     <button class="btn btn-primary" name="insertar">Registrar</button>

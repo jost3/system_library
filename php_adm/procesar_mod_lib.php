@@ -17,15 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $ejecutarActualizarLibro = mysqli_query($conex1, $actualizarLibro);
         if ($ejecutarActualizarLibro) {
             $_SESSION['mensaje'] = "Libro modificado con éxito";
+            $_SESSION['tipo_alerta'] = "success";
             header('Location: book.php?alerta=exito');
             exit();
         } else {
             $_SESSION['mensaje'] = "Error al modificar el préstamo";
+            $_SESSION['tipo_alerta'] = "error";
             header('Location: modificar_book.php?alerta=error');
             exit();
         }
     } else {
         $_SESSION['mensaje'] = "Todos los campos del formulario son obligatorios";
+        $_SESSION['tipo_alerta'] = "error";
         header('Location: modificar_book.php?id=' . $_POST['id_prestamo'] . '&alerta=error');
         exit();
     }

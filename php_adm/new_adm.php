@@ -71,7 +71,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search">
+								<input type="text" placeholder="" class="form-control" name="search">
 							</div>
 						</form>
 					</div>
@@ -227,8 +227,8 @@ if (isset($_POST['logout'])) {
 						<h4 class="page-title">Agregar un nuevo administrador</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
+								<a href="inic.php">
+									<i class="fas fa-home"></i>
 								</a>
 							</li>
 							<li class="separator">
@@ -254,8 +254,8 @@ if (isset($_POST['logout'])) {
                             <div class="card-body">
 
                             	<div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelFoto" type="file" class="form-control input-border-bottom " name="foto" accept="image/*">
-                                    <label for="inputFloatingLabelFoto" class="placeholder">Imagen del usuario</label>
+									<label for="inputFloatingLabelFoto" class="">Imagen del usuario</label>
+                                    <input id="inputFloatingLabelFoto" type="file" class="form-control input-border-bottom " name="foto" accept="image/*" required>
                                 </div>
                                 <div class="form-group form-floating-label">
                                     <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="id" required>

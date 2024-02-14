@@ -22,13 +22,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($resultado) {
         $_SESSION['mensaje'] = "Usuario actualizado con éxito";
-        header('Location: adm_register.php?alerta=exito');
+        $_SESSION['tipo_alerta'] = "success";
+        header('Location: adm_register.php');
+        exit();
     } else {
         $_SESSION['mensaje'] = "Error al actualizar el usuario";
-        header('Location: adm_register.php?alerta=error');
+        $_SESSION['tipo_alerta'] = "error";
+        header('Location: adm_register.php');
+        exit();
     }
 } else {
     $_SESSION['mensaje'] = "Método de solicitud no válido";
-    header('Location: adm_register.php?alerta=error');
+    $_SESSION['tipo_alerta'] = "error";
+    header('Location: adm_register.php');
+    exit();
 }
 ?>

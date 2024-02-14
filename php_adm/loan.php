@@ -68,7 +68,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search">
+								<input type="text" placeholder="Buscar Prestamos" class="form-control" name="search">
 							</div>
 						</form>
 					</div>
@@ -222,8 +222,8 @@ if (isset($_POST['logout'])) {
 						<h4 class="page-title">Prestamos actuales</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
+								<a href="inic.php">
+									<i class="fas fa-home"></i>
 								</a>
 							</li>
 							<li class="separator">
@@ -262,7 +262,6 @@ if (isset($_POST['logout'])) {
 							}
 						}
 					?>
-				
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
@@ -320,7 +319,7 @@ if (isset($_POST['logout'])) {
 													<th>FECHA DE RESERVA</th>
 													<th>FECHA DE TERMINO</th>
 													<th>DNI</th>
-													<th>ESTUDIANTE</th>
+												
 													<th>ACCION</th>
 												</tr>
 											</tfoot>
@@ -331,21 +330,21 @@ if (isset($_POST['logout'])) {
 												{?>
 												<tr>
 													<td><?php  echo $row["id_prest"];?></td>
-													<td><?php  echo $row["titulo1"];?></td>
-													<td><?php  echo $row["autor1"];?></td>
+													<td style="width: 110px;"><?php  echo $row["titulo1"];?></td>
+													<td style="width: 100px;"><?php  echo $row["autor1"];?></td>
 													<td><?php  echo $row["descripcion1"];?></td>
-													<td><?php  echo $row["estado"];?></td>
-													<td><?php  echo $row["fecha"];?></td>
-													<td><?php  echo $row["fecha_term"];?></td>
+													<td style="width: 80px;"><?php  echo $row["estado"];?></td>
+													<td style="width: 80px;"><?php  echo $row["fecha"];?></td>
+													<td style="width: 80px;"><?php  echo $row["fecha_term"];?></td>
 													<td><?php  echo $row["dni_est"];?></td>
-													<td><?php  echo $row["nombre"];?></td>
-													<td>
-													<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
-														<span class="btn-label">
-															<i class="fa fa-pencil"></i>
-														</span>
-														Modificar
-													</a>
+													<td style="width: 110px;"><?php  echo $row["nombre"];?></td>
+													<td style="width: 190px;">
+														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
+															<span class="btn-label">
+																<i class="fa fa-pencil"></i>
+															</span>
+															Modificar
+														</a>
 														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
 															<span class="btn-label">
 																<i class="fa fa-trash"></i>

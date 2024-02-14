@@ -66,7 +66,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search1">
+								<input type="text" placeholder="Buscar usuarios" class="form-control" name="search1">
 							</div>
 						</form>
 					</div>
@@ -217,9 +217,9 @@ if (isset($_POST['logout'])) {
 					<div class="page-header">
 						<h4 class="page-title">Usuarios actuales</h4>
 						<ul class="breadcrumbs">
-							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
+							<<li class="nav-home">
+								<a href="inic.php">
+									<i class="fas fa-home"></i>
 								</a>
 							</li>
 							<li class="separator">
@@ -249,6 +249,14 @@ if (isset($_POST['logout'])) {
 									<div class="card-head-row">
 										<h4 class="card-title"> Usuarios</h4>
 										<div class="card-tools">
+										<?php if (isset($_GET['search1'])) { ?>
+												<a href="?" class=" btn btn-info btn-border btn-round btn-sm mr-2">
+													<span class="btn-label">
+														<i class="fa fa-pencil"></i>
+													</span>
+													Mostrar
+												</a>
+												<?php } ?>
                                         <a href="new_adm.php" class="btn btn-info btn-border btn-round btn-sm mr-2">
 												<span class="btn-label">
 													<i class="fa fa-pencil"></i>
@@ -413,6 +421,22 @@ if (isset($_POST['logout'])) {
             });
         });
     });
+</script>
+<script>
+
+    <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
+        Swal.fire({
+            icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
+            title: '<?php echo $_SESSION['mensaje']; ?>',
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+    <?php
+        unset($_SESSION['mensaje']);
+        unset($_SESSION['tipo_alerta']);
+    endif;
+    ?>
 </script>
 </body>
 </html>

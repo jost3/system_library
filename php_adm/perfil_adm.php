@@ -68,7 +68,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search">
+								<input type="text" placeholder="" class="form-control" name="search">
 							</div>
 						</form>
 					</div>
@@ -236,13 +236,13 @@ if (isset($_POST['logout'])) {
 										<div class="col-md-6">
 											<div class="form-group form-group-default">
 												<label>Usuario</label>
-												<input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo $_SESSION['usuario']; ?>" readonly>
+												<input type="text" class="form-control" name="name" placeholder="Name" value="<?php echo $_SESSION['usuario']; ?>" >
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group form-group-default">
 												<label>Correo</label>
-												<input type="email" class="form-control" name="email" placeholder="Name" value="<?php echo $_SESSION['correoUsuario']; ?>"readonly>
+												<input type="email" class="form-control" name="email" placeholder="Name" value="<?php echo $_SESSION['correoUsuario']; ?>">
 											</div>
 										</div>
 									</div>
@@ -250,7 +250,7 @@ if (isset($_POST['logout'])) {
 										<div class="col-md-4">
 											<div class="form-group form-group-default">
 												<label>Telefono</label>
-												<input type="tel" class="form-control"  name="phone" placeholder="Phone" value="<?php echo $_SESSION['telfUsuario']; ?>"readonly>
+												<input type="tel" class="form-control"  name="phone" placeholder="Phone" value="<?php echo $_SESSION['telfUsuario']; ?>">
 											</div>
 										</div>
 									</div>
@@ -293,7 +293,7 @@ if (isset($_POST['logout'])) {
 											</a>
 										</div>
 										<div class="view-profile">
-											<a href="#" class="btn btn-primary btn-block">Biblioteca virtual</a>
+											<a href="inic.php" class="btn btn-primary btn-block">Panel administrativo</a>
 										</div>
 									</div>
 								</div>

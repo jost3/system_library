@@ -66,7 +66,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search1">
+								<input type="text" placeholder="Buscar Libros" class="form-control" name="search1">
 							</div>
 						</form>
 					</div>
@@ -189,7 +189,7 @@ if (isset($_POST['logout'])) {
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="adm_register.php">
+										<a href="estudent_adm.php">
 											<span class="sub-item">Estudiantes</span>
 										</a>
 									</li>
@@ -214,8 +214,8 @@ if (isset($_POST['logout'])) {
 						<h4 class="page-title">Libros actuales</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
+								<a href="inic.php">
+									<i class="fas fa-home"></i>
 								</a>
 							</li>
 							<li class="separator">
@@ -301,7 +301,7 @@ if (isset($_POST['logout'])) {
 													<td><?php  echo $row["autor"];?></td>
 													<td><?php  echo $row["edicion"];?></td>
 													<td><?php  echo $row["descripcion"];?></td>
-													<td>
+													<td style="width: 190px;">
 														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-libro" data-id="<?php echo $row["id"]; ?>">
 															<span class="btn-label">
 																<i class="fa fa-pencil"></i>
@@ -410,6 +410,22 @@ if (isset($_POST['logout'])) {
             });
         });
     });
+</script>
+<script>
+
+    <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
+        Swal.fire({
+            icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
+            title: '<?php echo $_SESSION['mensaje']; ?>',
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+    <?php
+        unset($_SESSION['mensaje']);
+        unset($_SESSION['tipo_alerta']);
+    endif;
+    ?>
 </script>
 <script src="../js/adm/ready.js"></script>
 <script src="../js/adm/table_function.js"></script>

@@ -67,7 +67,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de alumnoss" class="form-control" name="search">
+								<input type="text" placeholder="Buscar Alumnos" class="form-control" name="search">
 							</div>
 						</form>
 					</div>
@@ -222,8 +222,8 @@ if (isset($_POST['logout'])) {
 						<h4 class="page-title">Estudiantes actuales</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
+								<a href="inic.php">
+									<i class="fas fa-home"></i>
 								</a>
 							</li>
 							<li class="separator">
@@ -309,7 +309,7 @@ if (isset($_POST['logout'])) {
 													<td><?php  echo $row["carrera"];?></td>
 													<td><?php  echo $row["telefono"];?></td>
 													<td><?php  echo $row["correo"];?></td>
-													<td>
+													<td style="width: 190px;">
 													<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-alumnos" data-id="<?php echo $row["id"]; ?>">
 														<span class="btn-label">
 															<i class="fa fa-pencil"></i>

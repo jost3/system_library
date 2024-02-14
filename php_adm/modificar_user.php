@@ -98,7 +98,7 @@ if (isset($_POST['logout'])) {
 										<i class="fa fa-search search-icon"></i>
 									</button>
 								</div>
-								<input type="text" placeholder="Busca rapida de prestamos" class="form-control" name="search">
+								<input type="text" placeholder="" class="form-control" name="search">
 							</div>
 						</form>
 					</div>
@@ -252,8 +252,8 @@ if (isset($_POST['logout'])) {
 						<h4 class="page-title">Modificar usuario</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
-									<i class="flaticon-home"></i>
+								<a href="inic.php">
+									<i class="fas fa-home"></i>
 								</a>
 							</li>
 							<li class="separator">
