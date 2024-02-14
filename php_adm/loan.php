@@ -261,6 +261,18 @@ if (isset($_POST['logout'])) {
 								}
 							}
 						}
+						function getColor($estado) {
+							switch ($estado) {
+								case 'Ocupado':
+									return 'green'; // Color para "Prestado"
+								case 'Fuera de límite':
+									return 'red'; // Color para "Fuera de límite"
+								case 'Pendiente':
+									return 'orange'; // Color para "Pendiente"
+								default:
+									return 'white'; // Color predeterminado
+							}
+						}
 					?>
 					<div class="row">
 						<div class="col-md-12">
@@ -333,7 +345,7 @@ if (isset($_POST['logout'])) {
 													<td style="width: 110px;"><?php  echo $row["titulo1"];?></td>
 													<td style="width: 100px;"><?php  echo $row["autor1"];?></td>
 													<td><?php  echo $row["descripcion1"];?></td>
-													<td style="width: 80px;"><?php  echo $row["estado"];?></td>
+													<td style="width: 80px; background-color: <?php echo getColor($row["estado"]); ?>"><?php echo $row["estado"]; ?></td>
 													<td style="width: 80px;"><?php  echo $row["fecha"];?></td>
 													<td style="width: 80px;"><?php  echo $row["fecha_term"];?></td>
 													<td><?php  echo $row["dni_est"];?></td>

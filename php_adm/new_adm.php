@@ -29,11 +29,7 @@ if (isset($_POST['logout'])) {
         max-width: 70%; 
         height: auto; 
     }
-	.a1 {
-      
-        
-    }
-	
+
 </style>
 <body>
 	<div class="wrapper">
