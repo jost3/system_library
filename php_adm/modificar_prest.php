@@ -305,7 +305,6 @@ if (isset($_POST['logout'])) {
                                     <select class="form-control input-border-bottom" id="selectFloatingLabel" name="estado" required>
                                         <option value="" <?php if ($estado == '') echo 'selected'; ?>>&nbsp;</option>
                                         <option value="Ocupado" <?php if ($estado == 'Ocupado') echo 'selected'; ?>>Ocupado</option>
-                                        <option value="Limite de tiempo" <?php if ($estado == 'Limite de tiempo') echo 'selected'; ?>>Limite de tiempo</option>
                                     </select>
                                     <label for="selectFloatingLabel" class="placeholder">Estado</label>
                                 </div>

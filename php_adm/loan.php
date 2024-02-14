@@ -237,17 +237,32 @@ if (isset($_POST['logout'])) {
 						</ul>
 					</div>
 					<?php
-					include("../bd/conex_prest.php");
-					
-					$search = isset($_GET['search']) ? $_GET['search'] : '';
-					if ($search) {
-						$prestamo = "SELECT * FROM prestamo WHERE 
-								titulo1 LIKE '%$search%'";
-					
-					} else {
-						$prestamo = "SELECT * FROM prestamo";
-					}
+						include("../bd/conex_prest.php");
+
+						$search = isset($_GET['search']) ? $_GET['search'] : '';
+						if ($search) {
+							$prestamo = "SELECT * FROM prestamo WHERE titulo1 LIKE '%$search%'";
+						} else {
+							$prestamo = "SELECT * FROM prestamo";
+						}
+						$result = mysqli_query($conex1, $prestamo);
+
+						while ($row = mysqli_fetch_assoc($result)) {
+							if (!empty($row["fecha_term"])) {
+								$fecha_termino = strtotime($row["fecha_term"]);
+								$hoy = strtotime(date("Y-m-d"));
+							
+								$estado = "Prestado";
+								if ($hoy > $fecha_termino) {
+									$estado = "Fuera de límite";
+									// Actualizar el estado en la base de datos (opcional)
+									$update_query = "UPDATE prestamo SET estado = 'Fuera de límite' WHERE id_prest = {$row["id_prest"]}";
+									mysqli_query($conex1, $update_query);
+								}
+							}
+						}
 					?>
+				
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">

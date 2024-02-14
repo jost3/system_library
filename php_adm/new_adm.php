@@ -29,6 +29,11 @@ if (isset($_POST['logout'])) {
         max-width: 70%; 
         height: auto; 
     }
+	.a1 {
+      
+        
+    }
+	
 </style>
 <body>
 	<div class="wrapper">
@@ -248,9 +253,9 @@ if (isset($_POST['logout'])) {
                             </div>
                             <div class="card-body">
 
-                            <div class="form-group form-floating-label">
-                                    <input id="inputFloatingLabelTitulo" type="file" class="form-control input-border-bottom" name="foto" accept="image/*" required>
-                                    <label for="inputFloatingLabelTitulo" class="placeholder"></label>
+                            	<div class="form-group form-floating-label">
+                                    <input id="inputFloatingLabelFoto" type="file" class="form-control input-border-bottom " name="foto" accept="image/*">
+                                    <label for="inputFloatingLabelFoto" class="placeholder">Imagen del usuario</label>
                                 </div>
                                 <div class="form-group form-floating-label">
                                     <input id="inputFloatingLabelTitulo" type="text" class="form-control input-border-bottom" name="id" required>
@@ -273,13 +278,13 @@ if (isset($_POST['logout'])) {
                                     <select class="form-control input-border-bottom" id="selectFloatingLabel" name="rol" required>
                                         <option value="">&nbsp;</option>
                                         <option value="admin">Administrador</option>
-        								<option value="root"></option>
+        								<option value="root">Root</option>
                                     </select>
                                     <label for="selectFloatingLabel" class="placeholder">rol</label>
                                 </div>
                                 <div class="form-group form-floating-label">
                                     <input id="password" type="password" class="form-control input-border-bottom" name="password" required>
-                                    <label for="inputFloatingLabelEdicion" class="placeholder">Contraseña</label>
+                                    <label for="password" class="placeholder">Contraseña</label>
                                 </div>
                                 <div class="card-action text-center">
                                     <button class="btn btn-primary" name="registro">Registrar</button>
