@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('bd/mostrar_dt.php');
-
+session_regenerate_id(true);
 // Verificar la conexión
 if ($conex->connect_error) {
     die("Conexión fallida: " . $conex->connect_error);
@@ -12,8 +12,10 @@ $usuario = $conex->real_escape_string($_POST['usuario']);
 $contraseña = $_POST['password'];
 
 // Consulta SQL para verificar el inicio de sesión
-$sql = "SELECT id, usuario, correo, rol, telefono, password, foto FROM usuarios WHERE usuario='$usuario'";
-$result = $conex->query($sql);
+$stmt = $conex->prepare("SELECT id, usuario, correo, rol, telefono, password, foto FROM usuarios WHERE usuario=?");
+$stmt->bind_param("s", $usuario);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result) {
     if ($result->num_rows > 0) {
@@ -41,6 +43,8 @@ if ($result) {
 // Redirige a la página de inicio con una alerta de incorrecto
 header("Location: index.html?alerta=incorrecto");
 exit();
+$stmt->close();
+$conex->close();
 ?>
 
 

@@ -36,35 +36,35 @@ if (isset($_POST['logout'])) {
             width: 100%;
         }
         #tm a {
-        font-size: 15px; /* Puedes ajustar el valor según tus preferencias */
+        font-size: 15px; 
         }
         #navbar {
-    	/* Otros estilos aquí */
-    	transition: background-color 0.3s ease; /* Transición suave para cambios de color */
+    	
+    	transition: background-color 0.3s ease; 
 		}
 
 		.fixed-nav {
 			position: fixed;
 			width: 100%;
 			top: 0;
-			z-index: 1000; /* Ajusta según sea necesario para superponer otros elementos */
+			z-index: 1000; 
 		}
         #navbar .form-control {
-        width: 220px; /* Ajusta el ancho según tus preferencias */
+        width: 220px; /
         }
 
         /* Ajustes para los botones de sugerencia */
         .sugerencia {
-            width: 100%; /* Mismo ancho para todos los botones */
-            border: none; /* Eliminar borde */
-            background: none; /* Fondo transparente */
-            text-align: left; /* Alinear texto a la izquierda */
-            padding: 8px 12px; /* Espaciado interno */
+            width: 100%; 
+            border: none; 
+            background: none; 
+            text-align: left; 
+            padding: 8px 12px; 
             cursor: pointer;
             transition: background-color 0.3s;
         }
         .sugerencia:hover {
-            background-color: #f0f0f0; /* Cambiar color de fondo al pasar el ratón */
+            background-color: #f0f0f0; 
         }
     </style>
 </head>

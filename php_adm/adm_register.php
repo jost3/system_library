@@ -217,7 +217,7 @@ if (isset($_POST['logout'])) {
 					<div class="page-header">
 						<h4 class="page-title">Usuarios actuales</h4>
 						<ul class="breadcrumbs">
-							<<li class="nav-home">
+							<li class="nav-home">
 								<a href="inic.php">
 									<i class="fas fa-home"></i>
 								</a>

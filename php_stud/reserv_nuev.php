@@ -27,10 +27,27 @@ if (isset($_POST['registro'])) {
 
             // Verificar si el DNI coincide con el DNI almacenado en la sesión
             if ($dniEstudiante === $dniSesion) {
+                // Obtener la fecha de la última reserva realizada por el usuario
+                $fechaUltimaReserva = $_SESSION['fechaUltimaReserva'];
+
+                // Obtener la fecha actual
+                $fechaActual = date("Y-m-d");
+
+                // Verificar si ya se realizó una reserva hoy
+                if ($fechaUltimaReserva === $fechaActual) {
+                    $_SESSION['mensaje'] = "Error: Ya has realizado una reserva hoy";
+                    $_SESSION['tipo_alerta'] = "error";
+                    header('Location: reserva.php');
+                    exit();
+                }
+
                 // Guardar el ID del estudiante en la sesión
                 $_SESSION['idEst'] = $idEstudiante;
-                $estd= 'Pendiente';
+                $_SESSION['fechaUltimaReserva'] = $fechaActual;
+
+                $estd = 'Pendiente';
                 $fechaActual = date("Y-m-d");
+
                 // Ahora puedes realizar la inserción en la tabla de reservas
                 $descripcion1 = $_POST['descripcion1'];
                 $autor = $_POST['autor'];
@@ -40,7 +57,7 @@ if (isset($_POST['registro'])) {
                 $resultReserva = mysqli_query($conex, $queryReserva);
 
                 if ($resultReserva) {
-                    $_SESSION['mensaje'] = "Reservación registrado con exito";
+                    $_SESSION['mensaje'] = "Reservación registrada con éxito";
                     $_SESSION['tipo_alerta'] = "success";
                     header('Location: reserva.php');
                     exit();
@@ -51,7 +68,7 @@ if (isset($_POST['registro'])) {
                     exit();
                 }
             } else {
-                $_SESSION['mensaje'] = "Error al DNI es incorrecto";
+                $_SESSION['mensaje'] = "Error: El DNI es incorrecto";
                 $_SESSION['tipo_alerta'] = "error";
                 header('Location: reserva.php');
                 exit();
@@ -63,13 +80,14 @@ if (isset($_POST['registro'])) {
             exit();
         }
     } else {
-            $_SESSION['mensaje'] = "El libro no existe";
-            $_SESSION['tipo_alerta'] = "error";
-            header('Location: reserva.php');
-            exit();
+        $_SESSION['mensaje'] = "El libro no existe";
+        $_SESSION['tipo_alerta'] = "error";
+        header('Location: reserva.php');
+        exit();
     }
 
     // Cierra la conexión a la base de datos
     mysqli_close($conex);
 }
 ?>
+

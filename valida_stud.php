@@ -9,12 +9,14 @@ if ($conex->connect_error) {
 }
 
 // Obtener datos del formulario
-$usuario1 = $_POST['user'];
+$usuario1 = $conex->real_escape_string($_POST['user']);
 $contraseña1 = $_POST['contra1'];
 
 // Consulta SQL para verificar el inicio de sesión
-$sql = "SELECT id, Nombre, contra, correo, telefono, dni, carrera FROM alumno WHERE dni='$usuario1'";
-$result = $conex->query($sql);
+$stmt = $conex->prepare("SELECT id, Nombre, contra, correo, telefono, dni, carrera FROM alumno WHERE dni=?");
+$stmt->bind_param("s", $usuario1);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result) {
     if ($result->num_rows > 0) {
@@ -25,7 +27,7 @@ if ($result) {
         if (password_verify($contraseña1, $hashedPassword)) {
             // Inicio de sesión exitoso
             $_SESSION['idEst'] = $row['id'];
-            $_SESSION['student'] = $row['Nombre'];
+            $_SESSION['student'] = htmlspecialchars($row['Nombre'], ENT_QUOTES, 'UTF-8');
             $_SESSION['email'] = $row['correo'];
             $_SESSION['phone'] = $row['telefono']; 
             $_SESSION['dni'] = $row['dni'];
@@ -38,5 +40,6 @@ if ($result) {
 }
 header("Location: index.html?alerta=incorrecto");
 // Cerrar la conexión
+$stmt->close();
 $conex->close();
 ?>

@@ -264,11 +264,11 @@ if (isset($_POST['logout'])) {
 						function getColor($estado) {
 							switch ($estado) {
 								case 'Ocupado':
-									return 'green'; // Color para "Prestado"
+									return '#70b578'; // Color para "Prestado"
 								case 'Fuera de límite':
-									return 'red'; // Color para "Fuera de límite"
+									return '#ff7b5a'; // Color para "Fuera de límite"
 								case 'Pendiente':
-									return 'orange'; // Color para "Pendiente"
+									return '#ffc26c'; // Color para "Pendiente"
 								default:
 									return 'white'; // Color predeterminado
 							}
@@ -345,12 +345,12 @@ if (isset($_POST['logout'])) {
 													<td style="width: 110px;"><?php  echo $row["titulo1"];?></td>
 													<td style="width: 100px;"><?php  echo $row["autor1"];?></td>
 													<td><?php  echo $row["descripcion1"];?></td>
-													<td style="width: 80px; background-color: <?php echo getColor($row["estado"]); ?>"><?php echo $row["estado"]; ?></td>
+													<td style="width: 80px;color:black; background-color: <?php echo getColor($row["estado"]); ?>"><?php echo $row["estado"]; ?></td>
 													<td style="width: 80px;"><?php  echo $row["fecha"];?></td>
 													<td style="width: 80px;"><?php  echo $row["fecha_term"];?></td>
 													<td><?php  echo $row["dni_est"];?></td>
 													<td style="width: 110px;"><?php  echo $row["nombre"];?></td>
-													<td style="width: 190px;">
+													<td>
 														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
 															<span class="btn-label">
 																<i class="fa fa-pencil"></i>
