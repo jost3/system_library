@@ -1,8 +1,7 @@
 <?php
 session_start();
-
 include('bd/mostrar_dt.php');
-
+session_regenerate_id(true);
 // Verificar la conexión
 if ($conex->connect_error) {
     die("Conexión fallida: " . $conex->connect_error);
