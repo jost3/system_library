@@ -2,12 +2,30 @@
 <?php
 include("../bd/conex_prest.php");
 session_start();
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['usuario']) || !isset($_SESSION['token1'])) {
     // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
     header('Location: ../index.html');
     exit();
 }
+if (!isset($_SESSION['token1']) || empty($_SESSION['token1'])) {
+    header("Location: index.html?alerta=incorrecto");
+    exit();
+}
+$tiempoInactividad = 1800; // 600 segundos = 10 minutos
+if (isset($_SESSION['last_action'])) {
+    $tiempoTranscurrido = time() - $_SESSION['last_action'];
 
+    if ($tiempoTranscurrido > $tiempoInactividad) {
+        // Ha pasado más de 10 minutos, redirige al index.html
+        header("Location: ../index.html?alerta=sesion-expirada");
+        exit();
+    } elseif ($tiempoTranscurrido > 0) {
+        // Si hay interacción después de los 10 minutos, regenera el token y actualiza el timestamp
+        $_SESSION['token1'] = bin2hex(random_bytes(32));
+        $_SESSION['last_action'] = time();
+    }
+}
+$_SESSION['last_action'] = time();
 /* libro*/
 $sql = "SELECT COUNT(*) AS total_libros FROM libro";
 $result = $conex1->query($sql);

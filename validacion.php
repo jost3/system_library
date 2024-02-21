@@ -16,7 +16,7 @@ $stmt = $conex->prepare("SELECT id, usuario, correo, rol, telefono, password, fo
 $stmt->bind_param("s", $usuario);
 $stmt->execute();
 $result = $stmt->get_result();
-
+$conex->close();
 if ($result) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
@@ -31,7 +31,11 @@ if ($result) {
             $_SESSION['telfUsuario'] = $row['telefono'];
             $_SESSION['fotoUsuario'] = $row['foto'];
             $_SESSION['rolUsuario'] = $row['rol'];
+            $token = bin2hex(random_bytes(32));
 
+            // Guardar el token en la sesión
+            $_SESSION['token1'] = $token;
+            $_SESSION['last_action'] = time();
             // Redirige al archivo inic.php
             header("Location: php_adm/inic.php");
             exit();

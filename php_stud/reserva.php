@@ -1,10 +1,30 @@
 <?php
 session_start();
-if (!isset($_SESSION['student'])) {
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['student']) || !isset($_SESSION['token'])) {
     // Si no ha iniciado sesión, redirigir a la página de inicio de sesión
     header('Location: ../index.html');
     exit();
 }
+if (!isset($_SESSION['token']) || empty($_SESSION['token'])) {
+    header("Location: index.html?alerta=incorrecto");
+    exit();
+}
+$tiempoInactividad1 = 1800;
+if (isset($_SESSION['last_action1'])) {
+    $tiempoTranscurrido1 = time() - $_SESSION['last_action1'];
+
+    if ($tiempoTranscurrido1 > $tiempoInactividad1) {
+        // Ha pasado más de 10 minutos, redirige al index.html
+        header("Location: ../index.html?alerta=sesion-expirada");
+        exit();
+    } elseif ($tiempoTranscurrido1 > 0) {
+        // Si hay interacción después de los 10 minutos, regenera el token y actualiza el timestamp
+        $_SESSION['token'] = bin2hex(random_bytes(32));
+        $_SESSION['last_action1'] = time();
+    }
+}
+$_SESSION['last_action1'] = time();
 if (isset($_POST['logout'])) {
     // Cerrar sesión
     session_destroy();
@@ -69,24 +89,32 @@ if (isset($_POST['logout'])) {
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="inicio_stud.php"><img src="../img/hessen2.png" alt=""></a>
+                <a class="navbar-brand"><img src="../img/hessen2.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="tm">
-                        <li class="nav-item"><a class="nav-link " aria-current="page" href="inicio_stud.php">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="fisico_stud.php">Libros fisicos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reserva.php">Reservar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="perfil_student.php">Perfil</a></li>
+                        <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'inicio_stud.php') ? 'active' : ''; ?>">
+                            <a class="nav-link" href="inicio_stud.php">Inicio</a>
+                        </li>
+                        <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'fisico_stud.php') ? 'active' : ''; ?>">
+                            <a class="nav-link" href="fisico_stud.php">Libros físicos</a>
+                        </li>
+                        <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'reserva.php') ? 'active' : ''; ?>">
+                            <a class="nav-link" href="reserva.php">Reservar</a>
+                        </li>
+                        <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'perfil_student.php') ? 'active' : ''; ?>">
+                            <a class="nav-link" href="perfil_student.php">Perfil</a>
+                        </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar" name="busc1">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar">
                         <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>
-        </nav>
+    </nav>
         <!-- Header-->
         <header class="colr py-5 mt-5" >
             <div class="container px-4 px-lg-5 my-5">

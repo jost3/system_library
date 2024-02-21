@@ -31,6 +31,11 @@ if ($result) {
             $_SESSION['phone'] = $row['telefono']; 
             $_SESSION['dni'] = $row['dni'];
             $_SESSION['carrera'] = $row['carrera'];
+            $token = bin2hex(random_bytes(32));
+
+            // Guardar el token en la sesión
+            $_SESSION['token'] = $token;
+            $_SESSION['last_action1'] = time();
             // Redirige al archivo inic.php
             header("Location: php_stud/inicio_stud.php");
             exit();
