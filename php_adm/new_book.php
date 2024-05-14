@@ -199,6 +199,15 @@ if (isset($_POST['logout'])) {
 							</a>
 							
 						</li>
+						<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
+						<li class="nav-item ">
+							<a href="digital_book.php">
+								<i class="fas fa-layer-group"></i>
+								<p>Libro Digital</p>
+							</a>
+							
+						</li>
+						<?php endif; ?>
 						<li class="nav-item ">
 							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
@@ -282,11 +291,18 @@ if (isset($_POST['logout'])) {
                                 <div class="form-group form-floating-label">
                                     <select class="form-control input-border-bottom" id="selectFloatingLabel" name="descripcion" required>
                                         <option value="">&nbsp;</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option>Anatomía</option>
+                                        <option>Primeros auxilios y terminología</option>
+                                        <option>Patología y semiología</option>
+                                        <option>Enfermería</option>
+                                        <option>Medicina</option>
+										<option>Enfermería Especializado</option>
+										<option>Bilingüe</option>
+										<option>Literatura</option>
+										<option>Biología y Microbiología</option>
+										<option>Farmacia y Nutrición</option>
+										<option>Laboratorio Clínico</option>
+										<option>Cultura General</option>
                                     </select>
                                     <label for="selectFloatingLabel" class="placeholder">Seccion</label>
                                 </div>

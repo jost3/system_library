@@ -199,6 +199,13 @@ if (isset($_POST['logout'])) {
 							</a>
 							
 						</li>
+						<li class="nav-item ">
+							<a href="digital_book.php">
+								<i class="fas fa-layer-group"></i>
+								<p>Libro Digital</p>
+							</a>
+							
+						</li>
 						<li class="nav-item">
 							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
@@ -319,21 +326,17 @@ if (isset($_POST['logout'])) {
 																<img class="img-fluid" src="data:image/jpeg;base64,<?php echo base64_encode($row['foto']); ?>" alt="Foto de usuario" style="width: 50px; height: 50px;">
                                                             </td>
 															<td>
-																<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-usuario" data-id="<?php echo $row["id"]; ?>">
+																<a href="#" class="btn  btn-sm mr-2 modificar-usuario" data-id="<?php echo $row["id"]; ?>">
 																	<span class="btn-label">
-																		<i class="fa fa-pencil"></i>
+																		<i class="fas fa-edit"></i>
 																	</span>
-																	Modificar
 																</a>
-																<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-usuario" data-id="<?php echo $row["id"]; ?>">
+																<a href="#" class="btn  btn-sm mr-2 eliminar-usuario" data-id="<?php echo $row["id"]; ?>">
 																	<span class="btn-label">
 																		<i class="fa fa-trash"></i>
 																	</span>
-																	Eliminar
 																</a>
 															</td>
-
-														
 														</tr>
 													</tbody>
 													<?php } ?>

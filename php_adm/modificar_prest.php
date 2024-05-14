@@ -230,6 +230,15 @@ if (isset($_POST['logout'])) {
 							</a>
 							
 						</li>
+						<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
+						<li class="nav-item ">
+							<a href="digital_book.php">
+								<i class="fas fa-layer-group"></i>
+								<p>Libro Digital</p>
+							</a>
+							
+						</li>
+						<?php endif; ?>
 						<li class="nav-item active">
 							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
@@ -309,12 +318,19 @@ if (isset($_POST['logout'])) {
                                 </div>
                                 <div class="form-group form-floating-label">
                                     <select class="form-control input-border-bottom" id="selectFloatingLabel" name="descripcion1" required>
-                                        <option value="" <?php if ($descripcion == '') echo 'selected'; ?>>&nbsp;</option>
-                                        <option value="1" <?php if ($descripcion == '1') echo 'selected'; ?>>1</option>
-                                        <option value="2" <?php if ($descripcion == '2') echo 'selected'; ?>>2</option>
-                                        <option value="3" <?php if ($descripcion == '3') echo 'selected'; ?>>3</option>
-                                        <option value="4" <?php if ($descripcion == '4') echo 'selected'; ?>>4</option>
-                                        <option value="5" <?php if ($descripcion == '5') echo 'selected'; ?>>5</option>
+									<option value="" <?php if ($descripcion == '') echo 'selected'; ?>>&nbsp;</option>
+                                        <option value="Anatomía" <?php if ($descripcion == 'Anatomía') echo 'selected'; ?>>Anatomía</option>
+                                        <option value="Primeros auxilios y terminología" <?php if ($descripcion == 'Primeros auxilios y terminología') echo 'selected'; ?>>Primeros auxilios y terminología</option>
+                                        <option value="Patología y semiología" <?php if ($descripcion == 'Patología y semiología') echo 'selected'; ?>>Patología y semiología</option>
+                                        <option value="Enfermería" <?php if ($descripcion == 'Enfermería') echo 'selected'; ?>>Enfermería</option>
+                                        <option value="Medicina" <?php if ($descripcion == 'Medicina') echo 'selected'; ?>>Medicina</option>
+										<option value="Enfermería Especializado" <?php if ($descripcion == 'Enfermería Especializado') echo 'selected'; ?>>Enfermería Especializado</option>
+                                        <option value="Bilingüe" <?php if ($descripcion == 'Bilingüe') echo 'selected'; ?>>Bilingüe</option>
+                                        <option value="Literatura" <?php if ($descripcion == 'Literatura') echo 'selected'; ?>>Literatura</option>
+                                        <option value="Biología y Microbiología" <?php if ($descripcion == 'Biología y Microbiología') echo 'selected'; ?>>Biología y Microbiología</option>
+                                        <option value="Farmacia y Nutrición" <?php if ($descripcion == 'Farmacia y Nutrición') echo 'selected'; ?>>Farmacia y Nutrición</option>
+										<option value="Laboratorio Clínico" <?php if ($descripcion == 'Laboratorio Clínico') echo 'selected'; ?>>Laboratorio Clínico</option>
+                                        <option value="Cultura General" <?php if ($descripcion == 'Cultura General') echo 'selected'; ?>>Cultura General</option>
                                     </select>
                                     <label for="selectFloatingLabel" class="placeholder">Seccion</label>
                                 </div>

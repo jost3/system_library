@@ -100,7 +100,7 @@ $guarda= $conex1->query($consul_stud);
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" id="buscar" aria-label="Buscar">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" name="busc1" id="buscar" aria-label="Buscar">
                         <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form>
                 </div>

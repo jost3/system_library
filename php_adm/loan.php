@@ -201,6 +201,15 @@ if (isset($_POST['logout'])) {
 							</a>
 							
 						</li>
+						<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
+						<li class="nav-item ">
+							<a href="digital_book.php">
+								<i class="fas fa-layer-group"></i>
+								<p>Libro Digital</p>
+							</a>
+							
+						</li>
+						<?php endif; ?>
 						<li class="nav-item active">
 							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
@@ -370,17 +379,15 @@ if (isset($_POST['logout'])) {
 													<td><?php  echo $row["dni_est"];?></td>
 													<td style="width: 110px;"><?php  echo $row["nombre"];?></td>
 													<td>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
+														<a href="#" class="btn  btn-sm mr-2 modificar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
 															<span class="btn-label">
-																<i class="fa fa-pencil"></i>
+																<i class="fas fa-edit"></i>
 															</span>
-															Modificar
 														</a>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
+														<a href="#" class="btn  btn-sm mr-2 eliminar-prestamo" data-id="<?php echo $row["id_prest"]; ?>">
 															<span class="btn-label">
 																<i class="fa fa-trash"></i>
 															</span>
-															Eliminar
 														</a>
 													</td>
 												</tr>

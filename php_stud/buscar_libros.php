@@ -25,7 +25,7 @@ if (mysqli_num_rows($resultado) > 0) {
     echo '</ul>';
 } else {
     // Si no se encontraron resultados, devolver un mensaje indicando que no se encontraron sugerencias
-    echo '<p>No se encontraron libros que coincidan con la búsqueda.</p>';
+    echo '<p id="mensajeNoResultados">No se encontraron libros que coincidan con la búsqueda.</p>';
 }
 
 // Cerrar la conexión a la base de datos

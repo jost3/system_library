@@ -75,8 +75,8 @@ $_SESSION['last_action1'] = time();
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="tm">
-                        <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'inicio_stud.php') ? 'active' : ''; ?>">
-                            <a class="nav-link" href="inicio_stud.php">Inicio</a>
+                        <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'lib_virtual.php') ? 'active' : ''; ?>">
+                            <a class="nav-link" href="lib_virtual.php">Inicio</a>
                         </li>
                         <li class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) == 'fisico_stud.php') ? 'active' : ''; ?>">
                             <a class="nav-link" href="fisico_stud.php">Libros físicos</a>

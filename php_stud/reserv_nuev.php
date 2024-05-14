@@ -26,7 +26,8 @@ if (isset($_POST['registro'])) {
             $dniSesion = $_SESSION['dni'];
 
             // Verificar si el DNI coincide con el DNI almacenado en la sesión
-            if ($dniEstudiante === $dniSesion) {
+            if (strval($dniEstudiante) === strval($dniSesion)) {
+
                 // Obtener la fecha de la última reserva realizada por el usuario
                 $fechaUltimaReserva = $_SESSION['fechaUltimaReserva'];
 

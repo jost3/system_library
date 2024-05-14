@@ -193,6 +193,15 @@ if (isset($_POST['logout'])) {
 								<p>Libro</p>
 							</a>	
 						</li>
+						<?php if (isset($_SESSION['rolUsuario']) && strtolower($_SESSION['rolUsuario']) === 'root') : ?>
+						<li class="nav-item ">
+							<a href="digital_book.php">
+								<i class="fas fa-layer-group"></i>
+								<p>Libro Digital</p>
+							</a>
+							
+						</li>
+						<?php endif; ?>
 						<li class="nav-item">
 							<a  href="loan.php">
 								<i class="fas fa-pen-square"></i>
@@ -316,22 +325,20 @@ if (isset($_POST['logout'])) {
 											?>
 												<tr>
 													<td><?php  echo $row["id"];?></td>
-													<td><?php  echo $row["titulo"];?></td>
-													<td><?php  echo $row["autor"];?></td>
+													<td style="width: 150px;"><?php  echo $row["titulo"];?></td>
+													<td style="width: 150px;"><?php  echo $row["autor"];?></td>
 													<td><?php  echo $row["edicion"];?></td>
 													<td><?php  echo $row["descripcion"];?></td>
-													<td style="width: 190px;">
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 modificar-libro" data-id="<?php echo $row["id"]; ?>">
+													<td style="width: 250px;">
+														<a href="#" class="btn    btn-sm mr-2 modificar-libro" data-id="<?php echo $row["id"]; ?>">
 															<span class="btn-label">
-																<i class="fa fa-pencil"></i>
+																<i class="fas fa-edit"></i>
 															</span>
-															Modificar
 														</a>
-														<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2 eliminar-libro" data-id="<?php echo $row["id"]; ?>">
+														<a href="#" class="btn btn-sm mr-2 eliminar-libro" data-id="<?php echo $row["id"]; ?>">
 															<span class="btn-label">
 																<i class="fa fa-trash"></i>
 															</span>
-															Eliminar
 														</a>
 													</td>
 												</tr>

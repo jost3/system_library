@@ -40,7 +40,7 @@ if (isset($_POST['logout'])) {
     <title>Hessen - Reservacion</title>
     <link rel="icon" href="../img/hessen icono.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="../css/ventana3_prest.css">
+
     <link rel="stylesheet" href="../css/busqu_predictiva.css">
     <link rel="stylesheet" href="../css/princ_stud.css">
     <link rel="stylesheet" href="../css1/azzara.min.css">
@@ -176,25 +176,30 @@ if (isset($_POST['logout'])) {
         });
 
     </script>
+    <script>
+        document.addEventListener('click', function(event) {
+            // Ocultar el contenedor de sugerencias al hacer clic en otra parte de la pantalla
+            var sugerencias = document.getElementById('sugerencias');
+            if (sugerencias) {
+                sugerencias.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('input', function(event) {
+            // Ocultar el contenedor de sugerencias al eliminar el texto de búsqueda
+            var sugerencias = document.getElementById('sugerencias');
+            if (sugerencias && event.target.tagName.toLowerCase() === 'input' && event.target.id === 'inputFloatingLabelTitulo') {
+                sugerencias.style.display = 'none';
+            }
+        });
+    </script>
+</script>
     <!-- Scripts adicionales -->
     <script src="../js/buscar_libros.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbar = document.getElementById('navbar');
-
-            window.addEventListener('scroll', function () {
-                // Si el usuario ha desplazado hacia abajo más allá de cierto punto, agrega la clase 'fixed-nav'
-                if (window.scrollY > 100) {
-                    navbar.classList.add('fixed-nav');
-                } else {
-                    // De lo contrario, quita la clase 'fixed-nav'
-                    navbar.classList.remove('fixed-nav');
-                }
-            });
-        });
         <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['tipo_alerta'])) : ?>
             Swal.fire({
                 icon: '<?php echo $_SESSION['tipo_alerta']; ?>',
