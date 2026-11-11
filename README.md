@@ -33,12 +33,11 @@ Aplicación web en **PHP** para la biblioteca de un instituto. El estudiante **b
 
 - Estructurar una aplicación web en PHP puro: conexión a base de datos, formularios, sesiones y validaciones.
 - Diseñar una base de datos relacional para libros, usuarios y reservas.
-- Después migré a **Laravel**, que usé en mis proyectos posteriores (ver [QR_ASISTE](https://github.com/TU-USUARIO/qr-asiste) y el sistema de laboratorio).
 
 ## 👤 Autor
 
 **Josué Cotera Bravo** — Estudiante de Ingeniería de Software (UTP) · Técnico en Ingeniería de Software con IA (SENATI)
 
 - 📧 josuecotb@gmail.com
-- 💼 LinkedIn: <!-- TODO: tu enlace -->
+- 💼 LinkedIn: [Josue C](www.linkedin.com/in/josue-cotera-bravo-a92358336)
 - 🐙 GitHub: [@jost3](https://github.com/jost3)
