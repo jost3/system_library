@@ -9,18 +9,6 @@ Aplicación web en **PHP** para la biblioteca de un instituto. El estudiante **b
 
 ---
 
-## 🖼️ Capturas
-
-| Catálogo y búsqueda | Filtros |
-|---|---|
-| ![Catálogo](docs/img/01-catalogo.png) | ![Filtros](docs/img/02-filtros.png) |
-
-| Reserva de un libro | Módulo administrativo |
-|---|---|
-| ![Reserva](docs/img/03-reserva.png) | ![Admin](docs/img/04-admin-libros.png) |
-
----
-
 ## ✨ Funcionalidades
 
 **Estudiante**
